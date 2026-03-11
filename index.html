@@ -223,22 +223,9 @@ color:#22c55e;
 }
 
 @keyframes pulse{
-
-0%{
-transform:scale(1);
-box-shadow:0 0 0 rgba(34,197,94,0);
-}
-
-50%{
-transform:scale(1.05);
-box-shadow:0 0 20px rgba(34,197,94,0.6);
-}
-
-100%{
-transform:scale(1);
-box-shadow:0 0 0 rgba(34,197,94,0);
-}
-
+0%{transform:scale(1);box-shadow:0 0 0 rgba(34,197,94,0);}
+50%{transform:scale(1.05);box-shadow:0 0 20px rgba(34,197,94,0.6);}
+100%{transform:scale(1);box-shadow:0 0 0 rgba(34,197,94,0);}
 }
 
 /* PROFIT RULE */
@@ -261,6 +248,26 @@ width:220px;
 .box h3{
 margin:0 0 10px;
 color:#22c55e;
+}
+
+/* TABLE */
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:10px;
+}
+
+th, td{
+padding:8px;
+}
+
+th{
+border-bottom:1px solid #1e3a5f;
+}
+
+td{
+border-bottom:1px solid #0c243c;
 }
 
 /* FORM */
@@ -332,25 +339,18 @@ margin-bottom:14px;
 @media (max-width:768px){
 
 .hero h1{font-size:30px;}
-
 .hero p{font-size:17px;}
-
 .section h2{font-size:26px;}
-
 .section p{font-size:16px;}
 
-.flow{
-flex-direction:column;
-}
+.flow{flex-direction:column;}
 
 .flow-step{
 width:100%;
 max-width:280px;
 }
 
-.arrow{
-transform:rotate(90deg);
-}
+.arrow{transform:rotate(90deg);}
 
 .logos{flex-direction:column;}
 
@@ -413,10 +413,8 @@ If it profits, the profits pay the fee.
 </div>
 
 <p style="margin-top:20px">
-
 Futures trading carries substantial risk and losses are possible.<br>
 Please review the <strong>Risk Disclosure section at the bottom of this page</strong>.
-
 </p>
 
 </div>
@@ -424,11 +422,9 @@ Please review the <strong>Risk Disclosure section at the bottom of this page</st
 <!-- FLOW -->
 
 <div class="section">
-
 <h2>How It Works</h2>
 
 <div class="flow">
-
 <div class="flow-step">Sign Up</div>
 <div class="arrow">➜</div>
 
@@ -442,29 +438,6 @@ Please review the <strong>Risk Disclosure section at the bottom of this page</st
 <div class="arrow">➜</div>
 
 <div class="flow-step">Pay Only If Profitable</div>
-
-</div>
-
-</div>
-
-<!-- PROFIT RULE -->
-
-<div class="section">
-
-<h2>Monthly Profit Rule</h2>
-
-<div class="diagram">
-
-<div class="box">
-<h3>Profit ≤ $3,000</h3>
-<p>You pay $0</p>
-</div>
-
-<div class="box">
-<h3>Profit > $3,000</h3>
-<p>You pay the fee for that month</p>
-</div>
-
 </div>
 
 </div>
@@ -472,25 +445,67 @@ Please review the <strong>Risk Disclosure section at the bottom of this page</st
 <!-- STRATEGIES -->
 
 <div class="section">
-
 <h2>Strategies</h2>
 
 <div class="strategy">
-
 <h3>Easora</h3>
-
-<p>
-Early Session Opportunity Range Algorithm designed to capture liquidity sweeps and momentum during the market open.
-</p>
-
+<p>Early Session Opportunity Range Algorithm capturing liquidity sweeps and open-session momentum.</p>
 </div>
 
 <div class="strategy">
-
 <h3>Structora</h3>
+<p>Market structure algorithm that identifies A-B-C formations and executes trades using rule-based logic.</p>
+</div>
+
+</div>
+
+<!-- PERFORMANCE -->
+
+<div class="section">
+
+<h2>Recent Strategy Performance</h2>
 
 <p>
-Structural Market Execution Engine that identifies A-B-C market structure formations and executes trades using rule-based logic.
+Both winning and losing sessions are shown. Past performance does not guarantee future results.
+Please review the <strong>Risk Disclosure section at the bottom of this page</strong>.
+</p>
+
+<div class="license-box">
+
+<h3>Monthly Summary</h3>
+
+<p>
+<strong>February 2026:</strong> +$10,985<br>
+<strong>March 2026 (partial):</strong> +$1,980
+</p>
+
+<h3 style="margin-top:30px;">Daily Results</h3>
+
+<table>
+
+<tr>
+<th style="text-align:left">Date</th>
+<th style="text-align:right">Result</th>
+</tr>
+
+<tr><td>3/11/2026</td><td style="text-align:right;color:#ef4444;">-$430</td></tr>
+<tr><td>3/10/2026</td><td style="text-align:right;color:#ef4444;">-$155</td></tr>
+<tr><td>3/09/2026</td><td style="text-align:right;color:#22c55e;">+$1,615</td></tr>
+<tr><td>3/05/2026</td><td style="text-align:right;color:#22c55e;">+$1,750</td></tr>
+<tr><td>3/04/2026</td><td style="text-align:right;color:#ef4444;">-$800</td></tr>
+<tr><td>2/27/2026</td><td style="text-align:right;color:#22c55e;">+$1,515</td></tr>
+<tr><td>2/24/2026</td><td style="text-align:right;color:#22c55e;">+$1,040</td></tr>
+<tr><td>2/23/2026</td><td style="text-align:right;color:#22c55e;">+$790</td></tr>
+<tr><td>2/20/2026</td><td style="text-align:right;color:#22c55e;">+$2,785</td></tr>
+<tr><td>2/19/2026</td><td style="text-align:right;color:#22c55e;">+$1,185</td></tr>
+<tr><td>2/18/2026</td><td style="text-align:right;color:#22c55e;">+$1,900</td></tr>
+<tr><td>2/17/2026</td><td style="text-align:right;color:#ef4444;">-$230</td></tr>
+
+</table>
+
+<p style="margin-top:20px;font-size:14px;color:#9fb3c8;">
+On March 6, 2026 the strategy was not enabled.
+Market conditions during that session produced approximately $14,000 of opportunity using the same rules.
 </p>
 
 </div>
@@ -506,27 +521,10 @@ Structural Market Execution Engine that identifies A-B-C market structure format
 <div class="license-box">
 
 <p><strong>Day 0–30</strong> – Free test period.</p>
-
-<p><strong>Day 31</strong> – $500 license for the next 30 days.</p>
-
-<p><strong>Day 61</strong> – $1,000 license for the next 30 days.</p>
-
-<p><strong>Day 91</strong> – $2,000 license for the next 30 days.</p>
-
-<p><strong>Day 121+</strong> – 20% of monthly profits (minimum $2,000).</p>
-
-<p>
-Profit calculations are based on the strategy trading one NQ contract.
-</p>
-
-<p>
-Strategy licenses last 30 days.  
-There are no subscriptions, no credit card charges, and no automatic billing.
-</p>
-
-<p>
-Users send the correct fee amount via PayPal to continue the license period.
-</p>
+<p><strong>Day 31</strong> – $500 license.</p>
+<p><strong>Day 61</strong> – $1,000 license.</p>
+<p><strong>Day 91</strong> – $2,000 license.</p>
+<p><strong>Day 121+</strong> – 20% of profits (minimum $2,000).</p>
 
 </div>
 
@@ -538,14 +536,9 @@ Users send the correct fee amount via PayPal to continue the license period.
 
 <h2>Start Your 30-Day Test</h2>
 
-<p>
-Enter your information to receive setup instructions and training videos.
-</p>
-
 <form action="mailto:gagamulin@yahoo.com" method="post" enctype="text/plain">
 
 <input type="text" name="Name" placeholder="First Name" required>
-
 <input type="email" name="Email" placeholder="Email Address" required>
 
 <br>
@@ -576,7 +569,7 @@ Enter your information to receive setup instructions and training videos.
 
 </div>
 
-<!-- DISCLOSURES -->
+<!-- DISCLOSURE -->
 
 <div class="disclosure">
 
@@ -596,15 +589,10 @@ Futures trading contains substantial risk and is not suitable for every investor
 An investor could potentially lose all or more than the initial investment.
 </p>
 
-<h3>Hypothetical Performance Disclosure</h3>
-
-<p>
-Hypothetical or simulated performance results have inherent limitations and do not represent real trading.
-</p>
-
 <h3>CFTC Rule 4.41</h3>
 
 <p>
+Hypothetical or simulated performance results have certain limitations.
 No representation is being made that any account will achieve profits or losses similar to those shown.
 </p>
 
