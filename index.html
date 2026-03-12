@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -83,6 +82,12 @@ margin:30px auto;
 max-width:760px;
 }
 
+.micro-disclaimer{
+font-size:12px;
+color:#9fb3c8;
+margin-top:10px;
+}
+
 /* DASHBOARD */
 
 .dashboard{
@@ -113,7 +118,13 @@ font-weight:bold;
 margin-top:4px;
 }
 
-/* SECTION */
+.stat-positive{color:#22c55e;}
+.stat-negative{color:#ef4444;}
+
+.result-positive{color:#22c55e;font-weight:bold;}
+.result-negative{color:#ef4444;font-weight:bold;}
+
+/* SECTIONS */
 
 .section{
 margin-top:70px;
@@ -155,11 +166,9 @@ font-size:26px;
 color:#22c55e;
 }
 
-.mobile-arrow{
-display:none;
-}
+.mobile-arrow{display:none;}
 
-/* TRADES */
+/* RECENT TRADES */
 
 .results-grid{
 display:grid;
@@ -218,6 +227,14 @@ flex-wrap:wrap;
 .ninja-logo{height:50px;}
 .kinetick-logo{height:70px;}
 
+.platform-disclaimer{
+margin-top:20px;
+font-size:13px;
+color:#9fb3c8;
+border-top:1px solid #1e3a5f;
+padding-top:14px;
+}
+
 /* DISCLOSURE */
 
 .disclosure{
@@ -235,24 +252,17 @@ margin-top:40px;
 text-align:center;
 padding:30px 0;
 border-top:1px solid #1e3a5f;
+color:#9fb3c8;
 }
 
 /* MOBILE */
 
-@media(max-width:768px){
+@media (max-width:768px){
 
-.dashboard{
-grid-template-columns:repeat(2,1fr);
-}
+.dashboard{grid-template-columns:repeat(2,1fr);}
+.results-grid{grid-template-columns:1fr;}
 
-.results-grid{
-grid-template-columns:1fr;
-}
-
-.flow{
-flex-direction:column;
-}
-
+.flow{flex-direction:column;}
 .desktop-arrow{display:none;}
 .mobile-arrow{display:block;}
 
@@ -262,12 +272,11 @@ flex-direction:column;
 }
 
 </style>
-
 </head>
 
 <body>
 
-<!-- BLOCK 1 -->
+<!-- BLOCK 1 HEADER -->
 
 <div class="header">
 <div class="nav">
@@ -278,23 +287,34 @@ flex-direction:column;
 
 <div class="container">
 
-<!-- BLOCK 2 -->
+<!-- BLOCK 2 HERO -->
 
 <div class="hero">
+
 <h1>A Trading Strategy That Only Gets Paid If It Profits</h1>
-<p>Run the strategy on your NinjaTrader account. Test it free for 30 days.</p>
+
+<p>Run the strategy on your NinjaTrader account.<br>Test it free for 30 days.</p>
 
 <div class="message-box">
-<p><strong>Step 1</strong> — Test free for 30 days</p>
-<p><strong>Step 2</strong> — If it generates $3,000+</p>
-<p><strong>Step 3</strong> — Profits pay the license</p>
+
+<p><strong>Step 1</strong> — Test the strategy free for 30 days</p>
+<p><strong>Step 2</strong> — If the strategy generates more than $3,000</p>
+<p><strong>Step 3</strong> — The profits pay the license</p>
 <p><strong>If it doesn't profit — you pay nothing.</strong></p>
-</div>
+
 </div>
 
-<!-- BLOCK 3 -->
+<p class="micro-disclaimer">
+Futures trading involves substantial risk and is not suitable for every investor.
+Past performance is not indicative of future results.
+</p>
+
+</div>
+
+<!-- BLOCK 3 STRATEGY PERFORMANCE -->
 
 <div class="section">
+
 <h2>Strategy Performance</h2>
 
 <div class="dashboard">
@@ -312,7 +332,7 @@ flex-direction:column;
 </div>
 </div>
 
-<!-- BLOCK 4 -->
+<!-- BLOCK 4 RECENT TRADES -->
 
 <div class="section">
 <div class="box">
@@ -321,7 +341,7 @@ flex-direction:column;
 </div>
 </div>
 
-<!-- BLOCK 5 -->
+<!-- BLOCK 5 EQUITY CURVE -->
 
 <div class="section">
 <div class="box">
@@ -332,7 +352,7 @@ flex-direction:column;
 </div>
 </div>
 
-<!-- BLOCK 6 -->
+<!-- BLOCK 6 HOW IT WORKS -->
 
 <div class="section">
 
@@ -359,31 +379,31 @@ flex-direction:column;
 <div class="flow-step">Pay Only If Profitable</div>
 
 </div>
-
 </div>
 
-<!-- BLOCK 7 -->
+<!-- BLOCK 7 EVERYTHING YOU NEED -->
 
 <div class="section">
 <h2>Everything You Need To Start</h2>
 <div class="box">
-<p>Video tutorials</p>
-<p>Step-by-step setup instructions</p>
-<p>NinjaTrader configuration guide</p>
-<p>Strategy installation walkthrough</p>
+<p>• Video tutorials</p>
+<p>• Step-by-step setup instructions</p>
+<p>• NinjaTrader configuration guide</p>
+<p>• Strategy installation walkthrough</p>
+<p>Most setups take between <strong>1–5 days</strong>.</p>
 </div>
 </div>
 
-<!-- BLOCK 8 -->
+<!-- BLOCK 8 TIKTOK -->
 
 <div class="section">
 <h2>From TikTok To Live Trading</h2>
 <div class="box">
-<p>Many traders discover GustaBOT through TikTok where development and trading insights are shared.</p>
+<p>Many traders discover GustaBOT strategies through TikTok where development and trading insights are shared.</p>
 </div>
 </div>
 
-<!-- BLOCK 9 -->
+<!-- BLOCK 9 SIGNUP -->
 
 <div class="section" id="signup">
 <h2>Start Your 30-Day Test</h2>
@@ -393,37 +413,84 @@ flex-direction:column;
 <button>Start My Free 30-Day Test</button>
 </div>
 
-<!-- BLOCK 10 -->
+<!-- BLOCK 10 FAQ -->
 
 <div class="section">
+
 <h2>Frequently Asked Questions</h2>
+
 <div class="box">
+
 <p><strong>Do I need trading experience?</strong></p>
 <p>Basic familiarity with NinjaTrader is recommended.</p>
-</div>
+
+<br>
+
+<p><strong>Do you control my account?</strong></p>
+<p>No. The strategy runs locally on your NinjaTrader platform.</p>
+
+<br>
+
+<p><strong>Can I stop the strategy anytime?</strong></p>
+<p>Yes. You can disable it inside NinjaTrader.</p>
+
+<br>
+
+<p><strong>Can I test on SIM first?</strong></p>
+<p>Yes. Many users test in simulation first.</p>
+
+<br>
+
+<p><strong>What capital is required?</strong></p>
+<p>Micro contracts typically require about $200 while one NQ contract typically requires about $2,000.</p>
+
+<br>
+
+<p><strong>Does the strategy trade every day?</strong></p>
+<p>No. The system trades only when market conditions match its rules.</p>
+
+<br>
+
+<p><strong>Are profits guaranteed?</strong></p>
+<p>No. Futures trading involves substantial risk.</p>
+
 </div>
 
-<!-- BLOCK 11 -->
+</div>
+
+<!-- BLOCK 11 PLATFORMS -->
 
 <div class="section">
+
 <h2>Recommended Platforms</h2>
+
 <div class="logos">
 <img src="NinjaTrader_Wordmark_color_RGB.png" class="ninja-logo">
 <img src="Kinetick-FreeEOD-300x250.png" class="kinetick-logo">
 </div>
+
+<div class="platform-disclaimer">
+GustaBOT is not affiliated with NinjaTrader or Kinetick.
 </div>
 
-<!-- BLOCK 12 -->
+</div>
+
+<!-- BLOCK 12 DISCLOSURE -->
 
 <div class="disclosure">
 <h2>Important Risk Disclosures</h2>
-<p>Futures trading involves substantial risk and is not suitable for every investor.</p>
+<p>Futures trading contains substantial risk and is not suitable for every investor.</p>
+<p>Past performance is not indicative of future results.</p>
+<p>No representation is being made that any account will achieve profits similar to those shown.</p>
 </div>
 
-<!-- BLOCK 13 -->
+</div>
+
+<!-- BLOCK 13 FOOTER -->
 
 <footer>
 <p>© 2026 GustaBOT Trading Systems</p>
+<p>Automated trading strategies involve risk and may result in financial loss.</p>
 </footer>
 
 <script>
@@ -441,8 +508,7 @@ const trades=[
 {date:"2026-02-24",pnl:1040},
 {date:"2026-02-23",pnl:790},
 {date:"2026-02-20",pnl:2785}
-{date:"2026-02-17",pnl:-270}
-{date:"2026-02-18",pnl:1100}]
+]
 
 /* RECENT TRADES */
 
@@ -451,20 +517,15 @@ const grid=document.getElementById("resultsGrid")
 trades.forEach(t=>{
 let card=document.createElement("div")
 card.className="result-card"
-card.innerHTML=`<span>${t.date}</span><span>$${t.pnl.toLocaleString()}</span>`
+card.innerHTML=`
+<span>${t.date}</span>
+<span class="${t.pnl>=0?'result-positive':'result-negative'}">$${t.pnl.toLocaleString()}</span>`
 grid.appendChild(card)
 })
 
-/* PERFORMANCE CALCULATIONS */
+/* CALCULATIONS */
 
-let wins=0
-let losses=0
-let winTotal=0
-let lossTotal=0
-let equity=[]
-let net=0
-let peak=0
-let maxDD=0
+let wins=0,losses=0,winTotal=0,lossTotal=0,equity=[],net=0,peak=0,maxDD=0
 
 trades.slice().reverse().forEach(t=>{
 net+=t.pnl
@@ -482,22 +543,26 @@ let avgWin=winTotal/wins
 let avgLoss=lossTotal/losses
 let winRate=(wins/trades.length*100).toFixed(1)
 
-document.getElementById("lastTrade").innerText="$"+trades[0].pnl
-document.getElementById("avgWin").innerText="$"+Math.round(avgWin)
-document.getElementById("avgLoss").innerText="$"+Math.round(avgLoss)
-document.getElementById("maxDD").innerText="-$"+Math.round(maxDD)
+function setStat(id,val){
+let el=document.getElementById(id)
+el.innerText="$"+Math.round(val)
+el.className="stat-value "+(val>=0?"stat-positive":"stat-negative")
+}
+
+setStat("lastTrade",trades[0].pnl)
+setStat("avgWin",avgWin)
+setStat("avgLoss",avgLoss)
+setStat("maxDD",-maxDD)
+
 document.getElementById("winRate").innerText=winRate+"%"
 
 /* MONTH/WEEK */
 
 let now=new Date()
-
 let thisMonth=now.getMonth()
 let lastMonth=thisMonth===0?11:thisMonth-1
 
-let thisMonthPnL=0
-let lastMonthPnL=0
-let thisWeekPnL=0
+let thisMonthPnL=0,lastMonthPnL=0,thisWeekPnL=0
 
 let weekStart=new Date()
 weekStart.setDate(now.getDate()-now.getDay())
@@ -510,9 +575,9 @@ if(d.getMonth()===lastMonth)lastMonthPnL+=t.pnl
 if(d>=weekStart)thisWeekPnL+=t.pnl
 })
 
-document.getElementById("thisMonth").innerText="$"+thisMonthPnL
-document.getElementById("lastMonth").innerText="$"+lastMonthPnL
-document.getElementById("thisWeek").innerText="$"+thisWeekPnL
+setStat("thisMonth",thisMonthPnL)
+setStat("lastMonth",lastMonthPnL)
+setStat("thisWeek",thisWeekPnL)
 
 /* EQUITY CURVE */
 
