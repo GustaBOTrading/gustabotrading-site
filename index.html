@@ -18,7 +18,6 @@ font-family:Arial, Helvetica, sans-serif;
 background:#071a2d;
 color:white;
 line-height:1.6;
-scroll-behavior:smooth;
 }
 
 /* HEADER */
@@ -28,7 +27,6 @@ position:sticky;
 top:0;
 background:#071a2d;
 border-bottom:1px solid #1e3a5f;
-z-index:1000;
 }
 
 .nav{
@@ -38,18 +36,6 @@ display:flex;
 align-items:center;
 justify-content:space-between;
 padding:14px 20px;
-}
-
-.logo-container{
-display:flex;
-align-items:center;
-gap:10px;
-}
-
-.logo-icon{
-color:#22c55e;
-font-size:20px;
-font-weight:bold;
 }
 
 .logo-main{
@@ -82,7 +68,6 @@ padding:32px 20px 60px;
 
 .hero{
 text-align:center;
-margin-top:20px;
 }
 
 .hero h1{
@@ -144,7 +129,6 @@ text-align:center;
 
 .section h2{
 font-size:32px;
-margin-bottom:16px;
 }
 
 /* BOX */
@@ -175,6 +159,19 @@ border-radius:10px;
 width:180px;
 text-align:center;
 font-weight:bold;
+}
+
+/* TABLE */
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:10px;
+}
+
+th,td{
+padding:8px;
+border-bottom:1px solid #0c243c;
 }
 
 /* CHART */
@@ -237,28 +234,6 @@ border-radius:10px;
 font-size:14px;
 }
 
-/* MOBILE */
-
-@media (max-width:768px){
-
-.hero h1{font-size:28px;}
-
-.flow{
-flex-direction:column;
-align-items:center;
-}
-
-.flow-step{
-width:90%;
-}
-
-.ninja-logo{height:40px;}
-.kinetick-logo{height:90px;}
-
-.chart-container{height:300px;}
-
-}
-
 </style>
 </head>
 
@@ -267,10 +242,7 @@ width:90%;
 <div class="header">
 <div class="nav">
 
-<div class="logo-container">
-<div class="logo-icon">▲</div>
 <div class="logo-main">Gusta<span>BOT</span></div>
-</div>
 
 <a href="#signup" class="nav-button">Start My Free 30-Day Test</a>
 
@@ -296,7 +268,7 @@ width:90%;
 
 </div>
 
-<!-- PERFORMANCE -->
+<!-- PERFORMANCE DASHBOARD -->
 
 <div class="section">
 
@@ -306,75 +278,39 @@ width:90%;
 
 <div class="stat-box">
 <div class="stat-label">Month-to-Date</div>
-<div class="stat-value stat-positive" id="mtdCounter">$0</div>
+<div class="stat-value" id="mtd"></div>
 </div>
 
 <div class="stat-box">
 <div class="stat-label">Current Week</div>
-<div class="stat-value stat-positive" id="weekCounter">$0</div>
+<div class="stat-value" id="wtd"></div>
 </div>
 
 <div class="stat-box">
 <div class="stat-label">Today</div>
-<div class="stat-value stat-negative" id="todayCounter">$0</div>
+<div class="stat-value" id="today"></div>
 </div>
 
 </div>
 
 </div>
 
-<!-- HOW IT WORKS -->
+<!-- DAILY RESULTS TABLE -->
 
 <div class="section">
 
-<h2>How It Works</h2>
-
-<div class="flow">
-
-<div class="flow-step">Sign Up</div>
-<div class="flow-step">Install Strategy</div>
-<div class="flow-step">Test 30 Days</div>
-<div class="flow-step">Evaluate Results</div>
-<div class="flow-step">Pay Only If Profitable</div>
-
-</div>
-
-</div>
-
-<!-- EVERYTHING YOU NEED -->
-
-<div class="section">
-
-<h2>Everything You Need To Start</h2>
+<h2>Daily Results</h2>
 
 <div class="box">
 
-<p>After signup you receive an onboarding email instantly.</p>
+<table id="resultsTable">
 
-<p>The email contains:</p>
+<tr>
+<th>Date</th>
+<th style="text-align:right">Result</th>
+</tr>
 
-<p>• Video tutorials</p>
-<p>• Step-by-step setup instructions</p>
-<p>• NinjaTrader configuration guide</p>
-<p>• Strategy installation walkthrough</p>
-
-<p>Most users complete setup in <strong>10-20 minutes</strong>.</p>
-
-</div>
-
-</div>
-
-<!-- TIKTOK -->
-
-<div class="section">
-
-<h2>From TikTok To Live Trading</h2>
-
-<div class="box">
-
-<p>Thousands of traders follow the development of GustaBOT strategies on TikTok.</p>
-
-<p>Trades, strategy updates, and system insights are shared regularly.</p>
+</table>
 
 </div>
 
@@ -426,7 +362,7 @@ GustaBOT is not affiliated with NinjaTrader or Kinetick.
 
 </div>
 
-<!-- DISCLOSURES -->
+<!-- DISCLOSURE -->
 
 <div class="disclosure">
 
@@ -444,65 +380,116 @@ GustaBOT is not affiliated with NinjaTrader or Kinetick.
 
 <script>
 
-/* COUNTERS FIXED */
+/* === DAILY TRADE DATA (EDIT THIS DAILY) === */
 
-function animateCounter(id,target){
+const trades = [
 
-let value=0
-let step=Math.abs(target)/120
+{date:"2026-03-11", pnl:-430},
+{date:"2026-03-10", pnl:-155},
+{date:"2026-03-09", pnl:1615},
+{date:"2026-03-05", pnl:1750},
+{date:"2026-03-04", pnl:-800},
+{date:"2026-02-27", pnl:1515},
+{date:"2026-02-24", pnl:1040},
+{date:"2026-02-23", pnl:790},
+{date:"2026-02-20", pnl:2785},
+{date:"2026-02-19", pnl:1185},
+{date:"2026-02-18", pnl:1900},
+{date:"2026-02-17", pnl:-230}
 
-let counter=setInterval(()=>{
+]
 
-if(target>=0){
+/* === BUILD TABLE === */
 
-value+=step
-if(value>=target){
-value=target
-clearInterval(counter)
+const table=document.getElementById("resultsTable")
+
+trades.forEach(t=>{
+
+let row=table.insertRow()
+
+let d=row.insertCell(0)
+let p=row.insertCell(1)
+
+d.innerText=t.date
+p.innerText="$"+t.pnl.toLocaleString()
+p.style.textAlign="right"
+
+p.style.color=t.pnl>=0?"#22c55e":"#ef4444"
+
+})
+
+/* === CALCULATIONS === */
+
+const todayPnL=trades[0].pnl
+
+let now=new Date()
+let month=now.getMonth()
+
+let mtd=0
+let wtd=0
+
+trades.forEach(t=>{
+
+let d=new Date(t.date)
+
+if(d.getMonth()==month)
+mtd+=t.pnl
+
+let weekStart=new Date(now)
+weekStart.setDate(now.getDate()-now.getDay())
+
+if(d>=weekStart)
+wtd+=t.pnl
+
+})
+
+function format(val){
+
+let el=document.createElement("span")
+
+el.className=val>=0?"stat-positive":"stat-negative"
+
+el.innerText="$"+val.toLocaleString()
+
+return el
+
 }
 
-}else{
+document.getElementById("today").appendChild(format(todayPnL))
+document.getElementById("wtd").appendChild(format(wtd))
+document.getElementById("mtd").appendChild(format(mtd))
 
-value-=step
-if(value<=target){
-value=target
-clearInterval(counter)
-}
+/* === EQUITY CURVE === */
 
-}
+let equity=[]
+let total=0
 
-document.getElementById(id).innerText="$"+Math.round(value).toLocaleString()
+trades.slice().reverse().forEach(t=>{
+total+=t.pnl
+equity.push(total)
+})
 
-},15)
+new Chart(document.getElementById("equityChart"),{
 
-}
+type:"line",
 
-animateCounter("mtdCounter",10965)
-animateCounter("weekCounter",1030)
-animateCounter("todayCounter",-430)
-
-/* CHART */
-
-const ctx=document.getElementById("equityChart")
-
-new Chart(ctx,{
-type:'line',
 data:{
-labels:["Feb17","Feb18","Feb19","Feb20","Feb23","Feb24","Feb27","Mar4","Mar5","Mar9","Mar10","Mar11"],
+labels:trades.map(t=>t.date).reverse(),
 datasets:[{
-data:[-230,1670,2855,5640,6430,7470,8985,8185,9935,11550,11395,10965],
+data:equity,
 borderColor:"#22c55e",
 borderWidth:3,
 tension:0.35,
-pointRadius:4,
-pointBackgroundColor:"#22c55e"
+pointRadius:4
 }]
 },
+
 options:{
 responsive:true,
 maintainAspectRatio:false,
 plugins:{legend:{display:false}}
 }
+
 })
 
 </script>
