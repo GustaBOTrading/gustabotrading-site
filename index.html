@@ -40,8 +40,6 @@ justify-content:space-between;
 padding:14px 20px;
 }
 
-/* LOGO */
-
 .logo-container{
 display:flex;
 align-items:center;
@@ -74,8 +72,6 @@ color:#22c55e;
 font-size:11px;
 color:#9fb3c8;
 }
-
-/* BUTTON */
 
 .nav-button{
 background:#22c55e;
@@ -110,18 +106,12 @@ overflow:hidden;
 .hero h1{
 font-size:44px;
 margin-bottom:18px;
-position:relative;
-z-index:2;
 }
 
 .hero p{
 font-size:20px;
 color:#d6e2f0;
-position:relative;
-z-index:2;
 }
-
-/* TAGLINE */
 
 .tagline{
 background:#0f2a45;
@@ -131,41 +121,6 @@ font-size:22px;
 margin:26px auto 0;
 max-width:760px;
 border-left:4px solid #22c55e;
-}
-
-/* HERO EQUITY CURVE */
-
-.hero::after{
-content:"";
-position:absolute;
-bottom:20px;
-left:0;
-width:200%;
-height:160px;
-border-bottom:2px solid rgba(34,197,94,0.7);
-
-clip-path: polygon(
-0% 90%,10% 85%,20% 88%,30% 70%,40% 75%,
-50% 60%,60% 65%,70% 40%,80% 45%,90% 30%,100% 10%
-);
-
-animation:equityScroll 18s linear infinite;
-}
-
-@keyframes equityScroll{
-0%{transform:translateX(-50%);}
-100%{transform:translateX(0%);}
-}
-
-/* MESSAGE BOX */
-
-.message-box{
-background:#0f2a45;
-padding:24px;
-border-radius:12px;
-font-size:20px;
-margin:28px auto 0;
-max-width:760px;
 }
 
 /* SECTIONS */
@@ -187,17 +142,6 @@ max-width:820px;
 margin:auto;
 }
 
-/* STRATEGY */
-
-.strategy{
-background:#102b46;
-padding:22px;
-border-radius:10px;
-margin:18px auto;
-text-align:left;
-max-width:820px;
-}
-
 /* BOX */
 
 .license-box{
@@ -205,6 +149,17 @@ background:#0f2a45;
 padding:24px;
 border-radius:12px;
 margin:20px auto;
+text-align:left;
+max-width:820px;
+}
+
+/* STRATEGY */
+
+.strategy{
+background:#102b46;
+padding:22px;
+border-radius:10px;
+margin:18px auto;
 text-align:left;
 max-width:820px;
 }
@@ -217,6 +172,7 @@ justify-content:center;
 align-items:center;
 gap:16px;
 margin-top:34px;
+flex-wrap:wrap;
 }
 
 .flow-step{
@@ -370,34 +326,54 @@ Fees are paid from profits — never from capital.
 </div>
 
 <p style="margin-top:20px">
-Your capital should be used to trade, not to fund subscriptions.
-GustaBOT strategies are structured so the strategy has the opportunity
-to generate profit first — and those profits are what pay the license.
+Test the strategy free for 30 days. If it profits more than $3,000 in a month,
+the profits pay the license fee.
 </p>
 
-<div class="message-box">
-<p>Test the strategy free for <strong>30 days</strong></p>
-<p>If it profits more than <strong>$3,000 in a month</strong></p>
-<p>→ You pay the fee for that month</p>
-<p>If it doesn't</p>
-<p><strong>You pay nothing for that month</strong></p>
+</div>
+
+<div class="section">
+
+<h2>How It Works</h2>
+
+<div class="flow">
+
+<div class="flow-step">Sign Up</div>
+<div class="arrow">➜</div>
+
+<div class="flow-step">Install Strategy</div>
+<div class="arrow">➜</div>
+
+<div class="flow-step">Test 30 Days</div>
+<div class="arrow">➜</div>
+
+<div class="flow-step">Profit?</div>
+<div class="arrow">➜</div>
+
+<div class="flow-step">Pay Only If Profitable</div>
+
 </div>
 
 </div>
 
 <div class="section">
-<h2>How It Works</h2>
 
-<div class="flow">
-<div class="flow-step">Sign Up</div>
-<div class="arrow">➜</div>
-<div class="flow-step">Install Strategy</div>
-<div class="arrow">➜</div>
-<div class="flow-step">Test 30 Days</div>
-<div class="arrow">➜</div>
-<div class="flow-step">Profit?</div>
-<div class="arrow">➜</div>
-<div class="flow-step">Pay Only If Profitable</div>
+<h2>What To Expect</h2>
+
+<div class="license-box">
+
+<p>
+Automated trading strategies follow predefined rules, but market conditions constantly change.
+</p>
+
+<p>
+There will be winning days and losing days. Periods of strong performance may be followed by periods of drawdown.
+</p>
+
+<p>
+The goal of the strategy is not to win every trade, but to produce positive results over time through disciplined execution.
+</p>
+
 </div>
 
 </div>
@@ -411,9 +387,26 @@ to generate profit first — and those profits are what pay the license.
 <p>Early Session Opportunity Range Algorithm capturing liquidity sweeps and open-session momentum.</p>
 </div>
 
-<div class="strategy">
-<h3>Structora</h3>
-<p>Market structure algorithm identifying A-B-C formations and executing trades using rule-based logic.</p>
+</div>
+
+<div class="section">
+
+<h2>Full Account Control</h2>
+
+<div class="license-box">
+
+<p>
+GustaBOT strategies run directly inside your own NinjaTrader platform.
+</p>
+
+<p>
+Trades are executed on your account, and you maintain full control over enabling or disabling the strategy at any time.
+</p>
+
+<p>
+Position size, contract selection, and risk tolerance remain entirely under the control of the user.
+</p>
+
 </div>
 
 </div>
@@ -442,6 +435,7 @@ Equity curve based on results generated using one NQ futures contract.
 <h3 style="margin-top:30px;">Daily Results</h3>
 
 <table>
+
 <tr>
 <th>Date</th>
 <th style="text-align:right;">Result</th>
@@ -481,14 +475,9 @@ Equity curve based on results generated using one NQ futures contract.
 </div>
 
 <div class="license-box">
-
-<h3>Important Risk Reminder</h3>
-
 <p>
-The ideal amount of trading capital is money that a trader can afford to lose without creating financial hardship,
-emotional stress, or changes to their normal lifestyle.
+The ideal amount of trading capital is money that a trader can afford to lose without creating financial hardship or emotional stress.
 </p>
-
 </div>
 
 </div>
@@ -504,39 +493,31 @@ After submitting the request form, you will receive an email containing setup in
 </p>
 
 <p>
-The onboarding process typically takes about 30–60 minutes.
+The onboarding process typically takes about <strong>2–7 days</strong>.
 </p>
 
 </div>
 
-<div class="license-box">
-<h3>Step 1 — Platform Preparation</h3>
-<p>Instructions for opening a NinjaTrader account and downloading the desktop platform.</p>
 </div>
 
-<div class="license-box">
-<h3>Step 2 — VPN Setup</h3>
-<p>Guidance on installing and configuring a VPN if required.</p>
-</div>
+<div class="section">
+
+<h2>Frequently Asked Questions</h2>
 
 <div class="license-box">
-<h3>Step 3 — Strategy Installation</h3>
-<p>How to import the strategy and enable it within NinjaTrader.</p>
-</div>
 
-<div class="license-box">
-<h3>Step 4 — Chart Setup</h3>
-<p>How to add charts and configure the trading workspace.</p>
-</div>
+<h3>Do I need trading experience?</h3>
+<p>Basic familiarity with NinjaTrader and futures trading is recommended.</p>
 
-<div class="license-box">
-<h3>Step 5 — Simulation Testing</h3>
-<p>New users are encouraged to run the strategy in simulation before trading live.</p>
-</div>
+<h3>Can I use micro contracts?</h3>
+<p>Yes. Strategies can run using micro or mini futures contracts depending on account size.</p>
 
-<div class="license-box">
-<h3>Video Tutorials</h3>
-<p>Step-by-step video tutorials are provided covering the full setup and daily use.</p>
+<h3>Can I stop the strategy anytime?</h3>
+<p>Yes. Strategies run locally on your NinjaTrader platform and can be disabled at any time.</p>
+
+<h3>Is this financial advice?</h3>
+<p>No. GustaBOT provides automated trading software, not financial advice.</p>
+
 </div>
 
 </div>
@@ -544,6 +525,10 @@ The onboarding process typically takes about 30–60 minutes.
 <div class="section" id="signup">
 
 <h2>Start Your 30-Day Test</h2>
+
+<p style="color:#9fb3c8;margin-top:10px;">
+Your capital remains in your own trading account at all times.
+</p>
 
 <form action="https://formspree.io/f/mzdjrwpq" method="POST">
 
@@ -619,25 +604,8 @@ const ctx=document.getElementById('equityChart');
 new Chart(ctx,{
 type:'line',
 data:{
-labels:['Feb 17','Feb 18','Feb 19','Feb 20','Feb 23','Feb 24','Feb 27','Mar 4','Mar 5','Mar 9','Mar 10','Mar 11'],
+labels:['Feb17','Feb18','Feb19','Feb20','Feb23','Feb24','Feb27','Mar4','Mar5','Mar9','Mar10','Mar11'],
 datasets:[{
 data:[0,1900,3085,5870,6660,7700,9215,8415,10165,11780,11625,11195],
 borderColor:'#22c55e',
-borderWidth:3,
-pointRadius:0,
-tension:0.3
-}]
-},
-options:{
-plugins:{legend:{display:false}},
-scales:{
-x:{ticks:{color:'#9fb3c8'}},
-y:{ticks:{color:'#9fb3c8'}}
-}
-}
-});
-
-</script>
-
-</body>
-</html>
+borde
