@@ -4,7 +4,6 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>GustaBOT Trading Systems</title>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -32,7 +31,7 @@ z-index:1000;
 }
 
 .nav{
-max-width:1100px;
+max-width:1200px;
 margin:auto;
 display:flex;
 align-items:center;
@@ -59,7 +58,7 @@ text-decoration:none;
 /* CONTAINER */
 
 .container{
-max-width:1100px;
+max-width:1200px;
 margin:auto;
 padding:32px 20px 60px;
 }
@@ -104,7 +103,7 @@ margin-bottom:40px;
 background:#0f2a45;
 padding:18px;
 border-radius:12px;
-width:200px;
+width:180px;
 text-align:center;
 }
 
@@ -114,7 +113,7 @@ color:#9fb3c8;
 }
 
 .stat-value{
-font-size:28px;
+font-size:26px;
 font-weight:bold;
 margin-top:4px;
 }
@@ -138,7 +137,7 @@ background:#0f2a45;
 padding:26px;
 border-radius:12px;
 margin:20px auto;
-max-width:820px;
+max-width:900px;
 text-align:left;
 }
 
@@ -147,23 +146,25 @@ text-align:left;
 .flow{
 display:flex;
 justify-content:center;
-gap:16px;
-flex-wrap:wrap;
-margin-top:30px;
 align-items:center;
+gap:14px;
+margin-top:30px;
+flex-wrap:nowrap;
+overflow-x:auto;
 }
 
 .flow-step{
 background:#102b46;
-padding:18px;
+padding:14px;
 border-radius:10px;
-width:180px;
+min-width:150px;
 text-align:center;
 font-weight:bold;
+font-size:14px;
 }
 
 .arrow{
-font-size:28px;
+font-size:26px;
 color:#22c55e;
 }
 
@@ -171,7 +172,7 @@ color:#22c55e;
 
 .results-grid{
 display:grid;
-grid-template-columns:repeat(3,1fr);
+grid-template-columns:repeat(4,1fr);
 gap:10px;
 margin-top:15px;
 }
@@ -269,7 +270,7 @@ border-top:1px solid #1e3a5f;
 
 <body>
 
-<!-- HEADER -->
+<!-- BLOCK 1 HEADER -->
 
 <div class="header">
 <div class="nav">
@@ -280,7 +281,7 @@ border-top:1px solid #1e3a5f;
 
 <div class="container">
 
-<!-- HERO -->
+<!-- BLOCK 2 HERO -->
 
 <div class="hero">
 
@@ -298,13 +299,13 @@ border-top:1px solid #1e3a5f;
 </div>
 
 <p class="micro-disclaimer">
-Trading futures involves substantial risk and is not suitable for every investor.
+Futures trading involves substantial risk and is not suitable for every investor.
 Past performance is not indicative of future results.
 </p>
 
 </div>
 
-<!-- STRATEGY PERFORMANCE -->
+<!-- BLOCK 3 STRATEGY PERFORMANCE -->
 
 <div class="section">
 
@@ -324,6 +325,12 @@ Past performance is not indicative of future results.
 
 </div>
 
+</div>
+
+<!-- BLOCK 4 RECENT TRADES -->
+
+<div class="section">
+
 <div class="box">
 
 <h3>Recent Trades</h3>
@@ -331,6 +338,12 @@ Past performance is not indicative of future results.
 <div id="resultsGrid" class="results-grid"></div>
 
 </div>
+
+</div>
+
+<!-- BLOCK 5 EQUITY CURVE -->
+
+<div class="section">
 
 <div class="box">
 
@@ -344,7 +357,7 @@ Past performance is not indicative of future results.
 
 </div>
 
-<!-- HOW IT WORKS -->
+<!-- BLOCK 6 HOW IT WORKS -->
 
 <div class="section">
 
@@ -370,7 +383,7 @@ Past performance is not indicative of future results.
 
 </div>
 
-<!-- EVERYTHING YOU NEED -->
+<!-- BLOCK 7 EVERYTHING YOU NEED -->
 
 <div class="section">
 
@@ -385,13 +398,13 @@ Past performance is not indicative of future results.
 <p>• NinjaTrader configuration guide</p>
 <p>• Strategy installation walkthrough</p>
 
-<p>Most setups take between <strong>1-5 days</strong> depending on platform installation and brokerage configuration.</p>
+<p>Most setups take between <strong>1–5 days</strong>.</p>
 
 </div>
 
 </div>
 
-<!-- FROM TIKTOK -->
+<!-- BLOCK 8 TIKTOK -->
 
 <div class="section">
 
@@ -400,20 +413,20 @@ Past performance is not indicative of future results.
 <div class="box">
 
 <p>
-Many visitors first discover GustaBOT strategies through TikTok where trades,
-system updates, and development progress are shared.
+Many traders first discover GustaBOT strategies through TikTok,
+where strategy development and trading insights are shared.
 </p>
 
 <p>
 After signing up, users receive instructions and walkthroughs
-to install the strategy on their NinjaTrader platform and begin testing.
+to install the strategy on NinjaTrader and begin testing.
 </p>
 
 </div>
 
 </div>
 
-<!-- SIGNUP -->
+<!-- BLOCK 9 SIGNUP -->
 
 <div class="section" id="signup">
 
@@ -428,7 +441,7 @@ to install the strategy on their NinjaTrader platform and begin testing.
 
 </div>
 
-<!-- FAQ -->
+<!-- BLOCK 10 FAQ -->
 
 <div class="section">
 
@@ -452,17 +465,17 @@ to install the strategy on their NinjaTrader platform and begin testing.
 <br>
 
 <p><strong>Can I test on SIM first?</strong></p>
-<p>Yes. Many users test the system in simulation first.</p>
+<p>Yes. Many users test the strategy in simulation first.</p>
 
 <br>
 
 <p><strong>What capital is required?</strong></p>
-<p>Micro contracts typically require about $200 while one NQ contract usually requires around $2,000.</p>
+<p>Micro contracts typically require about $200 while one NQ contract usually requires about $2,000.</p>
 
 <br>
 
 <p><strong>Does the strategy trade every day?</strong></p>
-<p>No. It trades only when conditions match the strategy rules.</p>
+<p>No. It trades only when market conditions match the system rules.</p>
 
 <br>
 
@@ -473,7 +486,7 @@ to install the strategy on their NinjaTrader platform and begin testing.
 
 </div>
 
-<!-- PLATFORMS -->
+<!-- BLOCK 11 PLATFORMS -->
 
 <div class="section">
 
@@ -492,7 +505,7 @@ GustaBOT is not affiliated with NinjaTrader or Kinetick.
 
 </div>
 
-<!-- DISCLOSURE -->
+<!-- BLOCK 12 DISCLOSURE -->
 
 <div class="disclosure">
 
@@ -506,6 +519,8 @@ GustaBOT is not affiliated with NinjaTrader or Kinetick.
 
 </div>
 
+<!-- BLOCK 13 FOOTER -->
+
 <footer>
 
 <p>© 2026 GustaBOT Trading Systems</p>
@@ -516,22 +531,21 @@ GustaBOT is not affiliated with NinjaTrader or Kinetick.
 <script>
 
 const trades=[
-{date:"3/12",pnl:-375},
-{date:"3/11",pnl:-430},
-{date:"3/10",pnl:-155},
-{date:"3/09",pnl:1615},
-{date:"3/05",pnl:1750},
-{date:"3/04",pnl:-800},
-{date:"2/27",pnl:1515},
-{date:"2/24",pnl:1040},
-{date:"2/23",pnl:790},
-{date:"2/20",pnl:2785}
+{date:"2026-03-12",pnl:-375},
+{date:"2026-03-11",pnl:-430},
+{date:"2026-03-10",pnl:-155},
+{date:"2026-03-09",pnl:1615},
+{date:"2026-03-05",pnl:1750},
+{date:"2026-03-04",pnl:-800},
+{date:"2026-02-27",pnl:1515},
+{date:"2026-02-24",pnl:1040},
+{date:"2026-02-23",pnl:790},
+{date:"2026-02-20",pnl:2785}
 ]
 
 const grid=document.getElementById("resultsGrid")
 
 trades.forEach(t=>{
-
 let card=document.createElement("div")
 card.className="result-card"
 
@@ -541,22 +555,70 @@ date.innerText=t.date
 
 let pnl=document.createElement("span")
 pnl.innerText="$"+t.pnl.toLocaleString()
-
-pnl.className = t.pnl>=0 ? "result-positive":"result-negative"
+pnl.className=t.pnl>=0?"result-positive":"result-negative"
 
 card.appendChild(date)
 card.appendChild(pnl)
 
 grid.appendChild(card)
-
 })
 
-let equity=[],net=0
+let net=0
+let equity=[]
+let peak=0
+let maxDD=0
+let wins=0
 
 trades.slice().reverse().forEach(t=>{
 net+=t.pnl
 equity.push(net)
+
+if(t.pnl>0)wins++
+
+if(net>peak)peak=net
+let dd=peak-net
+if(dd>maxDD)maxDD=dd
 })
+
+let avg=net/trades.length
+let winRate=(wins/trades.length)*100
+
+function setStat(id,val){
+let el=document.getElementById(id)
+el.innerText="$"+Math.round(val).toLocaleString()
+el.className="stat-value "+(val>=0?"stat-positive":"stat-negative")
+}
+
+setStat("netProfit",net)
+setStat("maxDD",-maxDD)
+setStat("avgTrade",avg)
+setStat("lastTrade",trades[0].pnl)
+
+document.getElementById("winRate").innerText=winRate.toFixed(1)+"%"
+
+let now=new Date()
+
+let thisMonth=now.getMonth()
+let lastMonth=thisMonth===0?11:thisMonth-1
+
+let thisMonthPnL=0
+let lastMonthPnL=0
+let thisWeekPnL=0
+
+let weekStart=new Date()
+weekStart.setDate(now.getDate()-now.getDay())
+
+trades.forEach(t=>{
+let d=new Date(t.date+"T00:00:00")
+
+if(d.getMonth()===thisMonth)thisMonthPnL+=t.pnl
+if(d.getMonth()===lastMonth)lastMonthPnL+=t.pnl
+if(d>=weekStart)thisWeekPnL+=t.pnl
+})
+
+setStat("thisMonth",thisMonthPnL)
+setStat("lastMonth",lastMonthPnL)
+setStat("thisWeek",thisWeekPnL)
 
 new Chart(document.getElementById("equityChart"),{
 type:"line",
@@ -569,7 +631,11 @@ borderWidth:3,
 tension:0.35
 }]
 },
-options:{plugins:{legend:{display:false}},responsive:true}
+options:{
+plugins:{legend:{display:false}},
+responsive:true,
+maintainAspectRatio:false
+}
 })
 
 </script>
