@@ -232,6 +232,14 @@ font-weight:bold;
 cursor:pointer;
 }
 
+/* CHART CONTAINER */
+
+.chart-container{
+max-width:900px;
+height:360px;
+margin:30px auto;
+}
+
 /* LOGOS */
 
 .logos{
@@ -287,6 +295,10 @@ width:90%;
 
 .ninja-logo{height:40px;}
 .kinetick-logo{height:90px;}
+
+.chart-container{
+height:300px;
+}
 
 }
 
@@ -368,82 +380,15 @@ Displayed results represent recorded strategy performance and are not guarantees
 
 </div>
 
-<!-- HOW IT WORKS -->
-
-<div class="section">
-
-<h2>How It Works</h2>
-
-<div class="flow">
-
-<div class="flow-step">Sign Up</div>
-<div class="flow-step">Install Strategy</div>
-<div class="flow-step">Test 30 Days</div>
-<div class="flow-step">Evaluate Results</div>
-<div class="flow-step">Pay Only If Profitable</div>
-
-</div>
-
-</div>
-
-<!-- EVERYTHING YOU NEED -->
-
-<div class="section">
-
-<h2>Everything You Need To Start</h2>
-
-<div class="box">
-
-<p>Once you sign up you will immediately receive an onboarding email.</p>
-
-<p>The onboarding email includes:</p>
-
-<p>• Step-by-step setup instructions</p>
-<p>• Video tutorials</p>
-<p>• NinjaTrader platform installation guide</p>
-<p>• Strategy activation walkthrough</p>
-
-<p>The entire setup typically takes about <strong>10-20 minutes</strong>.</p>
-
-<p>Even traders with limited technical experience can complete the process.</p>
-
-<p class="disclaimer-mini">
-Users remain responsible for their own trading decisions and platform configuration.
-</p>
-
-</div>
-
-</div>
-
-<!-- TIKTOK SECTION -->
-
-<div class="section">
-
-<h2>From TikTok To Live Trading</h2>
-
-<div class="box">
-
-<p>Thousands of traders follow the development of GustaBOT systems on TikTok.</p>
-
-<p>Strategy updates, trades, and educational material are shared regularly.</p>
-
-<p>Many traders first discover the system through TikTok before testing it themselves.</p>
-
-<p class="disclaimer-mini">
-Social media content is for informational purposes only and should not be interpreted as investment advice.
-</p>
-
-</div>
-
-</div>
-
 <!-- EQUITY CURVE -->
 
 <div class="section">
 
 <h2>Strategy Equity Curve</h2>
 
+<div class="chart-container">
 <canvas id="equityChart"></canvas>
+</div>
 
 <p class="disclaimer-mini">
 Equity curves represent historical results and are not guarantees of future performance.
@@ -513,7 +458,7 @@ GustaBOT is not affiliated with NinjaTrader or Kinetick. All trademarks belong t
 
 <script>
 
-/* COUNTER ANIMATION */
+/* COUNTER ANIMATION FIXED */
 
 function animateCounter(id,target){
 
@@ -522,11 +467,22 @@ let step=Math.abs(target)/120
 
 let counter=setInterval(()=>{
 
-value+=step
+if(target>=0){
 
-if((target>0 && value>=target)||(target<0 && value<=target)){
-clearInterval(counter)
+value+=step
+if(value>=target){
 value=target
+clearInterval(counter)
+}
+
+}else{
+
+value-=step
+if(value<=target){
+value=target
+clearInterval(counter)
+}
+
 }
 
 document.getElementById(id).innerText="$"+Math.round(value).toLocaleString()
@@ -553,13 +509,20 @@ datasets:[{
 data:[-230,1670,2855,5640,6430,7470,8985,8185,9935,11550,11395,10965],
 borderColor:"#22c55e",
 borderWidth:3,
-tension:0.4,
-pointRadius:3
+tension:0.35,
+pointRadius:4,
+pointBackgroundColor:"#22c55e"
 }]
 },
 options:{
-animation:{duration:2500},
-plugins:{legend:{display:false}}
+responsive:true,
+maintainAspectRatio:false,
+animation:{duration:2000},
+plugins:{legend:{display:false}},
+scales:{
+y:{grid:{color:"#1e3a5f"}},
+x:{grid:{display:false}}
+}
 }
 })
 
