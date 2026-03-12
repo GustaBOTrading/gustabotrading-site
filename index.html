@@ -119,9 +119,6 @@ font-weight:bold;
 margin-top:4px;
 }
 
-.stat-positive{color:#22c55e;}
-.stat-negative{color:#ef4444;}
-
 /* SECTIONS */
 
 .section{
@@ -150,6 +147,7 @@ justify-content:center;
 align-items:center;
 gap:14px;
 margin-top:30px;
+flex-wrap:wrap;
 }
 
 .flow-step{
@@ -159,16 +157,11 @@ border-radius:10px;
 min-width:150px;
 text-align:center;
 font-weight:bold;
-font-size:14px;
 }
 
 .arrow{
 font-size:26px;
 color:#22c55e;
-}
-
-.mobile-arrow{
-display:none;
 }
 
 /* RECENT TRADES */
@@ -186,17 +179,8 @@ padding:14px;
 border-radius:10px;
 display:flex;
 justify-content:space-between;
-align-items:center;
 border:1px solid #1e3a5f;
-font-size:15px;
 }
-
-.result-date{
-color:#9fb3c8;
-}
-
-.result-positive{color:#22c55e;font-weight:bold;}
-.result-negative{color:#ef4444;font-weight:bold;}
 
 /* CHART */
 
@@ -210,7 +194,7 @@ margin:30px auto;
 
 input{
 padding:14px;
-width:280px;
+width:260px;
 margin:10px;
 border-radius:8px;
 border:none;
@@ -231,44 +215,13 @@ cursor:pointer;
 display:flex;
 justify-content:center;
 align-items:center;
-gap:70px;
+gap:60px;
 margin-top:40px;
 flex-wrap:wrap;
 }
 
 .ninja-logo{height:50px;}
 .kinetick-logo{height:70px;}
-
-.platform-disclaimer{
-margin-top:20px;
-font-size:13px;
-color:#9fb3c8;
-border-top:1px solid #1e3a5f;
-padding-top:14px;
-}
-
-/* DISCLOSURE */
-
-.disclosure{
-margin-top:80px;
-background:#132b45;
-padding:40px 24px;
-border-top:4px solid #22c55e;
-border-radius:10px;
-font-size:14px;
-color:#d6e2f0;
-}
-
-/* FOOTER */
-
-footer{
-margin-top:40px;
-text-align:center;
-color:#9fb3c8;
-font-size:13px;
-padding:30px 0;
-border-top:1px solid #1e3a5f;
-}
 
 /* MOBILE */
 
@@ -286,25 +239,8 @@ grid-template-columns:1fr;
 flex-direction:column;
 }
 
-.desktop-arrow{
-display:none;
-}
-
-.mobile-arrow{
-display:block;
-}
-
-.ninja-logo{
-height:38px;
-}
-
-.kinetick-logo{
-height:80px;
-}
-
-.logos{
-gap:30px;
-}
+.ninja-logo{height:38px;}
+.kinetick-logo{height:80px;}
 
 }
 
@@ -340,11 +276,6 @@ gap:30px;
 <p><strong>If it doesn't profit — you pay nothing.</strong></p>
 
 </div>
-
-<p class="micro-disclaimer">
-Futures trading involves substantial risk and is not suitable for every investor.
-Past performance is not indicative of future results.
-</p>
 
 </div>
 
@@ -399,20 +330,16 @@ Past performance is not indicative of future results.
 <div class="flow">
 
 <div class="flow-step">Sign Up</div>
-<div class="arrow desktop-arrow">→</div>
-<div class="arrow mobile-arrow">↓</div>
+<div class="arrow">→</div>
 
 <div class="flow-step">Install Strategy</div>
-<div class="arrow desktop-arrow">→</div>
-<div class="arrow mobile-arrow">↓</div>
+<div class="arrow">→</div>
 
 <div class="flow-step">Test 30 Days</div>
-<div class="arrow desktop-arrow">→</div>
-<div class="arrow mobile-arrow">↓</div>
+<div class="arrow">→</div>
 
 <div class="flow-step">Evaluate Results</div>
-<div class="arrow desktop-arrow">→</div>
-<div class="arrow mobile-arrow">↓</div>
+<div class="arrow">→</div>
 
 <div class="flow-step">Pay Only If Profitable</div>
 
@@ -420,9 +347,117 @@ Past performance is not indicative of future results.
 
 </div>
 
-<!-- BLOCKS 7-13 remain unchanged exactly as before -->
+<!-- BLOCK 7 -->
+
+<div class="section">
+<h2>Everything You Need To Start</h2>
+<div class="box">
+<p>Video tutorials</p>
+<p>Step-by-step setup instructions</p>
+<p>NinjaTrader configuration guide</p>
+<p>Strategy installation walkthrough</p>
+</div>
+</div>
+
+<!-- BLOCK 8 -->
+
+<div class="section">
+<h2>From TikTok To Live Trading</h2>
+<div class="box">
+<p>Many traders first discover GustaBOT strategies through TikTok where development and insights are shared.</p>
+</div>
+</div>
+
+<!-- BLOCK 9 -->
+
+<div class="section" id="signup">
+<h2>Start Your 30-Day Test</h2>
+<input type="text" placeholder="First Name">
+<input type="email" placeholder="Email Address">
+<br>
+<button>Start My Free 30-Day Test</button>
+</div>
+
+<!-- BLOCK 10 -->
+
+<div class="section">
+<h2>Frequently Asked Questions</h2>
+<div class="box">
+<p><strong>Do I need trading experience?</strong></p>
+<p>Basic NinjaTrader familiarity recommended.</p>
+</div>
+</div>
+
+<!-- BLOCK 11 -->
+
+<div class="section">
+
+<h2>Recommended Platforms</h2>
+
+<div class="logos">
+<img src="NinjaTrader_Wordmark_color_RGB.png" class="ninja-logo">
+<img src="Kinetick-FreeEOD-300x250.png" class="kinetick-logo">
+</div>
 
 </div>
+
+<!-- BLOCK 12 -->
+
+<div class="box">
+<h2>Important Risk Disclosures</h2>
+<p>Futures trading contains substantial risk and is not suitable for every investor.</p>
+</div>
+
+</div>
+
+<!-- BLOCK 13 -->
+
+<footer>
+<p>© 2026 GustaBOT Trading Systems</p>
+</footer>
+
+<script>
+
+const trades=[
+{date:"2026-03-12",pnl:-375},
+{date:"2026-03-11",pnl:-430},
+{date:"2026-03-10",pnl:-155},
+{date:"2026-03-09",pnl:1615},
+{date:"2026-03-05",pnl:1750},
+{date:"2026-03-04",pnl:-800},
+{date:"2026-02-27",pnl:1515},
+{date:"2026-02-24",pnl:1040},
+{date:"2026-02-23",pnl:790},
+{date:"2026-02-20",pnl:2785}
+]
+
+const grid=document.getElementById("resultsGrid")
+
+trades.forEach(t=>{
+let card=document.createElement("div")
+card.className="result-card"
+card.innerHTML=`<span>${t.date}</span><span>$${t.pnl}</span>`
+grid.appendChild(card)
+})
+
+let net=0
+let wins=0
+let losses=0
+let winTotal=0
+let lossTotal=0
+
+trades.forEach(t=>{
+net+=t.pnl
+if(t.pnl>0){wins++;winTotal+=t.pnl}
+if(t.pnl<0){losses++;lossTotal+=t.pnl}
+})
+
+document.getElementById("lastTrade").innerText="$"+trades[0].pnl
+document.getElementById("avgWin").innerText="$"+Math.round(winTotal/wins)
+document.getElementById("avgLoss").innerText="$"+Math.round(lossTotal/losses)
+document.getElementById("winRate").innerText=(wins/trades.length*100).toFixed(1)+"%"
+
+</script>
 
 </body>
 </html>
