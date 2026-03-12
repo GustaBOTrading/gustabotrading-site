@@ -89,6 +89,14 @@ margin:30px auto;
 max-width:760px;
 }
 
+/* MICRO DISCLAIMER */
+
+.micro-disclaimer{
+font-size:12px;
+color:#9fb3c8;
+margin-top:10px;
+}
+
 /* DASHBOARD */
 
 .dashboard{
@@ -97,6 +105,7 @@ justify-content:center;
 gap:20px;
 flex-wrap:wrap;
 margin-top:40px;
+margin-bottom:40px;
 }
 
 .stat-box{
@@ -283,9 +292,14 @@ border-top:1px solid #1e3a5f;
 
 </div>
 
+<p class="micro-disclaimer">
+Trading futures involves substantial risk and is not suitable for every investor.
+Past performance is not indicative of future results.
+</p>
+
 </div>
 
-<!-- PERFORMANCE DASHBOARD -->
+<!-- STRATEGY PERFORMANCE -->
 
 <div class="section">
 
@@ -335,6 +349,43 @@ border-top:1px solid #1e3a5f;
 
 </div>
 
+<p class="micro-disclaimer">
+Performance metrics are calculated from recorded results and are provided for informational purposes only.
+</p>
+
+<!-- DAILY RESULTS -->
+
+<div class="box">
+
+<h3>Daily Results</h3>
+
+<table id="resultsTable">
+
+<tr>
+<th>Date</th>
+<th style="text-align:right">Result</th>
+</tr>
+
+</table>
+
+</div>
+
+<!-- EQUITY CURVE -->
+
+<div class="box">
+
+<h3>Equity Curve</h3>
+
+<div class="chart-container">
+<canvas id="equityChart"></canvas>
+</div>
+
+<p class="micro-disclaimer">
+Equity curves represent cumulative historical results and do not guarantee future performance.
+</p>
+
+</div>
+
 </div>
 
 <!-- HOW IT WORKS -->
@@ -365,8 +416,6 @@ border-top:1px solid #1e3a5f;
 
 <p>After signup you receive an onboarding email instantly.</p>
 
-<p>The email contains:</p>
-
 <p>• Video tutorials</p>
 <p>• Step-by-step setup instructions</p>
 <p>• NinjaTrader configuration guide</p>
@@ -390,39 +439,6 @@ border-top:1px solid #1e3a5f;
 
 <p>Trades, system updates, and educational insights are shared regularly.</p>
 
-</div>
-
-</div>
-
-<!-- DAILY RESULTS -->
-
-<div class="section">
-
-<h2>Daily Results</h2>
-
-<div class="box">
-
-<table id="resultsTable">
-
-<tr>
-<th>Date</th>
-<th style="text-align:right">Result</th>
-</tr>
-
-</table>
-
-</div>
-
-</div>
-
-<!-- EQUITY CURVE -->
-
-<div class="section">
-
-<h2>Strategy Equity Curve</h2>
-
-<div class="chart-container">
-<canvas id="equityChart"></canvas>
 </div>
 
 </div>
@@ -505,8 +521,6 @@ const trades=[
 
 ]
 
-/* TABLE */
-
 const table=document.getElementById("resultsTable")
 
 trades.forEach(t=>{
@@ -518,8 +532,6 @@ p.style.textAlign="right"
 p.style.color=t.pnl>=0?"#22c55e":"#ef4444"
 })
 
-/* METRICS */
-
 let net=0
 let wins=0
 let equity=[]
@@ -527,28 +539,18 @@ let peak=0
 let maxDD=0
 
 trades.slice().reverse().forEach(t=>{
-
 net+=t.pnl
 equity.push(net)
-
 if(t.pnl>0)wins++
-
 if(net>peak)peak=net
-
 let dd=peak-net
-
 if(dd>maxDD)maxDD=dd
-
 })
 
 let avg=net/trades.length
 let winRate=(wins/trades.length)*100
 
-/* LAST TRADE */
-
 let lastTrade=trades[0].pnl
-
-/* DATE CALCULATIONS */
 
 let now=new Date()
 let thisMonth=now.getMonth()
@@ -587,8 +589,6 @@ document.getElementById("netProfit").appendChild(format(net))
 document.getElementById("maxDD").appendChild(format(-maxDD))
 document.getElementById("avgTrade").appendChild(format(avg))
 document.getElementById("winRate").appendChild(format(winRate.toFixed(1)+"%"))
-
-/* EQUITY CURVE */
 
 new Chart(document.getElementById("equityChart"),{
 
