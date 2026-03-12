@@ -91,10 +91,11 @@ margin-top:10px;
 /* DASHBOARD */
 
 .dashboard{
-display:flex;
-justify-content:center;
+display:grid;
+grid-template-columns:repeat(4,1fr);
 gap:20px;
-flex-wrap:wrap;
+max-width:900px;
+margin:auto;
 margin-top:40px;
 margin-bottom:40px;
 }
@@ -103,7 +104,6 @@ margin-bottom:40px;
 background:#0f2a45;
 padding:18px;
 border-radius:12px;
-width:180px;
 text-align:center;
 }
 
@@ -168,30 +168,32 @@ font-size:26px;
 color:#22c55e;
 }
 
-/* RESULTS GRID */
+/* RECENT TRADES */
 
 .results-grid{
 display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:10px;
+grid-template-columns:repeat(2,1fr);
+gap:12px;
 margin-top:15px;
 }
 
 .result-card{
-background:#102b46;
-padding:10px;
-border-radius:8px;
+background:#0d243d;
+padding:14px;
+border-radius:10px;
 display:flex;
 justify-content:space-between;
-font-size:14px;
+align-items:center;
+border:1px solid #1e3a5f;
+font-size:15px;
 }
 
 .result-date{
 color:#9fb3c8;
 }
 
-.result-positive{color:#22c55e;}
-.result-negative{color:#ef4444;}
+.result-positive{color:#22c55e;font-weight:bold;}
+.result-negative{color:#ef4444;font-weight:bold;}
 
 /* CHART */
 
@@ -549,25 +551,19 @@ trades.forEach(t=>{
 let card=document.createElement("div")
 card.className="result-card"
 
-let date=document.createElement("span")
-date.className="result-date"
-date.innerText=t.date
-
-let pnl=document.createElement("span")
-pnl.innerText="$"+t.pnl.toLocaleString()
-pnl.className=t.pnl>=0?"result-positive":"result-negative"
-
-card.appendChild(date)
-card.appendChild(pnl)
+card.innerHTML=`
+<span class="result-date">${t.date}</span>
+<span class="${t.pnl>=0?'result-positive':'result-negative'}">$${t.pnl.toLocaleString()}</span>
+`
 
 grid.appendChild(card)
 })
 
 let net=0
-let equity=[]
 let peak=0
 let maxDD=0
 let wins=0
+let equity=[]
 
 trades.slice().reverse().forEach(t=>{
 net+=t.pnl
@@ -576,6 +572,7 @@ equity.push(net)
 if(t.pnl>0)wins++
 
 if(net>peak)peak=net
+
 let dd=peak-net
 if(dd>maxDD)maxDD=dd
 })
@@ -599,7 +596,7 @@ document.getElementById("winRate").innerText=winRate.toFixed(1)+"%"
 let now=new Date()
 
 let thisMonth=now.getMonth()
-let lastMonth=thisMonth===0?11:thisMonth-1
+let lastMonth=thisMonth-1
 
 let thisMonthPnL=0
 let lastMonthPnL=0
@@ -609,10 +606,10 @@ let weekStart=new Date()
 weekStart.setDate(now.getDate()-now.getDay())
 
 trades.forEach(t=>{
-let d=new Date(t.date+"T00:00:00")
+let d=new Date(t.date)
 
 if(d.getMonth()===thisMonth)thisMonthPnL+=t.pnl
-if(d.getMonth()===lastMonth)lastMonthPnL+=t.pnl
+if(d.getMonth()===lastMonth)thisMonthPnL+=0,lastMonthPnL+=t.pnl
 if(d>=weekStart)thisWeekPnL+=t.pnl
 })
 
