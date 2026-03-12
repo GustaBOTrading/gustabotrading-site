@@ -39,6 +39,8 @@ justify-content:space-between;
 padding:14px 20px;
 }
 
+/* LOGO */
+
 .logo-container{
 display:flex;
 align-items:center;
@@ -49,6 +51,12 @@ gap:10px;
 color:#22c55e;
 font-size:20px;
 font-weight:bold;
+}
+
+.logo-text{
+display:flex;
+flex-direction:column;
+line-height:1.1;
 }
 
 .logo-main{
@@ -66,6 +74,8 @@ font-size:11px;
 color:#9fb3c8;
 }
 
+/* BUTTON */
+
 .nav-button{
 background:#22c55e;
 color:black;
@@ -79,11 +89,15 @@ text-decoration:none;
 background:#16a34a;
 }
 
+/* CONTAINER */
+
 .container{
 max-width:1100px;
 margin:auto;
 padding:32px 20px 60px;
 }
+
+/* HERO */
 
 .hero{
 text-align:center;
@@ -104,11 +118,12 @@ color:#d6e2f0;
 background:#0f2a45;
 padding:22px;
 border-radius:12px;
-font-size:22px;
-margin:26px auto 0;
+font-size:20px;
+margin:28px auto;
 max-width:760px;
-border-left:4px solid #22c55e;
 }
+
+/* SECTIONS */
 
 .section{
 margin-top:64px;
@@ -127,14 +142,7 @@ max-width:820px;
 margin:auto;
 }
 
-.license-box{
-background:#0f2a45;
-padding:24px;
-border-radius:12px;
-margin:20px auto;
-text-align:left;
-max-width:820px;
-}
+/* STRATEGY */
 
 .strategy{
 background:#102b46;
@@ -144,6 +152,19 @@ margin:18px auto;
 text-align:left;
 max-width:820px;
 }
+
+/* BOX */
+
+.license-box{
+background:#0f2a45;
+padding:24px;
+border-radius:12px;
+margin:20px auto;
+text-align:left;
+max-width:820px;
+}
+
+/* FLOW */
 
 .flow{
 display:flex;
@@ -168,6 +189,8 @@ font-size:30px;
 color:#22c55e;
 }
 
+/* TABLE */
+
 table{
 width:100%;
 border-collapse:collapse;
@@ -185,6 +208,8 @@ border-bottom:1px solid #1e3a5f;
 td{
 border-bottom:1px solid #0c243c;
 }
+
+/* FORM */
 
 form{
 margin-top:30px;
@@ -212,6 +237,8 @@ button:hover{
 background:#16a34a;
 }
 
+/* LOGOS */
+
 .logos{
 display:flex;
 justify-content:center;
@@ -223,6 +250,8 @@ flex-wrap:wrap;
 
 .ninja-logo{height:45px;}
 .kinetick-logo{height:55px;}
+
+/* DISCLOSURE */
 
 .disclosure{
 margin-top:80px;
@@ -240,6 +269,8 @@ margin-bottom:20px;
 font-size:30px;
 }
 
+/* FOOTER */
+
 footer{
 margin-top:80px;
 padding:30px;
@@ -249,11 +280,37 @@ border-top:1px solid #1e3a5f;
 font-size:14px;
 }
 
-canvas{
-background:#0f2a45;
-padding:20px;
-border-radius:12px;
-margin-top:30px;
+/* MOBILE */
+
+@media (max-width:768px){
+
+.hero h1{font-size:30px;}
+.hero p{font-size:17px;}
+
+.section h2{font-size:26px;}
+.section p{font-size:16px;}
+
+.flow{
+flex-direction:column;
+}
+
+.flow-step{
+width:100%;
+max-width:280px;
+}
+
+.arrow{
+transform:rotate(90deg);
+}
+
+.logos{
+flex-direction:column;
+}
+
+.logo-sub{
+display:none;
+}
+
 }
 
 </style>
@@ -266,7 +323,8 @@ margin-top:30px;
 
 <div class="logo-container">
 <div class="logo-icon">▲</div>
-<div>
+
+<div class="logo-text">
 <div class="logo-main">Gusta<span>BOT</span></div>
 <div class="logo-sub">Automated Trading Systems</div>
 </div>
@@ -288,14 +346,15 @@ Capital is for trading.<br>
 Fees are paid from profits — never from capital.
 </div>
 
-<p style="margin-top:20px">
-Test the strategy free for 30 days. If it profits more than $3,000 in a month,
-the profits pay the license fee.
+<p>
+Test the strategy free for 30 days.<br>
+If it profits, the profits pay the fee.
 </p>
 
 </div>
 
 <div class="section">
+
 <h2>How It Works</h2>
 
 <div class="flow">
@@ -312,12 +371,14 @@ the profits pay the license fee.
 <div class="flow-step">Profit?</div>
 <div class="arrow">➜</div>
 
-<div class="flow-step">Pay Only If Profitable</div>
+<div class="flow-step">Pay From Profits</div>
 
 </div>
+
 </div>
 
 <div class="section">
+
 <h2>Strategies</h2>
 
 <div class="strategy">
@@ -328,6 +389,7 @@ the profits pay the license fee.
 </div>
 
 <div class="section">
+
 <h2>Recent Strategy Performance</h2>
 
 <div class="license-box">
@@ -341,11 +403,11 @@ the profits pay the license fee.
 <p><strong>Total Trades:</strong> 12</p>
 <p><strong>Average Trade:</strong> $913.75</p>
 
-<h3 style="margin-top:34px;">Strategy Equity Curve</h3>
+<h3 style="margin-top:30px;">Strategy Equity Curve</h3>
 
 <canvas id="equityChart"></canvas>
 
-<h3 style="margin-top:34px;">Daily Results</h3>
+<h3 style="margin-top:30px;">Daily Results</h3>
 
 <table>
 
@@ -370,6 +432,7 @@ the profits pay the license fee.
 </table>
 
 </div>
+
 </div>
 
 <div class="section" id="signup">
@@ -417,8 +480,11 @@ An investor could potentially lose all or more than the initial investment.
 </p>
 
 <p>
-This website does not provide financial advice.
-Automated strategies are software tools and not investment recommendations.
+The ideal trading capital is money that can be lost without affecting your financial stability, lifestyle, or emotional well-being.
+</p>
+
+<p>
+Past performance does not guarantee future results.
 </p>
 
 </div>
@@ -434,8 +500,6 @@ Automated strategies are software tools and not investment recommendations.
 
 <script>
 
-document.addEventListener("DOMContentLoaded",function(){
-
 const ctx=document.getElementById("equityChart");
 
 new Chart(ctx,{
@@ -443,9 +507,7 @@ type:'line',
 data:{
 labels:["Feb17","Feb18","Feb19","Feb20","Feb23","Feb24","Feb27","Mar4","Mar5","Mar9","Mar10","Mar11"],
 datasets:[{
-data:[
--230,1670,2855,5640,6430,7470,8985,8185,9935,11550,11395,10965
-],
+data:[-230,1670,2855,5640,6430,7470,8985,8185,9935,11550,11395,10965],
 borderColor:"#22c55e",
 borderWidth:3,
 pointRadius:3,
@@ -460,8 +522,6 @@ x:{ticks:{color:"#9fb3c8"}},
 y:{ticks:{color:"#9fb3c8"}}
 }
 }
-});
-
 });
 
 </script>
