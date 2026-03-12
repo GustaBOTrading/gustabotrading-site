@@ -21,8 +21,6 @@ color:white;
 line-height:1.6;
 }
 
-/* HEADER */
-
 .header{
 position:sticky;
 top:0;
@@ -45,9 +43,7 @@ font-size:20px;
 font-weight:bold;
 }
 
-.logo-main span{
-color:#22c55e;
-}
+.logo-main span{color:#22c55e;}
 
 .nav-button{
 background:#22c55e;
@@ -58,15 +54,11 @@ font-weight:bold;
 text-decoration:none;
 }
 
-/* CONTAINER */
-
 .container{
 max-width:1100px;
 margin:auto;
 padding:32px 20px 60px;
 }
-
-/* HERO */
 
 .hero{text-align:center;}
 
@@ -90,8 +82,6 @@ font-size:12px;
 color:#9fb3c8;
 margin-top:10px;
 }
-
-/* DASHBOARD */
 
 .dashboard{
 display:flex;
@@ -124,18 +114,12 @@ margin-top:4px;
 .stat-positive{color:#22c55e;}
 .stat-negative{color:#ef4444;}
 
-/* SECTIONS */
-
 .section{
 margin-top:70px;
 text-align:center;
 }
 
-.section h2{
-font-size:32px;
-}
-
-/* BOX */
+.section h2{font-size:32px;}
 
 .box{
 background:#0f2a45;
@@ -146,14 +130,13 @@ max-width:820px;
 text-align:left;
 }
 
-/* FLOW */
-
 .flow{
 display:flex;
 justify-content:center;
 gap:16px;
 flex-wrap:wrap;
 margin-top:30px;
+align-items:center;
 }
 
 .flow-step{
@@ -165,7 +148,10 @@ text-align:center;
 font-weight:bold;
 }
 
-/* TABLE */
+.arrow{
+font-size:28px;
+color:#22c55e;
+}
 
 table{
 width:100%;
@@ -178,15 +164,11 @@ padding:8px;
 border-bottom:1px solid #0c243c;
 }
 
-/* CHART */
-
 .chart-container{
 max-width:900px;
 height:360px;
 margin:30px auto;
 }
-
-/* FORM */
 
 input{
 padding:14px;
@@ -204,8 +186,6 @@ border-radius:8px;
 font-weight:bold;
 cursor:pointer;
 }
-
-/* LOGOS */
 
 .logos{
 display:flex;
@@ -227,8 +207,6 @@ border-top:1px solid #1e3a5f;
 padding-top:14px;
 }
 
-/* DISCLOSURE */
-
 .disclosure{
 margin-top:80px;
 background:#132b45;
@@ -238,8 +216,6 @@ border-radius:10px;
 font-size:14px;
 color:#d6e2f0;
 }
-
-/* FOOTER */
 
 footer{
 margin-top:40px;
@@ -310,8 +286,6 @@ Past performance is not indicative of future results.
 
 </div>
 
-<!-- DAILY RESULTS -->
-
 <div class="box">
 
 <h3>Daily Results</h3>
@@ -326,8 +300,6 @@ Past performance is not indicative of future results.
 </table>
 
 </div>
-
-<!-- EQUITY CURVE -->
 
 <div class="box">
 
@@ -350,9 +322,17 @@ Past performance is not indicative of future results.
 <div class="flow">
 
 <div class="flow-step">Sign Up</div>
+<div class="arrow">➜</div>
+
 <div class="flow-step">Install Strategy</div>
+<div class="arrow">➜</div>
+
 <div class="flow-step">Test 30 Days</div>
+<div class="arrow">➜</div>
+
 <div class="flow-step">Evaluate Results</div>
+<div class="arrow">➜</div>
+
 <div class="flow-step">Pay Only If Profitable</div>
 
 </div>
@@ -415,17 +395,42 @@ Past performance is not indicative of future results.
 
 <div class="section">
 
-<h2>FAQ</h2>
+<h2>Frequently Asked Questions</h2>
 
 <div class="box">
 
 <p><strong>Do I need trading experience?</strong></p>
-<p>Basic familiarity with NinjaTrader and futures trading is recommended.</p>
+<p>Basic familiarity with NinjaTrader is recommended.</p>
+
+<br>
+
+<p><strong>Do you control my account?</strong></p>
+<p>No. The strategy runs locally on your NinjaTrader platform.</p>
 
 <br>
 
 <p><strong>Can I stop the strategy anytime?</strong></p>
-<p>Yes. You maintain full control of your account and can disable the strategy whenever you want.</p>
+<p>Yes. You can disable it inside NinjaTrader.</p>
+
+<br>
+
+<p><strong>Can I test on SIM first?</strong></p>
+<p>Yes. Many users test the strategy in simulation first.</p>
+
+<br>
+
+<p><strong>What capital is required?</strong></p>
+<p>Micro contracts typically require around $200. One NQ contract usually requires around $2,000.</p>
+
+<br>
+
+<p><strong>Does the strategy trade every day?</strong></p>
+<p>No. It trades only when market conditions match the system rules.</p>
+
+<br>
+
+<p><strong>Are profits guaranteed?</strong></p>
+<p>No. Futures trading involves substantial risk.</p>
 
 </div>
 
@@ -467,14 +472,11 @@ GustaBOT is not affiliated with NinjaTrader or Kinetick.
 <footer>
 
 <p>© 2026 GustaBOT Trading Systems</p>
-
 <p>Automated trading strategies involve risk and may result in financial loss.</p>
 
 </footer>
 
 <script>
-
-/* TRADE DATA */
 
 const trades=[
 {date:"2026-03-12",pnl:-375},
@@ -492,8 +494,6 @@ const trades=[
 {date:"2026-02-17",pnl:-230}
 ]
 
-/* TABLE */
-
 const table=document.getElementById("resultsTable")
 
 trades.forEach(t=>{
@@ -505,13 +505,7 @@ pnl.style.textAlign="right"
 pnl.style.color=t.pnl>=0?"#22c55e":"#ef4444"
 })
 
-/* METRICS */
-
-let net=0
-let wins=0
-let equity=[]
-let peak=0
-let maxDD=0
+let net=0,wins=0,equity=[],peak=0,maxDD=0
 
 trades.slice().reverse().forEach(t=>{
 net+=t.pnl
@@ -539,6 +533,27 @@ document.getElementById("maxDD").appendChild(format(-maxDD))
 document.getElementById("avgTrade").appendChild(format(avg))
 document.getElementById("winRate").innerText=winRate.toFixed(1)+"%"
 
+let now=new Date()
+let thisMonth=now.getMonth()
+let lastMonth=thisMonth===0?11:thisMonth-1
+
+let thisMonthPnL=0,lastMonthPnL=0,thisWeekPnL=0
+
+trades.forEach(t=>{
+let d=new Date(t.date)
+if(d.getMonth()==thisMonth)thisMonthPnL+=t.pnl
+if(d.getMonth()==lastMonth)lastMonthPnL+=t.pnl
+
+let weekStart=new Date(now)
+weekStart.setDate(now.getDate()-now.getDay())
+
+if(d>=weekStart)thisWeekPnL+=t.pnl
+})
+
+document.getElementById("lastMonth").appendChild(format(lastMonthPnL))
+document.getElementById("thisMonth").appendChild(format(thisMonthPnL))
+document.getElementById("thisWeek").appendChild(format(thisWeekPnL))
+
 new Chart(document.getElementById("equityChart"),{
 type:"line",
 data:{
@@ -550,11 +565,7 @@ borderWidth:3,
 tension:0.35
 }]
 },
-options:{
-plugins:{legend:{display:false}},
-responsive:true,
-maintainAspectRatio:false
-}
+options:{plugins:{legend:{display:false}},responsive:true,maintainAspectRatio:false}
 })
 
 </script>
