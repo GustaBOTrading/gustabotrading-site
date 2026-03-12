@@ -89,6 +89,8 @@ margin:30px auto;
 max-width:760px;
 }
 
+/* MICRO DISCLAIMER */
+
 .micro-disclaimer{
 font-size:12px;
 color:#9fb3c8;
@@ -309,12 +311,12 @@ Past performance is not indicative of future results.
 </div>
 
 <div class="stat-box">
-<div class="stat-label">Current Week</div>
+<div class="stat-label">Week-to-Date</div>
 <div class="stat-value" id="wtd"></div>
 </div>
 
 <div class="stat-box">
-<div class="stat-label">Today</div>
+<div class="stat-label">Last Trade</div>
 <div class="stat-value" id="today"></div>
 </div>
 
@@ -470,11 +472,8 @@ NinjaTrader® and Kinetick® are trademarks of their respective owners.
 <h2>Important Risk Disclosures</h2>
 
 <p>Futures trading contains substantial risk and is not suitable for every investor.</p>
-
 <p>Past performance is not indicative of future results.</p>
-
 <p>No representation is being made that any account will achieve profits similar to those shown.</p>
-
 <p>Hypothetical or simulated performance results have inherent limitations.</p>
 
 </div>
@@ -496,10 +495,11 @@ No representation is being made that any account will achieve profits similar to
 
 <script>
 
-/* DAILY TRADE DATA */
+/* TRADE DATA */
 
 const trades=[
-{date:"2026-03-12",pnl:-375}
+
+{date:"2026-03-12",pnl:-375},
 {date:"2026-03-11",pnl:-430},
 {date:"2026-03-10",pnl:-155},
 {date:"2026-03-09",pnl:1615},
@@ -512,6 +512,7 @@ const trades=[
 {date:"2026-02-19",pnl:1185},
 {date:"2026-02-18",pnl:1900},
 {date:"2026-02-17",pnl:-230}
+
 ]
 
 /* TABLE */
