@@ -79,8 +79,6 @@ font-size:20px;
 color:#d6e2f0;
 }
 
-/* MESSAGE BOX */
-
 .message-box{
 background:#0f2a45;
 padding:26px;
@@ -295,7 +293,64 @@ font-size:14px;
 
 </div>
 
-<!-- DAILY RESULTS TABLE -->
+<!-- HOW IT WORKS -->
+
+<div class="section">
+
+<h2>How It Works</h2>
+
+<div class="flow">
+
+<div class="flow-step">Sign Up</div>
+<div class="flow-step">Install Strategy</div>
+<div class="flow-step">Test 30 Days</div>
+<div class="flow-step">Evaluate Results</div>
+<div class="flow-step">Pay Only If Profitable</div>
+
+</div>
+
+</div>
+
+<!-- EVERYTHING YOU NEED -->
+
+<div class="section">
+
+<h2>Everything You Need To Start</h2>
+
+<div class="box">
+
+<p>After signup you receive an onboarding email instantly.</p>
+
+<p>The email contains:</p>
+
+<p>• Video tutorials</p>
+<p>• Step-by-step setup instructions</p>
+<p>• NinjaTrader configuration guide</p>
+<p>• Strategy installation walkthrough</p>
+
+<p>Most users complete setup in <strong>10-20 minutes</strong>.</p>
+
+</div>
+
+</div>
+
+<!-- TIKTOK -->
+
+<div class="section">
+
+<h2>From TikTok To Live Trading</h2>
+
+<div class="box">
+
+<p>Thousands of traders follow the development of GustaBOT strategies on TikTok.</p>
+
+<p>Trades, system updates, and strategy insights are shared regularly.</p>
+
+</div>
+
+</div>
+
+<!-- DAILY RESULTS -->
 
 <div class="section">
 
@@ -362,7 +417,7 @@ GustaBOT is not affiliated with NinjaTrader or Kinetick.
 
 </div>
 
-<!-- DISCLOSURE -->
+<!-- DISCLOSURES -->
 
 <div class="disclosure">
 
@@ -380,10 +435,9 @@ GustaBOT is not affiliated with NinjaTrader or Kinetick.
 
 <script>
 
-/* === DAILY TRADE DATA (EDIT THIS DAILY) === */
+/* TRADE DATA */
 
 const trades = [
-
 {date:"2026-03-11", pnl:-430},
 {date:"2026-03-10", pnl:-155},
 {date:"2026-03-09", pnl:1615},
@@ -396,31 +450,24 @@ const trades = [
 {date:"2026-02-19", pnl:1185},
 {date:"2026-02-18", pnl:1900},
 {date:"2026-02-17", pnl:-230}
-
 ]
 
-/* === BUILD TABLE === */
+/* TABLE */
 
 const table=document.getElementById("resultsTable")
 
 trades.forEach(t=>{
-
 let row=table.insertRow()
-
-let d=row.insertCell(0)
-let p=row.insertCell(1)
-
-d.innerText=t.date
-p.innerText="$"+t.pnl.toLocaleString()
-p.style.textAlign="right"
-
-p.style.color=t.pnl>=0?"#22c55e":"#ef4444"
-
+row.insertCell(0).innerText=t.date
+let pnl=row.insertCell(1)
+pnl.innerText="$"+t.pnl.toLocaleString()
+pnl.style.textAlign="right"
+pnl.style.color=t.pnl>=0?"#22c55e":"#ef4444"
 })
 
-/* === CALCULATIONS === */
+/* CALCULATIONS */
 
-const todayPnL=trades[0].pnl
+let todayPnL=trades[0].pnl
 
 let now=new Date()
 let month=now.getMonth()
@@ -429,7 +476,6 @@ let mtd=0
 let wtd=0
 
 trades.forEach(t=>{
-
 let d=new Date(t.date)
 
 if(d.getMonth()==month)
@@ -440,26 +486,20 @@ weekStart.setDate(now.getDate()-now.getDay())
 
 if(d>=weekStart)
 wtd+=t.pnl
-
 })
 
 function format(val){
-
-let el=document.createElement("span")
-
-el.className=val>=0?"stat-positive":"stat-negative"
-
-el.innerText="$"+val.toLocaleString()
-
-return el
-
+let span=document.createElement("span")
+span.className=val>=0?"stat-positive":"stat-negative"
+span.innerText="$"+val.toLocaleString()
+return span
 }
 
 document.getElementById("today").appendChild(format(todayPnL))
 document.getElementById("wtd").appendChild(format(wtd))
 document.getElementById("mtd").appendChild(format(mtd))
 
-/* === EQUITY CURVE === */
+/* EQUITY CURVE */
 
 let equity=[]
 let total=0
