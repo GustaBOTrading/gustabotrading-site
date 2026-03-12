@@ -55,7 +55,6 @@ font-weight:bold;
 .logo-main{
 font-size:20px;
 font-weight:bold;
-letter-spacing:1px;
 }
 
 .logo-main span{
@@ -88,12 +87,21 @@ margin-top:20px;
 
 .hero h1{
 font-size:40px;
-margin-bottom:16px;
 }
 
 .hero p{
 font-size:20px;
 color:#d6e2f0;
+}
+
+/* MESSAGE BOX */
+
+.message-box{
+background:#0f2a45;
+padding:26px;
+border-radius:12px;
+margin:30px auto;
+max-width:760px;
 }
 
 /* DASHBOARD */
@@ -117,7 +125,6 @@ text-align:center;
 .stat-label{
 font-size:14px;
 color:#9fb3c8;
-margin-bottom:6px;
 }
 
 .stat-value{
@@ -125,29 +132,8 @@ font-size:32px;
 font-weight:bold;
 }
 
-.stat-positive{
-color:#22c55e;
-}
-
-.stat-negative{
-color:#ef4444;
-}
-
-/* MESSAGE BOX */
-
-.message-box{
-background:#0f2a45;
-padding:26px;
-border-radius:12px;
-margin:28px auto;
-max-width:760px;
-}
-
-.disclaimer-mini{
-font-size:12px;
-color:#9fb3c8;
-margin-top:10px;
-}
+.stat-positive{color:#22c55e;}
+.stat-negative{color:#ef4444;}
 
 /* SECTIONS */
 
@@ -159,13 +145,6 @@ text-align:center;
 .section h2{
 font-size:32px;
 margin-bottom:16px;
-}
-
-.section p{
-font-size:18px;
-color:#d6e2f0;
-max-width:820px;
-margin:auto;
 }
 
 /* BOX */
@@ -184,10 +163,9 @@ text-align:left;
 .flow{
 display:flex;
 justify-content:center;
-align-items:center;
 gap:16px;
-margin-top:34px;
 flex-wrap:wrap;
+margin-top:30px;
 }
 
 .flow-step{
@@ -199,17 +177,12 @@ text-align:center;
 font-weight:bold;
 }
 
-/* TABLE */
+/* CHART */
 
-table{
-width:100%;
-border-collapse:collapse;
-margin-top:10px;
-}
-
-th,td{
-padding:8px;
-border-bottom:1px solid #0c243c;
+.chart-container{
+max-width:900px;
+height:360px;
+margin:30px auto;
 }
 
 /* FORM */
@@ -217,7 +190,6 @@ border-bottom:1px solid #0c243c;
 input{
 padding:14px;
 width:280px;
-max-width:100%;
 margin:10px;
 border-radius:8px;
 border:none;
@@ -232,14 +204,6 @@ font-weight:bold;
 cursor:pointer;
 }
 
-/* CHART CONTAINER */
-
-.chart-container{
-max-width:900px;
-height:360px;
-margin:30px auto;
-}
-
 /* LOGOS */
 
 .logos{
@@ -251,13 +215,8 @@ margin-top:40px;
 flex-wrap:wrap;
 }
 
-.ninja-logo{
-height:50px;
-}
-
-.kinetick-logo{
-height:70px;
-}
+.ninja-logo{height:50px;}
+.kinetick-logo{height:70px;}
 
 .platform-disclaimer{
 margin-top:20px;
@@ -276,7 +235,6 @@ padding:40px 24px;
 border-top:4px solid #22c55e;
 border-radius:10px;
 font-size:14px;
-color:#d6e2f0;
 }
 
 /* MOBILE */
@@ -287,6 +245,7 @@ color:#d6e2f0;
 
 .flow{
 flex-direction:column;
+align-items:center;
 }
 
 .flow-step{
@@ -296,9 +255,7 @@ width:90%;
 .ninja-logo{height:40px;}
 .kinetick-logo{height:90px;}
 
-.chart-container{
-height:300px;
-}
+.chart-container{height:300px;}
 
 }
 
@@ -328,28 +285,18 @@ height:300px;
 
 <h1>A Trading Strategy That Only Gets Paid If It Profits</h1>
 
-<p>
-Run the strategy on your own NinjaTrader account.<br>
-Test it free for 30 days.
-</p>
+<p>Run the strategy on your own NinjaTrader account.<br>Test it free for 30 days.</p>
 
 <div class="message-box">
-
 <p><strong>Step 1</strong> — Test the strategy free for 30 days</p>
 <p><strong>Step 2</strong> — If the strategy generates more than $3,000</p>
 <p><strong>Step 3</strong> — The profits pay the license</p>
-
 <p><strong>If it doesn't profit — you pay nothing.</strong></p>
-
-<p class="disclaimer-mini">
-Trading futures involves substantial risk. Past performance does not guarantee future results.
-</p>
-
 </div>
 
 </div>
 
-<!-- PERFORMANCE DASHBOARD -->
+<!-- PERFORMANCE -->
 
 <div class="section">
 
@@ -374,9 +321,62 @@ Trading futures involves substantial risk. Past performance does not guarantee f
 
 </div>
 
-<p class="disclaimer-mini">
-Displayed results represent recorded strategy performance and are not guarantees of future profitability.
-</p>
+</div>
+
+<!-- HOW IT WORKS -->
+
+<div class="section">
+
+<h2>How It Works</h2>
+
+<div class="flow">
+
+<div class="flow-step">Sign Up</div>
+<div class="flow-step">Install Strategy</div>
+<div class="flow-step">Test 30 Days</div>
+<div class="flow-step">Evaluate Results</div>
+<div class="flow-step">Pay Only If Profitable</div>
+
+</div>
+
+</div>
+
+<!-- EVERYTHING YOU NEED -->
+
+<div class="section">
+
+<h2>Everything You Need To Start</h2>
+
+<div class="box">
+
+<p>After signup you receive an onboarding email instantly.</p>
+
+<p>The email contains:</p>
+
+<p>• Video tutorials</p>
+<p>• Step-by-step setup instructions</p>
+<p>• NinjaTrader configuration guide</p>
+<p>• Strategy installation walkthrough</p>
+
+<p>Most users complete setup in <strong>10-20 minutes</strong>.</p>
+
+</div>
+
+</div>
+
+<!-- TIKTOK -->
+
+<div class="section">
+
+<h2>From TikTok To Live Trading</h2>
+
+<div class="box">
+
+<p>Thousands of traders follow the development of GustaBOT strategies on TikTok.</p>
+
+<p>Trades, strategy updates, and system insights are shared regularly.</p>
+
+</div>
 
 </div>
 
@@ -390,10 +390,6 @@ Displayed results represent recorded strategy performance and are not guarantees
 <canvas id="equityChart"></canvas>
 </div>
 
-<p class="disclaimer-mini">
-Equity curves represent historical results and are not guarantees of future performance.
-</p>
-
 </div>
 
 <!-- SIGNUP -->
@@ -402,18 +398,12 @@ Equity curves represent historical results and are not guarantees of future perf
 
 <h2>Start Your 30-Day Test</h2>
 
-<p>Enter your email to receive onboarding instructions.</p>
-
 <input type="text" placeholder="First Name">
 <input type="email" placeholder="Email Address">
 
 <br>
 
 <button>Start My Free 30-Day Test</button>
-
-<p class="disclaimer-mini">
-Submitting your email does not guarantee trading success or profitability.
-</p>
 
 </div>
 
@@ -431,7 +421,7 @@ Submitting your email does not guarantee trading success or profitability.
 </div>
 
 <div class="platform-disclaimer">
-GustaBOT is not affiliated with NinjaTrader or Kinetick. All trademarks belong to their respective owners.
+GustaBOT is not affiliated with NinjaTrader or Kinetick.
 </div>
 
 </div>
@@ -444,13 +434,9 @@ GustaBOT is not affiliated with NinjaTrader or Kinetick. All trademarks belong t
 
 <p>Futures trading contains substantial risk and is not suitable for every investor.</p>
 
+<p>Past performance is not indicative of future results.</p>
+
 <p>No representation is being made that any account will achieve profits similar to those shown.</p>
-
-<p>Hypothetical or simulated performance results have inherent limitations.</p>
-
-<p>Simulated results do not represent actual trading.</p>
-
-<p>Market conditions, slippage, commissions, and execution differences may significantly impact results.</p>
 
 </div>
 
@@ -458,7 +444,7 @@ GustaBOT is not affiliated with NinjaTrader or Kinetick. All trademarks belong t
 
 <script>
 
-/* COUNTER ANIMATION FIXED */
+/* COUNTERS FIXED */
 
 function animateCounter(id,target){
 
@@ -491,13 +477,11 @@ document.getElementById(id).innerText="$"+Math.round(value).toLocaleString()
 
 }
 
-/* UPDATE VALUES HERE */
-
 animateCounter("mtdCounter",10965)
 animateCounter("weekCounter",1030)
 animateCounter("todayCounter",-430)
 
-/* EQUITY CURVE */
+/* CHART */
 
 const ctx=document.getElementById("equityChart")
 
@@ -517,12 +501,7 @@ pointBackgroundColor:"#22c55e"
 options:{
 responsive:true,
 maintainAspectRatio:false,
-animation:{duration:2000},
-plugins:{legend:{display:false}},
-scales:{
-y:{grid:{color:"#1e3a5f"}},
-x:{grid:{display:false}}
-}
+plugins:{legend:{display:false}}
 }
 })
 
