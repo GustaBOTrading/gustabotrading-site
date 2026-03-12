@@ -4,6 +4,7 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>GustaBOT Trading Systems</title>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -320,10 +321,10 @@ Past performance is not indicative of future results.
 <div class="stat-box"><div class="stat-label">This Week</div><div class="stat-value" id="thisWeek"></div></div>
 <div class="stat-box"><div class="stat-label">Last Trade</div><div class="stat-value" id="lastTrade"></div></div>
 
-<div class="stat-box"><div class="stat-label">Net Profit</div><div class="stat-value" id="netProfit"></div></div>
-<div class="stat-box"><div class="stat-label">Max Drawdown</div><div class="stat-value" id="maxDD"></div></div>
-<div class="stat-box"><div class="stat-label">Average Trade</div><div class="stat-value" id="avgTrade"></div></div>
 <div class="stat-box"><div class="stat-label">Win Rate</div><div class="stat-value" id="winRate"></div></div>
+<div class="stat-box"><div class="stat-label">Avg Win</div><div class="stat-value" id="avgWin"></div></div>
+<div class="stat-box"><div class="stat-label">Avg Loss</div><div class="stat-value" id="avgLoss"></div></div>
+<div class="stat-box"><div class="stat-label">Max DD</div><div class="stat-value" id="maxDD"></div></div>
 
 </div>
 
@@ -332,31 +333,21 @@ Past performance is not indicative of future results.
 <!-- BLOCK 4 RECENT TRADES -->
 
 <div class="section">
-
 <div class="box">
-
 <h3>Recent Trades</h3>
-
 <div id="resultsGrid" class="results-grid"></div>
-
 </div>
-
 </div>
 
 <!-- BLOCK 5 EQUITY CURVE -->
 
 <div class="section">
-
 <div class="box">
-
 <h3>Equity Curve</h3>
-
 <div class="chart-container">
 <canvas id="equityChart"></canvas>
 </div>
-
 </div>
-
 </div>
 
 <!-- BLOCK 6 HOW IT WORKS -->
@@ -388,104 +379,65 @@ Past performance is not indicative of future results.
 <!-- BLOCK 7 EVERYTHING YOU NEED -->
 
 <div class="section">
-
 <h2>Everything You Need To Start</h2>
-
 <div class="box">
-
 <p>After signup you receive an onboarding email instantly.</p>
-
 <p>• Video tutorials</p>
 <p>• Step-by-step setup instructions</p>
 <p>• NinjaTrader configuration guide</p>
 <p>• Strategy installation walkthrough</p>
-
 <p>Most setups take between <strong>1–5 days</strong>.</p>
-
 </div>
-
 </div>
 
 <!-- BLOCK 8 TIKTOK -->
 
 <div class="section">
-
 <h2>From TikTok To Live Trading</h2>
-
 <div class="box">
-
-<p>
-Many traders first discover GustaBOT strategies through TikTok,
-where strategy development and trading insights are shared.
-</p>
-
-<p>
-After signing up, users receive instructions and walkthroughs
-to install the strategy on NinjaTrader and begin testing.
-</p>
-
+<p>Many traders first discover GustaBOT strategies through TikTok where strategy development and trading insights are shared.</p>
+<p>After signing up, users receive instructions and walkthroughs to install the strategy on NinjaTrader and begin testing.</p>
 </div>
-
 </div>
 
 <!-- BLOCK 9 SIGNUP -->
 
 <div class="section" id="signup">
-
 <h2>Start Your 30-Day Test</h2>
-
 <input type="text" placeholder="First Name">
 <input type="email" placeholder="Email Address">
-
 <br>
-
 <button>Start My Free 30-Day Test</button>
-
 </div>
 
 <!-- BLOCK 10 FAQ -->
 
 <div class="section">
-
 <h2>Frequently Asked Questions</h2>
-
 <div class="box">
 
 <p><strong>Do I need trading experience?</strong></p>
 <p>Basic familiarity with NinjaTrader is recommended.</p>
 
-<br>
-
 <p><strong>Do you control my account?</strong></p>
 <p>No. The strategy runs locally on your NinjaTrader platform.</p>
-
-<br>
 
 <p><strong>Can I stop the strategy anytime?</strong></p>
 <p>Yes. You can disable it inside NinjaTrader.</p>
 
-<br>
-
 <p><strong>Can I test on SIM first?</strong></p>
 <p>Yes. Many users test the strategy in simulation first.</p>
-
-<br>
 
 <p><strong>What capital is required?</strong></p>
 <p>Micro contracts typically require about $200 while one NQ contract usually requires about $2,000.</p>
 
-<br>
-
 <p><strong>Does the strategy trade every day?</strong></p>
 <p>No. It trades only when market conditions match the system rules.</p>
-
-<br>
 
 <p><strong>Are profits guaranteed?</strong></p>
 <p>No. Futures trading involves substantial risk.</p>
 
 </div>
-
 </div>
 
 <!-- BLOCK 11 PLATFORMS -->
@@ -495,10 +447,8 @@ to install the strategy on NinjaTrader and begin testing.
 <h2>Recommended Platforms</h2>
 
 <div class="logos">
-
 <img src="NinjaTrader_Wordmark_color_RGB.png" class="ninja-logo">
 <img src="Kinetick-FreeEOD-300x250.png" class="kinetick-logo">
-
 </div>
 
 <div class="platform-disclaimer">
@@ -510,13 +460,10 @@ GustaBOT is not affiliated with NinjaTrader or Kinetick.
 <!-- BLOCK 12 DISCLOSURE -->
 
 <div class="disclosure">
-
 <h2>Important Risk Disclosures</h2>
-
 <p>Futures trading contains substantial risk and is not suitable for every investor.</p>
 <p>Past performance is not indicative of future results.</p>
 <p>No representation is being made that any account will achieve profits similar to those shown.</p>
-
 </div>
 
 </div>
@@ -524,10 +471,8 @@ GustaBOT is not affiliated with NinjaTrader or Kinetick.
 <!-- BLOCK 13 FOOTER -->
 
 <footer>
-
 <p>© 2026 GustaBOT Trading Systems</p>
 <p>Automated trading strategies involve risk and may result in financial loss.</p>
-
 </footer>
 
 <script>
@@ -563,21 +508,35 @@ let net=0
 let peak=0
 let maxDD=0
 let wins=0
+let losses=0
+let winTotal=0
+let lossTotal=0
 let equity=[]
 
 trades.slice().reverse().forEach(t=>{
+
 net+=t.pnl
 equity.push(net)
 
-if(t.pnl>0)wins++
+if(t.pnl>0){
+wins++
+winTotal+=t.pnl
+}
+
+if(t.pnl<0){
+losses++
+lossTotal+=t.pnl
+}
 
 if(net>peak)peak=net
 
 let dd=peak-net
 if(dd>maxDD)maxDD=dd
+
 })
 
-let avg=net/trades.length
+let avgWin=wins?winTotal/wins:0
+let avgLoss=losses?lossTotal/losses:0
 let winRate=(wins/trades.length)*100
 
 function setStat(id,val){
@@ -586,17 +545,17 @@ el.innerText="$"+Math.round(val).toLocaleString()
 el.className="stat-value "+(val>=0?"stat-positive":"stat-negative")
 }
 
-setStat("netProfit",net)
-setStat("maxDD",-maxDD)
-setStat("avgTrade",avg)
 setStat("lastTrade",trades[0].pnl)
+setStat("avgWin",avgWin)
+setStat("avgLoss",avgLoss)
+setStat("maxDD",-maxDD)
 
 document.getElementById("winRate").innerText=winRate.toFixed(1)+"%"
 
 let now=new Date()
 
 let thisMonth=now.getMonth()
-let lastMonth=thisMonth-1
+let lastMonth=thisMonth===0?11:thisMonth-1
 
 let thisMonthPnL=0
 let lastMonthPnL=0
@@ -609,7 +568,7 @@ trades.forEach(t=>{
 let d=new Date(t.date)
 
 if(d.getMonth()===thisMonth)thisMonthPnL+=t.pnl
-if(d.getMonth()===lastMonth)thisMonthPnL+=0,lastMonthPnL+=t.pnl
+if(d.getMonth()===lastMonth)lastMonthPnL+=t.pnl
 if(d>=weekStart)thisWeekPnL+=t.pnl
 })
 
