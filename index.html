@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -27,6 +28,7 @@ position:sticky;
 top:0;
 background:#071a2d;
 border-bottom:1px solid #1e3a5f;
+z-index:1000;
 }
 
 .nav{
@@ -85,6 +87,12 @@ padding:26px;
 border-radius:12px;
 margin:30px auto;
 max-width:760px;
+}
+
+.micro-disclaimer{
+font-size:12px;
+color:#9fb3c8;
+margin-top:10px;
 }
 
 /* DASHBOARD */
@@ -230,12 +238,26 @@ padding:40px 24px;
 border-top:4px solid #22c55e;
 border-radius:10px;
 font-size:14px;
+color:#d6e2f0;
+}
+
+/* FOOTER */
+
+footer{
+margin-top:40px;
+text-align:center;
+color:#9fb3c8;
+font-size:13px;
+padding:30px 0;
+border-top:1px solid #1e3a5f;
 }
 
 </style>
 </head>
 
 <body>
+
+<!-- HEADER -->
 
 <div class="header">
 <div class="nav">
@@ -258,11 +280,18 @@ font-size:14px;
 <p>Run the strategy on your own NinjaTrader account.<br>Test it free for 30 days.</p>
 
 <div class="message-box">
+
 <p><strong>Step 1</strong> — Test the strategy free for 30 days</p>
 <p><strong>Step 2</strong> — If the strategy generates more than $3,000</p>
 <p><strong>Step 3</strong> — The profits pay the license</p>
 <p><strong>If it doesn't profit — you pay nothing.</strong></p>
+
 </div>
+
+<p class="micro-disclaimer">
+Trading futures involves substantial risk and is not suitable for every investor.
+Past performance is not indicative of future results.
+</p>
 
 </div>
 
@@ -290,6 +319,10 @@ font-size:14px;
 </div>
 
 </div>
+
+<p class="micro-disclaimer">
+Performance metrics are calculated from recorded results and are provided for informational purposes only.
+</p>
 
 </div>
 
@@ -328,7 +361,11 @@ font-size:14px;
 <p>• NinjaTrader configuration guide</p>
 <p>• Strategy installation walkthrough</p>
 
-<p>Most users complete setup in <strong>10-20 minutes</strong>.</p>
+<p>Most users complete setup in <strong>10–20 minutes</strong>.</p>
+
+<p class="micro-disclaimer">
+Users remain responsible for their own trading decisions and platform configuration.
+</p>
 
 </div>
 
@@ -344,7 +381,7 @@ font-size:14px;
 
 <p>Thousands of traders follow the development of GustaBOT strategies on TikTok.</p>
 
-<p>Trades, system updates, and strategy insights are shared regularly.</p>
+<p>Trades, system updates, and educational insights are shared regularly.</p>
 
 </div>
 
@@ -367,6 +404,10 @@ font-size:14px;
 
 </table>
 
+<p class="micro-disclaimer">
+Daily results represent historical performance and may not reflect future market conditions.
+</p>
+
 </div>
 
 </div>
@@ -380,6 +421,10 @@ font-size:14px;
 <div class="chart-container">
 <canvas id="equityChart"></canvas>
 </div>
+
+<p class="micro-disclaimer">
+Equity curves represent cumulative historical results and do not guarantee future performance.
+</p>
 
 </div>
 
@@ -413,11 +458,12 @@ font-size:14px;
 
 <div class="platform-disclaimer">
 GustaBOT is not affiliated with NinjaTrader or Kinetick.
+NinjaTrader® and Kinetick® are trademarks of their respective owners.
 </div>
 
 </div>
 
-<!-- DISCLOSURES -->
+<!-- RISK DISCLOSURE -->
 
 <div class="disclosure">
 
@@ -429,27 +475,42 @@ GustaBOT is not affiliated with NinjaTrader or Kinetick.
 
 <p>No representation is being made that any account will achieve profits similar to those shown.</p>
 
+<p>Hypothetical or simulated performance results have inherent limitations.</p>
+
 </div>
 
 </div>
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>© 2026 GustaBOT Trading Systems</p>
+
+<p>
+Automated trading strategies involve risk and may result in financial loss.
+No representation is being made that any account will achieve profits similar to those shown.
+</p>
+
+</footer>
 
 <script>
 
-/* TRADE DATA */
+/* DAILY TRADE DATA */
 
-const trades = [
-{date:"2026-03-11", pnl:-430},
-{date:"2026-03-10", pnl:-155},
-{date:"2026-03-09", pnl:1615},
-{date:"2026-03-05", pnl:1750},
-{date:"2026-03-04", pnl:-800},
-{date:"2026-02-27", pnl:1515},
-{date:"2026-02-24", pnl:1040},
-{date:"2026-02-23", pnl:790},
-{date:"2026-02-20", pnl:2785},
-{date:"2026-02-19", pnl:1185},
-{date:"2026-02-18", pnl:1900},
-{date:"2026-02-17", pnl:-230}
+const trades=[
+{date:"2026-03-11",pnl:-430},
+{date:"2026-03-10",pnl:-155},
+{date:"2026-03-09",pnl:1615},
+{date:"2026-03-05",pnl:1750},
+{date:"2026-03-04",pnl:-800},
+{date:"2026-02-27",pnl:1515},
+{date:"2026-02-24",pnl:1040},
+{date:"2026-02-23",pnl:790},
+{date:"2026-02-20",pnl:2785},
+{date:"2026-02-19",pnl:1185},
+{date:"2026-02-18",pnl:1900},
+{date:"2026-02-17",pnl:-230}
 ]
 
 /* TABLE */
@@ -459,10 +520,10 @@ const table=document.getElementById("resultsTable")
 trades.forEach(t=>{
 let row=table.insertRow()
 row.insertCell(0).innerText=t.date
-let pnl=row.insertCell(1)
-pnl.innerText="$"+t.pnl.toLocaleString()
-pnl.style.textAlign="right"
-pnl.style.color=t.pnl>=0?"#22c55e":"#ef4444"
+let p=row.insertCell(1)
+p.innerText="$"+t.pnl.toLocaleString()
+p.style.textAlign="right"
+p.style.color=t.pnl>=0?"#22c55e":"#ef4444"
 })
 
 /* CALCULATIONS */
