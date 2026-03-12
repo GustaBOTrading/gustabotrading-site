@@ -145,17 +145,8 @@ height:160px;
 border-bottom:2px solid rgba(34,197,94,0.7);
 
 clip-path: polygon(
-0% 90%,
-10% 85%,
-20% 88%,
-30% 70%,
-40% 75%,
-50% 60%,
-60% 65%,
-70% 40%,
-80% 45%,
-90% 30%,
-100% 10%
+0% 90%,10% 85%,20% 88%,30% 70%,40% 75%,
+50% 60%,60% 65%,70% 40%,80% 45%,90% 30%,100% 10%
 );
 
 animation:equityScroll 18s linear infinite;
@@ -328,27 +319,20 @@ margin:auto;
 margin-bottom:14px;
 }
 
+footer{
+margin-top:80px;
+padding:30px;
+text-align:center;
+color:#9fb3c8;
+border-top:1px solid #1e3a5f;
+font-size:14px;
+}
+
 canvas{
 background:#0f2a45;
 padding:20px;
 border-radius:12px;
 margin-top:30px;
-}
-
-/* MOBILE */
-
-@media (max-width:768px){
-
-.hero h1{font-size:30px;}
-.hero p{font-size:17px;}
-.section h2{font-size:26px;}
-
-.flow{flex-direction:column;}
-.arrow{transform:rotate(90deg);}
-
-.logos{flex-direction:column;}
-.logo-sub{display:none;}
-
 }
 
 </style>
@@ -399,33 +383,21 @@ to generate profit first — and those profits are what pay the license.
 <p><strong>You pay nothing for that month</strong></p>
 </div>
 
-<p style="margin-top:20px">
-Futures trading carries substantial risk and losses are possible.<br>
-Please review the <strong>Risk Disclosure section at the bottom of this page</strong>.
-</p>
-
 </div>
 
 <div class="section">
-
 <h2>How It Works</h2>
 
 <div class="flow">
-
 <div class="flow-step">Sign Up</div>
 <div class="arrow">➜</div>
-
 <div class="flow-step">Install Strategy</div>
 <div class="arrow">➜</div>
-
 <div class="flow-step">Test 30 Days</div>
 <div class="arrow">➜</div>
-
 <div class="flow-step">Profit?</div>
 <div class="arrow">➜</div>
-
 <div class="flow-step">Pay Only If Profitable</div>
-
 </div>
 
 </div>
@@ -459,22 +431,20 @@ Please review the <strong>Risk Disclosure section at the bottom of this page</st
 <strong>March 2026 (partial):</strong> +$1,980
 </p>
 
-<h3 style="margin-top:34px;">Strategy Equity Curve</h3>
+<h3 style="margin-top:30px;">Strategy Equity Curve</h3>
 
-<canvas id="equityChart" height="120"></canvas>
+<canvas id="equityChart"></canvas>
 
-<p style="margin-top:12px; font-size:15px; color:#9fb3c8;">
-Equity curve based on results generated using <strong>one NQ futures contract</strong>.
-Performance will vary depending on contract size, market conditions, and execution.
+<p style="font-size:15px;color:#9fb3c8;margin-top:10px;">
+Equity curve based on results generated using one NQ futures contract.
 </p>
 
-<h3 style="margin-top:34px;">Daily Results</h3>
+<h3 style="margin-top:30px;">Daily Results</h3>
 
 <table>
-
 <tr>
-<th style="text-align:left">Date</th>
-<th style="text-align:right">Result</th>
+<th>Date</th>
+<th style="text-align:right;">Result</th>
 </tr>
 
 <tr><td>3/11/2026</td><td style="text-align:right;color:#ef4444;">-$430</td></tr>
@@ -523,6 +493,54 @@ emotional stress, or changes to their normal lifestyle.
 
 </div>
 
+<div class="section">
+
+<h2>What Happens After You Sign Up</h2>
+
+<div class="license-box">
+
+<p>
+After submitting the request form, you will receive an email containing setup instructions and onboarding materials.
+</p>
+
+<p>
+The onboarding process typically takes about 30–60 minutes.
+</p>
+
+</div>
+
+<div class="license-box">
+<h3>Step 1 — Platform Preparation</h3>
+<p>Instructions for opening a NinjaTrader account and downloading the desktop platform.</p>
+</div>
+
+<div class="license-box">
+<h3>Step 2 — VPN Setup</h3>
+<p>Guidance on installing and configuring a VPN if required.</p>
+</div>
+
+<div class="license-box">
+<h3>Step 3 — Strategy Installation</h3>
+<p>How to import the strategy and enable it within NinjaTrader.</p>
+</div>
+
+<div class="license-box">
+<h3>Step 4 — Chart Setup</h3>
+<p>How to add charts and configure the trading workspace.</p>
+</div>
+
+<div class="license-box">
+<h3>Step 5 — Simulation Testing</h3>
+<p>New users are encouraged to run the strategy in simulation before trading live.</p>
+</div>
+
+<div class="license-box">
+<h3>Video Tutorials</h3>
+<p>Step-by-step video tutorials are provided covering the full setup and daily use.</p>
+</div>
+
+</div>
+
 <div class="section" id="signup">
 
 <h2>Start Your 30-Day Test</h2>
@@ -530,7 +548,6 @@ emotional stress, or changes to their normal lifestyle.
 <form action="https://formspree.io/f/mzdjrwpq" method="POST">
 
 <input type="text" name="Name" placeholder="First Name" required>
-
 <input type="email" name="email" placeholder="Email Address" required>
 
 <input type="hidden" name="source" value="GustaBOT Website Signup">
@@ -581,13 +598,25 @@ No representation is being made that any account will achieve profits or losses 
 
 </div>
 
+<footer>
+
+<p><strong>GustaBOT</strong> — Automated Trading Systems</p>
+
+<p>
+Automated futures trading strategies designed for the NinjaTrader platform.
+</p>
+
+<p>© 2026 GustaBOT</p>
+
+</footer>
+
 </div>
 
 <script>
 
-const ctx = document.getElementById('equityChart');
+const ctx=document.getElementById('equityChart');
 
-new Chart(ctx, {
+new Chart(ctx,{
 type:'line',
 data:{
 labels:['Feb 17','Feb 18','Feb 19','Feb 20','Feb 23','Feb 24','Feb 27','Mar 4','Mar 5','Mar 9','Mar 10','Mar 11'],
