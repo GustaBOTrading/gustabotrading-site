@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GustaBOT Trading Systems</title>
@@ -142,20 +143,9 @@ max-width:820px;
 margin:auto;
 }
 
-/* STRATEGY */
-
-.strategy{
-background:#102b46;
-padding:22px;
-border-radius:10px;
-margin:18px auto;
-text-align:left;
-max-width:820px;
-}
-
 /* BOX */
 
-.license-box{
+.box{
 background:#0f2a45;
 padding:24px;
 border-radius:12px;
@@ -263,23 +253,6 @@ font-size:14px;
 color:#d6e2f0;
 }
 
-.disclosure h2{
-text-align:center;
-margin-bottom:20px;
-font-size:30px;
-}
-
-/* FOOTER */
-
-footer{
-margin-top:80px;
-padding:30px;
-text-align:center;
-color:#9fb3c8;
-border-top:1px solid #1e3a5f;
-font-size:14px;
-}
-
 /* MOBILE */
 
 @media (max-width:768px){
@@ -290,26 +263,18 @@ font-size:14px;
 .section h2{font-size:26px;}
 .section p{font-size:16px;}
 
-.flow{
-flex-direction:column;
-}
+.flow{flex-direction:column;}
 
 .flow-step{
 width:100%;
 max-width:280px;
 }
 
-.arrow{
-transform:rotate(90deg);
-}
+.arrow{transform:rotate(90deg);}
 
-.logos{
-flex-direction:column;
-}
+.logos{flex-direction:column;}
 
-.logo-sub{
-display:none;
-}
+.logo-sub{display:none;}
 
 }
 
@@ -319,15 +284,18 @@ display:none;
 <body>
 
 <div class="header">
+
 <div class="nav">
 
 <div class="logo-container">
+
 <div class="logo-icon">▲</div>
 
 <div class="logo-text">
 <div class="logo-main">Gusta<span>BOT</span></div>
 <div class="logo-sub">Automated Trading Systems</div>
 </div>
+
 </div>
 
 <a href="#signup" class="nav-button">Start Test</a>
@@ -377,24 +345,21 @@ If it profits, the profits pay the fee.
 
 </div>
 
+<!-- STRATEGY SECTION -->
+
 <div class="section">
 
-<h2>Strategies</h2>
+<h2>Strategy</h2>
 
-<div class="strategy">
+<div class="box">
+
 <h3>Easora</h3>
-<p>Early Session Opportunity Range Algorithm capturing liquidity sweeps and open-session momentum.</p>
-</div>
 
-</div>
+<p>
+Early Session Opportunity Range Algorithm capturing liquidity sweeps and open-session momentum.
+</p>
 
-<div class="section">
-
-<h2>Recent Strategy Performance</h2>
-
-<div class="license-box">
-
-<h3>Performance Snapshot</h3>
+<h3 style="margin-top:28px;">Performance Snapshot</h3>
 
 <p><strong>Total Net Profit:</strong> $10,965</p>
 <p><strong>Profit Factor:</strong> 7.79</p>
@@ -403,11 +368,11 @@ If it profits, the profits pay the fee.
 <p><strong>Total Trades:</strong> 12</p>
 <p><strong>Average Trade:</strong> $913.75</p>
 
-<h3 style="margin-top:30px;">Strategy Equity Curve</h3>
+<h3 style="margin-top:28px;">Strategy Equity Curve</h3>
 
 <canvas id="equityChart"></canvas>
 
-<h3 style="margin-top:30px;">Daily Results</h3>
+<h3 style="margin-top:28px;">Daily Results</h3>
 
 <table>
 
@@ -435,6 +400,70 @@ If it profits, the profits pay the fee.
 
 </div>
 
+<!-- LICENSE STRUCTURE -->
+
+<div class="section">
+
+<h2>License Structure</h2>
+
+<div class="box">
+
+<p><strong>Day 0–30</strong> — Free test period.</p>
+
+<p><strong>Day 31</strong> — $500 license.</p>
+
+<p><strong>Day 61</strong> — $1,000 license.</p>
+
+<p><strong>Day 91</strong> — $2,000 license.</p>
+
+<p><strong>Day 121+</strong> — 20% of monthly net profit based on one NQ contract.</p>
+
+</div>
+
+</div>
+
+<!-- ACCOUNT SIZE -->
+
+<div class="section">
+
+<h2>Minimum Account Size</h2>
+
+<div class="box">
+
+<p><strong>Micro contracts:</strong> $200 minimum capital.</p>
+
+<p><strong>NQ mini contract:</strong> $2,000 minimum capital.</p>
+
+<p>
+Users may scale contracts. Scaling increases both potential profits and potential losses.
+</p>
+
+</div>
+
+</div>
+
+<!-- ONBOARDING -->
+
+<div class="section">
+
+<h2>After Signup</h2>
+
+<div class="box">
+
+<p>
+After submitting the request form, you will receive an email containing setup instructions and onboarding materials.
+</p>
+
+<p>
+The onboarding process typically takes about <strong>2–7 days</strong>.
+</p>
+
+</div>
+
+</div>
+
+<!-- SIGNUP -->
+
 <div class="section" id="signup">
 
 <h2>Start Your 30-Day Test</h2>
@@ -442,6 +471,7 @@ If it profits, the profits pay the fee.
 <form action="https://formspree.io/f/mzdjrwpq" method="POST">
 
 <input type="text" name="Name" placeholder="First Name" required>
+
 <input type="email" name="email" placeholder="Email Address" required>
 
 <br>
@@ -451,6 +481,8 @@ If it profits, the profits pay the fee.
 </form>
 
 </div>
+
+<!-- PLATFORMS -->
 
 <div class="section">
 
@@ -470,17 +502,18 @@ If it profits, the profits pay the fee.
 
 </div>
 
+<!-- DISCLOSURE -->
+
 <div class="disclosure">
 
 <h2>Important Disclosures</h2>
 
 <p>
 Futures trading contains substantial risk and is not suitable for every investor.
-An investor could potentially lose all or more than the initial investment.
 </p>
 
 <p>
-The ideal trading capital is money that can be lost without affecting your financial stability, lifestyle, or emotional well-being.
+The ideal trading capital is money that can be lost without affecting financial stability or emotional well-being.
 </p>
 
 <p>
@@ -488,13 +521,6 @@ Past performance does not guarantee future results.
 </p>
 
 </div>
-
-<footer>
-
-<p><strong>GustaBOT</strong> — Automated Trading Systems</p>
-<p>© 2026 GustaBOT</p>
-
-</footer>
 
 </div>
 
