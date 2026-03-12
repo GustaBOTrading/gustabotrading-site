@@ -21,6 +21,8 @@ color:white;
 line-height:1.6;
 }
 
+/* HEADER */
+
 .header{
 position:sticky;
 top:0;
@@ -54,11 +56,15 @@ font-weight:bold;
 text-decoration:none;
 }
 
+/* CONTAINER */
+
 .container{
 max-width:1100px;
 margin:auto;
 padding:32px 20px 60px;
 }
+
+/* HERO */
 
 .hero{text-align:center;}
 
@@ -82,6 +88,8 @@ font-size:12px;
 color:#9fb3c8;
 margin-top:10px;
 }
+
+/* DASHBOARD */
 
 .dashboard{
 display:flex;
@@ -114,12 +122,16 @@ margin-top:4px;
 .stat-positive{color:#22c55e;}
 .stat-negative{color:#ef4444;}
 
+/* SECTIONS */
+
 .section{
 margin-top:70px;
 text-align:center;
 }
 
 .section h2{font-size:32px;}
+
+/* BOX */
 
 .box{
 background:#0f2a45;
@@ -129,6 +141,8 @@ margin:20px auto;
 max-width:820px;
 text-align:left;
 }
+
+/* FLOW */
 
 .flow{
 display:flex;
@@ -153,22 +167,40 @@ font-size:28px;
 color:#22c55e;
 }
 
-table{
-width:100%;
-border-collapse:collapse;
-margin-top:10px;
+/* RESULTS GRID */
+
+.results-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:10px;
+margin-top:15px;
 }
 
-th,td{
-padding:8px;
-border-bottom:1px solid #0c243c;
+.result-card{
+background:#102b46;
+padding:10px;
+border-radius:8px;
+display:flex;
+justify-content:space-between;
+font-size:14px;
 }
+
+.result-date{
+color:#9fb3c8;
+}
+
+.result-positive{color:#22c55e;}
+.result-negative{color:#ef4444;}
+
+/* CHART */
 
 .chart-container{
 max-width:900px;
 height:360px;
 margin:30px auto;
 }
+
+/* FORM */
 
 input{
 padding:14px;
@@ -186,6 +218,8 @@ border-radius:8px;
 font-weight:bold;
 cursor:pointer;
 }
+
+/* LOGOS */
 
 .logos{
 display:flex;
@@ -207,6 +241,8 @@ border-top:1px solid #1e3a5f;
 padding-top:14px;
 }
 
+/* DISCLOSURE */
+
 .disclosure{
 margin-top:80px;
 background:#132b45;
@@ -216,6 +252,8 @@ border-radius:10px;
 font-size:14px;
 color:#d6e2f0;
 }
+
+/* FOOTER */
 
 footer{
 margin-top:40px;
@@ -288,16 +326,9 @@ Past performance is not indicative of future results.
 
 <div class="box">
 
-<h3>Daily Results</h3>
+<h3>Recent Trades</h3>
 
-<table id="resultsTable">
-
-<tr>
-<th>Date</th>
-<th style="text-align:right">Result</th>
-</tr>
-
-</table>
+<div id="resultsGrid" class="results-grid"></div>
 
 </div>
 
@@ -354,13 +385,13 @@ Past performance is not indicative of future results.
 <p>• NinjaTrader configuration guide</p>
 <p>• Strategy installation walkthrough</p>
 
-<p>Most users complete setup in <strong>10–20 minutes</strong>.</p>
+<p>Most setups take between <strong>1-5 days</strong> depending on platform installation and brokerage configuration.</p>
 
 </div>
 
 </div>
 
-<!-- TIKTOK -->
+<!-- FROM TIKTOK -->
 
 <div class="section">
 
@@ -368,9 +399,15 @@ Past performance is not indicative of future results.
 
 <div class="box">
 
-<p>Thousands of traders follow the development of GustaBOT strategies on TikTok.</p>
+<p>
+Many visitors first discover GustaBOT strategies through TikTok where trades,
+system updates, and development progress are shared.
+</p>
 
-<p>Trades, system updates, and educational insights are shared regularly.</p>
+<p>
+After signing up, users receive instructions and walkthroughs
+to install the strategy on their NinjaTrader platform and begin testing.
+</p>
 
 </div>
 
@@ -415,17 +452,17 @@ Past performance is not indicative of future results.
 <br>
 
 <p><strong>Can I test on SIM first?</strong></p>
-<p>Yes. Many users test the strategy in simulation first.</p>
+<p>Yes. Many users test the system in simulation first.</p>
 
 <br>
 
 <p><strong>What capital is required?</strong></p>
-<p>Micro contracts typically require around $200. One NQ contract usually requires around $2,000.</p>
+<p>Micro contracts typically require about $200 while one NQ contract usually requires around $2,000.</p>
 
 <br>
 
 <p><strong>Does the strategy trade every day?</strong></p>
-<p>No. It trades only when market conditions match the system rules.</p>
+<p>No. It trades only when conditions match the strategy rules.</p>
 
 <br>
 
@@ -479,80 +516,47 @@ GustaBOT is not affiliated with NinjaTrader or Kinetick.
 <script>
 
 const trades=[
-{date:"2026-03-12",pnl:-375},
-{date:"2026-03-11",pnl:-430},
-{date:"2026-03-10",pnl:-155},
-{date:"2026-03-09",pnl:1615},
-{date:"2026-03-05",pnl:1750},
-{date:"2026-03-04",pnl:-800},
-{date:"2026-02-27",pnl:1515},
-{date:"2026-02-24",pnl:1040},
-{date:"2026-02-23",pnl:790},
-{date:"2026-02-20",pnl:2785},
-{date:"2026-02-19",pnl:1185},
-{date:"2026-02-18",pnl:1900},
-{date:"2026-02-17",pnl:-230}
+{date:"3/12",pnl:-375},
+{date:"3/11",pnl:-430},
+{date:"3/10",pnl:-155},
+{date:"3/09",pnl:1615},
+{date:"3/05",pnl:1750},
+{date:"3/04",pnl:-800},
+{date:"2/27",pnl:1515},
+{date:"2/24",pnl:1040},
+{date:"2/23",pnl:790},
+{date:"2/20",pnl:2785}
 ]
 
-const table=document.getElementById("resultsTable")
+const grid=document.getElementById("resultsGrid")
 
 trades.forEach(t=>{
-let row=table.insertRow()
-row.insertCell(0).innerText=t.date
-let pnl=row.insertCell(1)
+
+let card=document.createElement("div")
+card.className="result-card"
+
+let date=document.createElement("span")
+date.className="result-date"
+date.innerText=t.date
+
+let pnl=document.createElement("span")
 pnl.innerText="$"+t.pnl.toLocaleString()
-pnl.style.textAlign="right"
-pnl.style.color=t.pnl>=0?"#22c55e":"#ef4444"
+
+pnl.className = t.pnl>=0 ? "result-positive":"result-negative"
+
+card.appendChild(date)
+card.appendChild(pnl)
+
+grid.appendChild(card)
+
 })
 
-let net=0,wins=0,equity=[],peak=0,maxDD=0
+let equity=[],net=0
 
 trades.slice().reverse().forEach(t=>{
 net+=t.pnl
 equity.push(net)
-if(t.pnl>0)wins++
-if(net>peak)peak=net
-let dd=peak-net
-if(dd>maxDD)maxDD=dd
 })
-
-let avg=net/trades.length
-let winRate=(wins/trades.length)*100
-let lastTrade=trades[0].pnl
-
-function format(v){
-let span=document.createElement("span")
-span.className=v>=0?"stat-positive":"stat-negative"
-span.innerText="$"+Math.round(v).toLocaleString()
-return span
-}
-
-document.getElementById("lastTrade").appendChild(format(lastTrade))
-document.getElementById("netProfit").appendChild(format(net))
-document.getElementById("maxDD").appendChild(format(-maxDD))
-document.getElementById("avgTrade").appendChild(format(avg))
-document.getElementById("winRate").innerText=winRate.toFixed(1)+"%"
-
-let now=new Date()
-let thisMonth=now.getMonth()
-let lastMonth=thisMonth===0?11:thisMonth-1
-
-let thisMonthPnL=0,lastMonthPnL=0,thisWeekPnL=0
-
-trades.forEach(t=>{
-let d=new Date(t.date)
-if(d.getMonth()==thisMonth)thisMonthPnL+=t.pnl
-if(d.getMonth()==lastMonth)lastMonthPnL+=t.pnl
-
-let weekStart=new Date(now)
-weekStart.setDate(now.getDate()-now.getDay())
-
-if(d>=weekStart)thisWeekPnL+=t.pnl
-})
-
-document.getElementById("lastMonth").appendChild(format(lastMonthPnL))
-document.getElementById("thisMonth").appendChild(format(thisMonthPnL))
-document.getElementById("thisWeek").appendChild(format(thisWeekPnL))
 
 new Chart(document.getElementById("equityChart"),{
 type:"line",
@@ -565,7 +569,7 @@ borderWidth:3,
 tension:0.35
 }]
 },
-options:{plugins:{legend:{display:false}},responsive:true,maintainAspectRatio:false}
+options:{plugins:{legend:{display:false}},responsive:true}
 })
 
 </script>
