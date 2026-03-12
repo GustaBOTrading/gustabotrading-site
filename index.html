@@ -83,12 +83,6 @@ margin:30px auto;
 max-width:760px;
 }
 
-.micro-disclaimer{
-font-size:12px;
-color:#9fb3c8;
-margin-top:10px;
-}
-
 /* DASHBOARD */
 
 .dashboard{
@@ -119,7 +113,7 @@ font-weight:bold;
 margin-top:4px;
 }
 
-/* SECTIONS */
+/* SECTION */
 
 .section{
 margin-top:70px;
@@ -127,8 +121,6 @@ text-align:center;
 }
 
 .section h2{font-size:32px;}
-
-/* BOX */
 
 .box{
 background:#0f2a45;
@@ -147,7 +139,6 @@ justify-content:center;
 align-items:center;
 gap:14px;
 margin-top:30px;
-flex-wrap:wrap;
 }
 
 .flow-step{
@@ -164,7 +155,11 @@ font-size:26px;
 color:#22c55e;
 }
 
-/* RECENT TRADES */
+.mobile-arrow{
+display:none;
+}
+
+/* TRADES */
 
 .results-grid{
 display:grid;
@@ -223,9 +218,28 @@ flex-wrap:wrap;
 .ninja-logo{height:50px;}
 .kinetick-logo{height:70px;}
 
+/* DISCLOSURE */
+
+.disclosure{
+margin-top:80px;
+background:#132b45;
+padding:40px 24px;
+border-top:4px solid #22c55e;
+border-radius:10px;
+}
+
+/* FOOTER */
+
+footer{
+margin-top:40px;
+text-align:center;
+padding:30px 0;
+border-top:1px solid #1e3a5f;
+}
+
 /* MOBILE */
 
-@media (max-width:768px){
+@media(max-width:768px){
 
 .dashboard{
 grid-template-columns:repeat(2,1fr);
@@ -239,17 +253,21 @@ grid-template-columns:1fr;
 flex-direction:column;
 }
 
+.desktop-arrow{display:none;}
+.mobile-arrow{display:block;}
+
 .ninja-logo{height:38px;}
 .kinetick-logo{height:80px;}
 
 }
 
 </style>
+
 </head>
 
 <body>
 
-<!-- BLOCK 1 HEADER -->
+<!-- BLOCK 1 -->
 
 <div class="header">
 <div class="nav">
@@ -260,48 +278,41 @@ flex-direction:column;
 
 <div class="container">
 
-<!-- BLOCK 2 HERO -->
+<!-- BLOCK 2 -->
 
 <div class="hero">
-
 <h1>A Trading Strategy That Only Gets Paid If It Profits</h1>
-
-<p>Run the strategy on your own NinjaTrader account.<br>Test it free for 30 days.</p>
+<p>Run the strategy on your NinjaTrader account. Test it free for 30 days.</p>
 
 <div class="message-box">
-
-<p><strong>Step 1</strong> — Test the strategy free for 30 days</p>
-<p><strong>Step 2</strong> — If the strategy generates more than $3,000</p>
-<p><strong>Step 3</strong> — The profits pay the license</p>
+<p><strong>Step 1</strong> — Test free for 30 days</p>
+<p><strong>Step 2</strong> — If it generates $3,000+</p>
+<p><strong>Step 3</strong> — Profits pay the license</p>
 <p><strong>If it doesn't profit — you pay nothing.</strong></p>
-
+</div>
 </div>
 
-</div>
-
-<!-- BLOCK 3 STRATEGY PERFORMANCE -->
+<!-- BLOCK 3 -->
 
 <div class="section">
-
 <h2>Strategy Performance</h2>
 
 <div class="dashboard">
 
-<div class="stat-box"><div class="stat-label">Last Month</div><div class="stat-value" id="lastMonth"></div></div>
-<div class="stat-box"><div class="stat-label">This Month</div><div class="stat-value" id="thisMonth"></div></div>
-<div class="stat-box"><div class="stat-label">This Week</div><div class="stat-value" id="thisWeek"></div></div>
-<div class="stat-box"><div class="stat-label">Last Trade</div><div class="stat-value" id="lastTrade"></div></div>
+<div class="stat-box"><div class="stat-label">Last Month</div><div id="lastMonth" class="stat-value"></div></div>
+<div class="stat-box"><div class="stat-label">This Month</div><div id="thisMonth" class="stat-value"></div></div>
+<div class="stat-box"><div class="stat-label">This Week</div><div id="thisWeek" class="stat-value"></div></div>
+<div class="stat-box"><div class="stat-label">Last Trade</div><div id="lastTrade" class="stat-value"></div></div>
 
-<div class="stat-box"><div class="stat-label">Win Rate</div><div class="stat-value" id="winRate"></div></div>
-<div class="stat-box"><div class="stat-label">Avg Win</div><div class="stat-value" id="avgWin"></div></div>
-<div class="stat-box"><div class="stat-label">Avg Loss</div><div class="stat-value" id="avgLoss"></div></div>
-<div class="stat-box"><div class="stat-label">Max DD</div><div class="stat-value" id="maxDD"></div></div>
-
-</div>
+<div class="stat-box"><div class="stat-label">Win Rate</div><div id="winRate" class="stat-value"></div></div>
+<div class="stat-box"><div class="stat-label">Avg Win</div><div id="avgWin" class="stat-value"></div></div>
+<div class="stat-box"><div class="stat-label">Avg Loss</div><div id="avgLoss" class="stat-value"></div></div>
+<div class="stat-box"><div class="stat-label">Max DD</div><div id="maxDD" class="stat-value"></div></div>
 
 </div>
+</div>
 
-<!-- BLOCK 4 RECENT TRADES -->
+<!-- BLOCK 4 -->
 
 <div class="section">
 <div class="box">
@@ -310,7 +321,7 @@ flex-direction:column;
 </div>
 </div>
 
-<!-- BLOCK 5 EQUITY CURVE -->
+<!-- BLOCK 5 -->
 
 <div class="section">
 <div class="box">
@@ -321,7 +332,7 @@ flex-direction:column;
 </div>
 </div>
 
-<!-- BLOCK 6 HOW IT WORKS -->
+<!-- BLOCK 6 -->
 
 <div class="section">
 
@@ -330,16 +341,20 @@ flex-direction:column;
 <div class="flow">
 
 <div class="flow-step">Sign Up</div>
-<div class="arrow">→</div>
+<div class="arrow desktop-arrow">→</div>
+<div class="arrow mobile-arrow">↓</div>
 
 <div class="flow-step">Install Strategy</div>
-<div class="arrow">→</div>
+<div class="arrow desktop-arrow">→</div>
+<div class="arrow mobile-arrow">↓</div>
 
 <div class="flow-step">Test 30 Days</div>
-<div class="arrow">→</div>
+<div class="arrow desktop-arrow">→</div>
+<div class="arrow mobile-arrow">↓</div>
 
 <div class="flow-step">Evaluate Results</div>
-<div class="arrow">→</div>
+<div class="arrow desktop-arrow">→</div>
+<div class="arrow mobile-arrow">↓</div>
 
 <div class="flow-step">Pay Only If Profitable</div>
 
@@ -364,7 +379,7 @@ flex-direction:column;
 <div class="section">
 <h2>From TikTok To Live Trading</h2>
 <div class="box">
-<p>Many traders first discover GustaBOT strategies through TikTok where development and insights are shared.</p>
+<p>Many traders discover GustaBOT through TikTok where development and trading insights are shared.</p>
 </div>
 </div>
 
@@ -384,30 +399,25 @@ flex-direction:column;
 <h2>Frequently Asked Questions</h2>
 <div class="box">
 <p><strong>Do I need trading experience?</strong></p>
-<p>Basic NinjaTrader familiarity recommended.</p>
+<p>Basic familiarity with NinjaTrader is recommended.</p>
 </div>
 </div>
 
 <!-- BLOCK 11 -->
 
 <div class="section">
-
 <h2>Recommended Platforms</h2>
-
 <div class="logos">
 <img src="NinjaTrader_Wordmark_color_RGB.png" class="ninja-logo">
 <img src="Kinetick-FreeEOD-300x250.png" class="kinetick-logo">
 </div>
-
 </div>
 
 <!-- BLOCK 12 -->
 
-<div class="box">
+<div class="disclosure">
 <h2>Important Risk Disclosures</h2>
-<p>Futures trading contains substantial risk and is not suitable for every investor.</p>
-</div>
-
+<p>Futures trading involves substantial risk and is not suitable for every investor.</p>
 </div>
 
 <!-- BLOCK 13 -->
@@ -417,6 +427,8 @@ flex-direction:column;
 </footer>
 
 <script>
+
+/* TRADE DATA */
 
 const trades=[
 {date:"2026-03-12",pnl:-375},
@@ -431,31 +443,95 @@ const trades=[
 {date:"2026-02-20",pnl:2785}
 ]
 
+/* RECENT TRADES */
+
 const grid=document.getElementById("resultsGrid")
 
 trades.forEach(t=>{
 let card=document.createElement("div")
 card.className="result-card"
-card.innerHTML=`<span>${t.date}</span><span>$${t.pnl}</span>`
+card.innerHTML=`<span>${t.date}</span><span>$${t.pnl.toLocaleString()}</span>`
 grid.appendChild(card)
 })
 
-let net=0
+/* PERFORMANCE CALCULATIONS */
+
 let wins=0
 let losses=0
 let winTotal=0
 let lossTotal=0
+let equity=[]
+let net=0
+let peak=0
+let maxDD=0
 
-trades.forEach(t=>{
+trades.slice().reverse().forEach(t=>{
 net+=t.pnl
+equity.push(net)
+
 if(t.pnl>0){wins++;winTotal+=t.pnl}
 if(t.pnl<0){losses++;lossTotal+=t.pnl}
+
+if(net>peak)peak=net
+let dd=peak-net
+if(dd>maxDD)maxDD=dd
 })
 
+let avgWin=winTotal/wins
+let avgLoss=lossTotal/losses
+let winRate=(wins/trades.length*100).toFixed(1)
+
 document.getElementById("lastTrade").innerText="$"+trades[0].pnl
-document.getElementById("avgWin").innerText="$"+Math.round(winTotal/wins)
-document.getElementById("avgLoss").innerText="$"+Math.round(lossTotal/losses)
-document.getElementById("winRate").innerText=(wins/trades.length*100).toFixed(1)+"%"
+document.getElementById("avgWin").innerText="$"+Math.round(avgWin)
+document.getElementById("avgLoss").innerText="$"+Math.round(avgLoss)
+document.getElementById("maxDD").innerText="-$"+Math.round(maxDD)
+document.getElementById("winRate").innerText=winRate+"%"
+
+/* MONTH/WEEK */
+
+let now=new Date()
+
+let thisMonth=now.getMonth()
+let lastMonth=thisMonth===0?11:thisMonth-1
+
+let thisMonthPnL=0
+let lastMonthPnL=0
+let thisWeekPnL=0
+
+let weekStart=new Date()
+weekStart.setDate(now.getDate()-now.getDay())
+
+trades.forEach(t=>{
+let d=new Date(t.date)
+
+if(d.getMonth()===thisMonth)thisMonthPnL+=t.pnl
+if(d.getMonth()===lastMonth)lastMonthPnL+=t.pnl
+if(d>=weekStart)thisWeekPnL+=t.pnl
+})
+
+document.getElementById("thisMonth").innerText="$"+thisMonthPnL
+document.getElementById("lastMonth").innerText="$"+lastMonthPnL
+document.getElementById("thisWeek").innerText="$"+thisWeekPnL
+
+/* EQUITY CURVE */
+
+new Chart(document.getElementById("equityChart"),{
+type:"line",
+data:{
+labels:trades.map(t=>t.date).reverse(),
+datasets:[{
+data:equity,
+borderColor:"#22c55e",
+borderWidth:3,
+tension:0.35
+}]
+},
+options:{
+plugins:{legend:{display:false}},
+responsive:true,
+maintainAspectRatio:false
+}
+})
 
 </script>
 
