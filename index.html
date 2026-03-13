@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -217,6 +218,16 @@ height:360px;
 margin:30px auto;
 }
 
+/* LICENSE */
+
+.license-box{
+background:#0f2a45;
+padding:28px;
+border-radius:12px;
+max-width:900px;
+margin:auto;
+}
+
 /* FORM */
 
 input{
@@ -283,7 +294,6 @@ color:#9fb3c8;
 @media (max-width:768px){
 
 .dashboard{grid-template-columns:repeat(2,1fr);}
-
 .flow{flex-direction:column;}
 .desktop-arrow{display:none;}
 .mobile-arrow{display:block;}
@@ -294,9 +304,12 @@ color:#9fb3c8;
 }
 
 </style>
+
 </head>
 
 <body>
+
+<!-- HEADER -->
 
 <div class="header">
 <div class="nav">
@@ -307,6 +320,8 @@ color:#9fb3c8;
 
 <div class="container">
 
+<!-- HERO -->
+
 <div class="hero">
 
 <h1>A Trading Strategy That Only Gets Paid If It Profits</h1>
@@ -316,15 +331,16 @@ color:#9fb3c8;
 <div class="message-box">
 
 <p><strong>Step 1</strong> — Test the strategy free for 30 days</p>
-<p><strong>Step 2</strong> — If the strategy generates more than $3,000</p>
+<p><strong>Step 2</strong> — If the strategy generates profits</p>
 <p><strong>Step 3</strong> — The profits pay the license</p>
-<p><strong>If it doesn't profit — you pay nothing.</strong></p>
 
 </div>
 
 <p class="micro-disclaimer">
 Futures trading involves substantial risk and is not suitable for every investor.
-Past performance is not indicative of future results.
+You may lose part or all of your trading capital. Users enable strategies on their
+own trading accounts and assume full responsibility for all trading decisions.
+Past performance does not guarantee future results.
 </p>
 
 </div>
@@ -342,7 +358,6 @@ Past performance is not indicative of future results.
 <div class="strategy-card">
 
 <div class="strategy-title">EASORA</div>
-
 <div class="strategy-market">Instrument: NQ (Nasdaq Futures)</div>
 
 <p>
@@ -364,7 +379,6 @@ when predefined conditions are satisfied.
 <div class="strategy-card">
 
 <div class="strategy-title">STRUCTORA</div>
-
 <div class="strategy-market">Multi-Instrument Strategy Family</div>
 
 <p>
@@ -389,17 +403,53 @@ instrument while maintaining the same core trading model.
 
 <div class="dashboard">
 
-<div class="stat-box"><div class="stat-label">Last Month</div><div id="lastMonth" class="stat-value"></div></div>
-<div class="stat-box"><div class="stat-label">This Month</div><div id="thisMonth" class="stat-value"></div></div>
-<div class="stat-box"><div class="stat-label">This Week</div><div id="thisWeek" class="stat-value"></div></div>
-<div class="stat-box"><div class="stat-label">Last Trade</div><div id="lastTrade" class="stat-value"></div></div>
+<div class="stat-box">
+<div class="stat-label">Last Month</div>
+<div id="lastMonth" class="stat-value"></div>
+</div>
 
-<div class="stat-box"><div class="stat-label">Win Rate</div><div id="winRate" class="stat-value"></div></div>
-<div class="stat-box"><div class="stat-label">Avg Win</div><div id="avgWin" class="stat-value"></div></div>
-<div class="stat-box"><div class="stat-label">Avg Loss</div><div id="avgLoss" class="stat-value"></div></div>
-<div class="stat-box"><div class="stat-label">Max DD</div><div id="maxDD" class="stat-value"></div></div>
+<div class="stat-box">
+<div class="stat-label">This Month</div>
+<div id="thisMonth" class="stat-value"></div>
+</div>
+
+<div class="stat-box">
+<div class="stat-label">This Week</div>
+<div id="thisWeek" class="stat-value"></div>
+</div>
+
+<div class="stat-box">
+<div class="stat-label">Last Trading Day</div>
+<div id="lastTrade" class="stat-value"></div>
+</div>
+
+<div class="stat-box">
+<div class="stat-label">Profit Factor</div>
+<div id="profitFactor" class="stat-value"></div>
+</div>
+
+<div class="stat-box">
+<div class="stat-label">Win Rate</div>
+<div id="winRate" class="stat-value"></div>
+</div>
+
+<div class="stat-box">
+<div class="stat-label">Average Trade</div>
+<div id="avgTrade" class="stat-value"></div>
+</div>
+
+<div class="stat-box">
+<div class="stat-label">Max Drawdown</div>
+<div id="maxDD" class="stat-value"></div>
+</div>
 
 </div>
+
+<p class="micro-disclaimer">
+Metrics summarize historical strategy performance. Trading futures
+involves substantial risk of loss and users remain responsible for
+all trading decisions on their own accounts.
+</p>
 
 <h3>Equity Curve</h3>
 
@@ -413,7 +463,41 @@ instrument while maintaining the same core trading model.
 
 </div>
 
-<!-- REMAINING BLOCKS UNCHANGED -->
+
+<!-- LICENSE MODEL -->
+
+<div class="section">
+
+<h2>License Model</h2>
+
+<div class="license-box">
+
+<p><strong>First 30 days:</strong> Free evaluation period.</p>
+<p><strong>Days 31–60:</strong> $1,000 license.</p>
+<p><strong>Days 61–90:</strong> $2,000 license.</p>
+<p><strong>After 90 days:</strong> 20% of monthly profit with a minimum license fee of $2,000.</p>
+
+<br>
+
+<p><strong>Example Calculation</strong></p>
+
+<p>Monthly Profit: $8,000</p>
+<p>20% License: $1,600</p>
+<p>Minimum License Applies: $2,000</p>
+<p>Trader Keeps: $6,000</p>
+
+<p class="micro-disclaimer">
+Users enable the strategy on their own trading accounts and assume
+full responsibility for trading risk. Past performance does not
+guarantee future results.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- HOW IT WORKS -->
 
 <div class="section">
 
@@ -440,33 +524,65 @@ instrument while maintaining the same core trading model.
 <div class="flow-step">Pay Only If Profitable</div>
 
 </div>
+
 </div>
 
+
+<!-- EVERYTHING YOU NEED -->
+
 <div class="section">
+
 <h2>Everything You Need To Start</h2>
+
 <div class="box">
+
 <p>• Video tutorials</p>
 <p>• Step-by-step setup instructions</p>
 <p>• NinjaTrader configuration guide</p>
 <p>• Strategy installation walkthrough</p>
+
 <p>Most setups take between <strong>1–5 days</strong>.</p>
+
 </div>
+
 </div>
+
+
+<!-- TIKTOK -->
 
 <div class="section">
+
 <h2>From TikTok To Live Trading</h2>
+
 <div class="box">
-<p>Many traders discover GustaBOT strategies through TikTok where development and trading insights are shared.</p>
-</div>
+
+<p>
+Many traders discover GustaBOT strategies through TikTok where
+development and trading insights are shared.
+</p>
+
 </div>
 
+</div>
+
+
+<!-- SIGNUP -->
+
 <div class="section" id="signup">
+
 <h2>Start Your 30-Day Test</h2>
+
 <input type="text" placeholder="First Name">
 <input type="email" placeholder="Email Address">
+
 <br>
+
 <button>Start My Free 30-Day Test</button>
+
 </div>
+
+
+<!-- FAQ -->
 
 <div class="section">
 
@@ -505,11 +621,13 @@ instrument while maintaining the same core trading model.
 <br>
 
 <p><strong>Are profits guaranteed?</strong></p>
-<p>No. Futures trading involves substantial risk.</p>
+<p>No. Futures trading involves substantial risk of loss.</p>
 
 </div>
 
 </div>
+
+<!-- PLATFORMS -->
 
 <div class="section">
 
@@ -526,14 +644,35 @@ GustaBOT is not affiliated with NinjaTrader or Kinetick.
 
 </div>
 
+<!-- DISCLOSURE -->
+
 <div class="disclosure">
+
 <h2>Important Risk Disclosures</h2>
-<p>Futures trading contains substantial risk and is not suitable for every investor.</p>
-<p>Past performance is not indicative of future results.</p>
-<p>No representation is being made that any account will achieve profits similar to those shown.</p>
+
+<p>
+Futures trading contains substantial risk and is not suitable for every investor.
+You may lose part or all of your trading capital. You should carefully consider
+whether trading is suitable for you in light of your financial condition.
+</p>
+
+<p>
+Trading strategies are executed on user-controlled accounts. Users enable
+strategies on their own NinjaTrader platform and assume full responsibility
+for all trading decisions and outcomes.
+</p>
+
+<p>
+Past performance is not indicative of future results. No representation
+is being made that any account will or is likely to achieve profits
+similar to those shown.
+</p>
+
 </div>
 
 </div>
+
+<!-- FOOTER -->
 
 <footer>
 <p>© 2026 GustaBOT Trading Systems</p>
@@ -560,78 +699,137 @@ const trades = [
 {date:"2026-02-17", pnl:-230}
 ];
 
-/* METRICS CALCULATIONS */
+/* PERFORMANCE CALCULATIONS */
 
-let wins=0,losses=0,winTotal=0,lossTotal=0,equity=[],net=0,peak=0,maxDD=0
+let wins = 0
+let losses = 0
+let winTotal = 0
+let lossTotal = 0
+let equity = []
+let net = 0
+let peak = 0
+let maxDD = 0
 
-trades.slice().reverse().forEach(t=>{
-net+=t.pnl
+trades.slice().reverse().forEach(t => {
+
+net += t.pnl
 equity.push(net)
 
-if(t.pnl>0){wins++;winTotal+=t.pnl}
-if(t.pnl<0){losses++;lossTotal+=t.pnl}
-
-if(net>peak)peak=net
-let dd=peak-net
-if(dd>maxDD)maxDD=dd
-})
-
-let avgWin=winTotal/wins
-let avgLoss=lossTotal/losses
-let winRate=(wins/trades.length*100).toFixed(1)
-
-function setStat(id,val){
-let el=document.getElementById(id)
-el.innerText="$"+Math.round(val)
-el.className="stat-value "+(val>=0?"stat-positive":"stat-negative")
+if(t.pnl > 0){
+wins++
+winTotal += t.pnl
 }
 
-setStat("lastTrade",trades[0].pnl)
-setStat("avgWin",avgWin)
-setStat("avgLoss",avgLoss)
-setStat("maxDD",-maxDD)
+if(t.pnl < 0){
+losses++
+lossTotal += t.pnl
+}
 
-document.getElementById("winRate").innerText=winRate+"%"
+if(net > peak) peak = net
 
-let now=new Date()
-let thisMonth=now.getMonth()
-let lastMonth=thisMonth===0?11:thisMonth-1
+let dd = peak - net
+if(dd > maxDD) maxDD = dd
 
-let thisMonthPnL=0,lastMonthPnL=0,thisWeekPnL=0
-
-let weekStart=new Date()
-weekStart.setDate(now.getDate()-now.getDay())
-
-trades.forEach(t=>{
-let d=new Date(t.date)
-
-if(d.getMonth()===thisMonth)thisMonthPnL+=t.pnl
-if(d.getMonth()===lastMonth)lastMonthPnL+=t.pnl
-if(d>=weekStart)thisWeekPnL+=t.pnl
 })
 
-setStat("thisMonth",thisMonthPnL)
-setStat("lastMonth",lastMonthPnL)
-setStat("thisWeek",thisWeekPnL)
+let avgTrade = net / trades.length
+let winRate = (wins / trades.length) * 100
+
+/* DISPLAY FUNCTIONS */
+
+function setCurrency(id, val){
+
+let el = document.getElementById(id)
+
+if(!el) return
+
+el.innerText = "$" + Math.round(val).toLocaleString()
+
+if(val >= 0){
+el.classList.add("stat-positive")
+}else{
+el.classList.add("stat-negative")
+}
+
+}
+
+function setPercent(id,val){
+let el = document.getElementById(id)
+if(el) el.innerText = val.toFixed(1) + "%"
+}
+
+/* BASIC METRICS */
+
+setCurrency("avgTrade", avgTrade)
+setCurrency("maxDD", -maxDD)
+setCurrency("lastTrade", trades[0].pnl)
+
+setPercent("winRate", winRate)
+
+/* PROFIT FACTOR */
+
+let profitFactor = Math.abs(winTotal / lossTotal)
+document.getElementById("profitFactor").innerText = profitFactor.toFixed(2)
+
+/* MONTH / WEEK METRICS */
+
+let now = new Date()
+let thisMonth = now.getMonth()
+let lastMonth = thisMonth === 0 ? 11 : thisMonth - 1
+
+let thisMonthPnL = 0
+let lastMonthPnL = 0
+let thisWeekPnL = 0
+
+let weekStart = new Date()
+weekStart.setDate(now.getDate() - now.getDay())
+
+trades.forEach(t=>{
+
+let d = new Date(t.date)
+
+if(d.getMonth() === thisMonth)
+thisMonthPnL += t.pnl
+
+if(d.getMonth() === lastMonth)
+lastMonthPnL += t.pnl
+
+if(d >= weekStart)
+thisWeekPnL += t.pnl
+
+})
+
+setCurrency("thisMonth", thisMonthPnL)
+setCurrency("lastMonth", lastMonthPnL)
+setCurrency("thisWeek", thisWeekPnL)
 
 /* EQUITY CURVE */
 
 new Chart(document.getElementById("equityChart"),{
+
 type:"line",
+
 data:{
 labels:trades.map(t=>t.date).reverse(),
 datasets:[{
 data:equity,
 borderColor:"#22c55e",
 borderWidth:3,
-tension:0.35
+tension:0.35,
+fill:false
 }]
 },
+
 options:{
 plugins:{legend:{display:false}},
 responsive:true,
-maintainAspectRatio:false
+maintainAspectRatio:false,
+scales:{
+x:{ticks:{color:"#9fb3c8"}},
+y:{ticks:{color:"#9fb3c8"}}
 }
+}
+
 })
 
 </script>
