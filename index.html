@@ -627,7 +627,7 @@ development and trading insights are shared.
 
 </div>
 
-<!-- PLATFORMS -->
+<!-- PLATFORM -->
 
 <div class="section">
 
@@ -647,27 +647,11 @@ GustaBOT is not affiliated with NinjaTrader or Kinetick.
 <!-- DISCLOSURE -->
 
 <div class="disclosure">
-
 <h2>Important Risk Disclosures</h2>
-
-<p>
-Futures trading contains substantial risk and is not suitable for every investor.
-You may lose part or all of your trading capital. You should carefully consider
-whether trading is suitable for you in light of your financial condition.
-</p>
-
-<p>
-Trading strategies are executed on user-controlled accounts. Users enable
-strategies on their own NinjaTrader platform and assume full responsibility
-for all trading decisions and outcomes.
-</p>
-
-<p>
-Past performance is not indicative of future results. No representation
-is being made that any account will or is likely to achieve profits
-similar to those shown.
-</p>
-
+<p>Futures trading contains substantial risk and is not suitable for every investor.</p>
+<p>Past performance is not indicative of future results.</p>
+<p>No representation is being made that any account will achieve profits similar to those shown.</p>
+<p>You assume full responsibility for enabling any automated trading system on your account.</p>
 </div>
 
 </div>
@@ -697,111 +681,120 @@ const trades = [
 {date:"2026-02-19", pnl:1185},
 {date:"2026-02-18", pnl:1900},
 {date:"2026-02-17", pnl:-230}
-];
+]
 
-/* PERFORMANCE CALCULATIONS */
+/* RECENT RESULTS GRID REMOVED */
 
-let wins = 0
-let losses = 0
-let winTotal = 0
-let lossTotal = 0
-let equity = []
-let net = 0
-let peak = 0
-let maxDD = 0
+/* CALCULATIONS */
 
-trades.slice().reverse().forEach(t => {
+let wins=0
+let losses=0
+let winTotal=0
+let lossTotal=0
+let equity=[]
+let net=0
+let peak=0
+let maxDD=0
 
-net += t.pnl
+trades.slice().reverse().forEach(t=>{
+
+net+=t.pnl
 equity.push(net)
 
-if(t.pnl > 0){
+if(t.pnl>0){
 wins++
-winTotal += t.pnl
+winTotal+=t.pnl
 }
 
-if(t.pnl < 0){
+if(t.pnl<0){
 losses++
-lossTotal += t.pnl
+lossTotal+=t.pnl
 }
 
-if(net > peak) peak = net
+if(net>peak) peak=net
 
-let dd = peak - net
-if(dd > maxDD) maxDD = dd
+let dd=peak-net
+if(dd>maxDD) maxDD=dd
 
 })
 
+/* METRICS */
+
+let profitFactor = Math.abs(winTotal / lossTotal)
 let avgTrade = net / trades.length
-let winRate = (wins / trades.length) * 100
+let winRate = (wins / trades.length * 100)
 
 /* DISPLAY FUNCTIONS */
 
-function setCurrency(id, val){
+function setCurrency(id,val){
 
-let el = document.getElementById(id)
+let el=document.getElementById(id)
 
 if(!el) return
 
-el.innerText = "$" + Math.round(val).toLocaleString()
+el.innerText="$"+Math.round(val).toLocaleString()
 
-if(val >= 0){
-el.classList.add("stat-positive")
-}else{
-el.classList.add("stat-negative")
-}
+el.className="stat-value "+(val>=0?"stat-positive":"stat-negative")
 
 }
 
-function setPercent(id,val){
-let el = document.getElementById(id)
-if(el) el.innerText = val.toFixed(1) + "%"
-}
+/* LAST TRADING DAY */
 
-/* BASIC METRICS */
+setCurrency("lastTrade",trades[0].pnl)
 
-setCurrency("avgTrade", avgTrade)
-setCurrency("maxDD", -maxDD)
-setCurrency("lastTrade", trades[0].pnl)
+/* AVERAGE TRADE */
 
-setPercent("winRate", winRate)
+setCurrency("avgTrade",avgTrade)
+
+/* MAX DRAW DOWN */
+
+setCurrency("maxDD",-maxDD)
+
+/* WIN RATE */
+
+let winRateEl=document.getElementById("winRate")
+
+if(winRateEl)
+winRateEl.innerText=winRate.toFixed(1)+"%"
 
 /* PROFIT FACTOR */
 
-let profitFactor = Math.abs(winTotal / lossTotal)
-document.getElementById("profitFactor").innerText = profitFactor.toFixed(2)
+let pf=document.getElementById("profitFactor")
 
-/* MONTH / WEEK METRICS */
+if(pf)
+pf.innerText=profitFactor.toFixed(2)
 
-let now = new Date()
-let thisMonth = now.getMonth()
-let lastMonth = thisMonth === 0 ? 11 : thisMonth - 1
+/* MONTH / WEEK PERFORMANCE */
 
-let thisMonthPnL = 0
-let lastMonthPnL = 0
-let thisWeekPnL = 0
+let now=new Date()
+let thisMonth=now.getMonth()
+let lastMonth=thisMonth===0?11:thisMonth-1
 
-let weekStart = new Date()
-weekStart.setDate(now.getDate() - now.getDay())
+let thisMonthPnL=0
+let lastMonthPnL=0
+let thisWeekPnL=0
+
+let weekStart=new Date()
+weekStart.setDate(now.getDate()-now.getDay())
 
 trades.forEach(t=>{
 
-let d = new Date(t.date)
+let d=new Date(t.date)
 
-if(d.getMonth() === thisMonth)
-thisMonthPnL += t.pnl
+if(d.getMonth()===thisMonth)
+thisMonthPnL+=t.pnl
 
-if(d.getMonth() === lastMonth)
-lastMonthPnL += t.pnl
+if(d.getMonth()===lastMonth)
+lastMonthPnL+=t.pnl
 
-if(d >= weekStart)
-thisWeekPnL += t.pnl
+if(d>=weekStart)
+thisWeekPnL+=t.pnl
 
 })
 
-setCurrency("thisMonth", thisMonthPnL)
-setCurrency("lastMonth", lastMonthPnL)
-setCurrency("thisWeek", thisWeekPnL)
+setCurrency("thisMonth",thisMonthPnL)
+setCurrency("lastMonth",lastMonthPnL)
+setCurrency("thisWeek",thisWeekPnL)
 
 /* EQUITY CURVE */
 
@@ -811,23 +804,24 @@ type:"line",
 
 data:{
 labels:trades.map(t=>t.date).reverse(),
+
 datasets:[{
+
 data:equity,
+
 borderColor:"#22c55e",
 borderWidth:3,
 tension:0.35,
-fill:false
+pointRadius:5
+
 }]
+
 },
 
 options:{
 plugins:{legend:{display:false}},
 responsive:true,
-maintainAspectRatio:false,
-scales:{
-x:{ticks:{color:"#9fb3c8"}},
-y:{ticks:{color:"#9fb3c8"}}
-}
+maintainAspectRatio:false
 }
 
 })
