@@ -829,6 +829,113 @@ These examples are provided for educational purposes only. Past performance does
 
 </div>
 
+<!-- LICENSE MODEL -->
+
+<div class="section">
+
+<h2>Strategy License Model</h2>
+
+<p class="license-text">
+Traders can run Easora using a simple performance-based licensing model designed to align strategy success with trader success.
+</p>
+
+<div class="profit-breakdown">
+
+<div class="stat-card">
+<div class="stat-title">Strategy Profit</div>
+<div class="stat-value" id="grossProfit">$0</div>
+</div>
+
+<div class="stat-card">
+<div class="stat-title">Strategy Fee</div>
+<div class="stat-value" id="strategyFee">$0</div>
+</div>
+
+<div class="stat-card">
+<div class="stat-title">Trader Keeps</div>
+<div class="stat-value" id="netProfit">$0</div>
+</div>
+
+</div>
+
+<p class="micro-disclaimer">
+These figures illustrate how historical strategy performance translates into trader profit after licensing fees. Fee examples are calculated using historical strategy performance and the current fee structure.
+</p>
+
+<p class="micro-disclaimer">
+Past performance does not guarantee future results. Actual results may differ due to execution quality, broker commissions, slippage, market conditions, and trader behavior.
+</p>
+
+<p class="micro-disclaimer">
+Futures trading involves substantial risk and traders may lose all capital. Traders assume full responsibility for enabling strategies and managing their own risk.
+</p>
+
+</div>
+
+
+
+<!-- ACCOUNT GROWTH -->
+
+<div class="section">
+
+<h2>Account Growth Scenarios</h2>
+
+<p class="license-text">
+The examples below illustrate how strategy performance may scale when trading micro contracts versus mini contracts.
+</p>
+
+
+<!-- MICRO ROW -->
+
+<div class="growth-row">
+
+<div class="stat-card">
+<div class="stat-title">Micro Account Start</div>
+<div class="stat-value">$300</div>
+</div>
+
+<div class="stat-card">
+<div class="stat-title">Micro Account Now</div>
+<div class="stat-value" id="microGrowth">$0</div>
+</div>
+
+</div>
+
+
+<!-- MINI ROW -->
+
+<div class="growth-row">
+
+<div class="stat-card">
+<div class="stat-title">Mini Account Start</div>
+<div class="stat-value">$3,000</div>
+</div>
+
+<div class="stat-card">
+<div class="stat-title">Mini Account Now</div>
+<div class="stat-value" id="miniGrowth">$0</div>
+</div>
+
+</div>
+
+
+<p class="micro-disclaimer">
+Micro contract examples assume approximately 10% of the performance of the equivalent mini contract strategy.
+</p>
+
+<p class="micro-disclaimer">
+These figures are hypothetical illustrations derived from historical strategy performance data and do not represent guaranteed outcomes.
+</p>
+
+<p class="micro-disclaimer">
+Actual trading results will vary depending on account size, execution quality, broker costs, slippage, market volatility, and trader risk management.
+</p>
+
+<p class="micro-disclaimer">
+Futures trading contains substantial risk and traders may lose all invested capital.
+</p>
+
+</div>
 
 <!-- PLATFORMS -->
 
@@ -837,8 +944,11 @@ These examples are provided for educational purposes only. Past performance does
 <h2>Recommended Platforms</h2>
 
 <div class="logos">
+
 <img src="NinjaTrader_Wordmark_color_RGB.png" class="ninja-logo">
+
 <img src="Kinetick-FreeEOD-300x250.png" class="kinetick-logo">
+
 </div>
 
 <div class="platform-disclaimer">
@@ -846,10 +956,15 @@ GustaBOT is not affiliated with NinjaTrader or Kinetick.
 </div>
 
 <p class="micro-disclaimer">
-Automated trading strategies run locally on the trader's NinjaTrader installation. Traders assume full responsibility for enabling or disabling strategies and managing risk in their accounts.
+Automated strategies run locally on the trader's NinjaTrader installation. Traders assume full responsibility for enabling or disabling strategies and managing risk in their accounts.
+</p>
+
+<p class="micro-disclaimer">
+Strategy automation does not eliminate trading risk. Futures trading may result in financial loss.
 </p>
 
 </div>
+
 
 
 <!-- DISCLOSURE -->
@@ -868,22 +983,29 @@ Automated trading strategies run locally on the trader's NinjaTrader installatio
 
 <p>No representation is being made that any account will achieve profits similar to those displayed.</p>
 
+<p>All strategy statistics displayed are derived from historical testing or recorded results and should not be interpreted as guarantees of performance.</p>
+
 </div>
 
 </div>
+
 
 
 <!-- FOOTER -->
 
 <footer>
+
 <p>© 2026 GustaBOT Trading Systems</p>
+
 <p>Automated trading strategies involve risk and may result in financial loss.</p>
+
 </footer>
+
 
 
 <script>
 
-/* NINJATRADER METRICS */
+/* EASORA PERFORMANCE DATA */
 
 const performance = {
 
@@ -901,6 +1023,8 @@ totalProfit: 10260
 
 }
 
+
+
 /* DISPLAY FUNCTION */
 
 function setCurrency(id,val){
@@ -914,6 +1038,8 @@ el.innerText="$"+Math.round(val).toLocaleString()
 el.className="stat-value "+(val>=0?"stat-positive":"stat-negative")
 
 }
+
+
 
 /* METRICS */
 
@@ -932,6 +1058,7 @@ let pf=document.getElementById("profitFactor")
 if(pf) pf.innerText=performance.profitFactor
 
 
+
 /* PROFIT BREAKDOWN */
 
 let grossProfit = performance.totalProfit
@@ -943,7 +1070,8 @@ setCurrency("strategyFee",fee)
 setCurrency("netProfit",traderKeeps)
 
 
-/* ACCOUNT OUTCOMES */
+
+/* ACCOUNT GROWTH */
 
 let microStart = 300
 let miniStart = 3000
@@ -953,6 +1081,7 @@ let miniGrowth = miniStart + performance.totalProfit
 
 setCurrency("microGrowth",microGrowth)
 setCurrency("miniGrowth",miniGrowth)
+
 
 
 /* EQUITY CURVE */
