@@ -142,6 +142,47 @@ max-width:900px;
 text-align:left;
 }
 
+.strategy-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:20px;
+margin-top:20px;
+}
+
+.strategy-card{
+background:#0d243d;
+border:1px solid #1e3a5f;
+padding:22px;
+border-radius:12px;
+transition:transform .2s ease;
+}
+
+.strategy-card:hover{
+transform:translateY(-3px);
+}
+
+.strategy-title{
+font-size:20px;
+font-weight:bold;
+margin-bottom:10px;
+color:#22c55e;
+}
+
+.strategy-market{
+font-size:13px;
+color:#9fb3c8;
+margin-bottom:12px;
+}
+
+.strategy-list{
+margin-top:12px;
+padding-left:18px;
+}
+
+.strategy-list li{
+margin-bottom:6px;
+}
+  
 /* FLOW */
 
 .flow{
@@ -272,6 +313,7 @@ color:#9fb3c8;
 }
 
 </style>
+  
 </head>
 
 <body>
@@ -317,43 +359,50 @@ Past performance is not indicative of future results.
 
 <h2>Strategy Performance</h2>
 
-<div class="box">
+<h3>Strategy Description</h3>
 
-<h3>EASORA — NQ Strategy</h3>
+<div class="strategy-grid">
 
-<p>
-EASORA is an automated intraday futures strategy designed specifically for
-<strong>NQ (Nasdaq Futures)</strong>. The system monitors market activity
-during defined trading windows and executes trades automatically when
-predefined conditions are met.
-</p>
+<div class="strategy-card">
+
+<div class="strategy-title">EASORA</div>
+<div class="strategy-market">Instrument: NQ (Nasdaq Futures)</div>
 
 <p>
-The strategy focuses on structured execution, defined risk parameters,
-and consistent intraday opportunities within the NQ futures market.
+EASORA is an automated intraday futures strategy designed specifically
+for the Nasdaq futures market. The system evaluates price behavior
+during defined trading periods and executes trades automatically
+when predefined conditions are satisfied.
 </p>
 
-<br>
+<ul class="strategy-list">
+<li>Designed for NQ futures</li>
+<li>Automated trade execution</li>
+<li>Intraday opportunity focus</li>
+<li>Structured risk management</li>
+</ul>
 
-<h3>STRUCTORA — Multi-Instrument Strategy Family</h3>
+</div>
+
+
+<div class="strategy-card">
+
+<div class="strategy-title">STRUCTORA</div>
+<div class="strategy-market">Multi-Instrument Strategy Family</div>
 
 <p>
-STRUCTORA is a family of automated structural futures strategies designed
-for multiple instruments. Each version is configured for a specific market
-while maintaining the same core trading framework.
+STRUCTORA is a structural trading framework deployed across several
+futures markets. Each strategy version is configured for a specific
+instrument while maintaining the same core trading model.
 </p>
 
-<p>
-Available STRUCTORA instruments include:
-</p>
-
-<p>
-• STRUCTORA — MNQ<br>
-• STRUCTORA — MES<br>
-• STRUCTORA — MGC<br>
-• STRUCTORA — SIL<br>
-• STRUCTORA — MCL
-</p>
+<ul class="strategy-list">
+<li>STRUCTORA — MNQ</li>
+<li>STRUCTORA — MES</li>
+<li>STRUCTORA — MGC</li>
+<li>STRUCTORA — SIL</li>
+<li>STRUCTORA — MCL</li>
+</ul>
 
 </div>
 
