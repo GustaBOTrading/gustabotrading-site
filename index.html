@@ -702,6 +702,134 @@ These examples are hypothetical illustrations derived from historical performanc
 
 </div>
 
+<!-- LICENSE MODEL -->
+
+<div class="section">
+
+<h2>License Model</h2>
+
+<div class="box">
+
+<p>
+The strategy license is performance-based. The first 30 days are free so traders can evaluate results using their own NinjaTrader account.
+</p>
+
+<p>
+After the initial testing period, the license fee becomes performance-based and equals <strong>20% of strategy profit with a $2,000 monthly minimum</strong>.
+</p>
+
+<p class="micro-disclaimer">
+All examples below illustrate how historical strategy performance would translate under the license model. These examples are for educational purposes only and do not represent guaranteed results.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- STRATEGY PROFIT BREAKDOWN -->
+
+<div class="section">
+
+<h2>Strategy Profit Breakdown</h2>
+
+<div class="dashboard">
+
+<div class="stat-box">
+<div class="stat-label">Strategy Profit</div>
+<div id="grossProfit" class="stat-value"></div>
+</div>
+
+<div class="stat-box">
+<div class="stat-label">Strategy Fee</div>
+<div id="strategyFee" class="stat-value"></div>
+</div>
+
+<div class="stat-box">
+<div class="stat-label">Trader Keeps</div>
+<div id="netProfit" class="stat-value"></div>
+</div>
+
+</div>
+
+<p class="micro-disclaimer">
+These figures illustrate how historical strategy performance translates into trader profit after licensing fees.
+Actual trader results may differ due to execution, broker costs, slippage, and market conditions.
+</p>
+
+<p class="micro-disclaimer">
+Past performance does not guarantee future results. Futures trading involves substantial risk and traders may lose all invested capital.
+</p>
+
+</div>
+
+
+<!-- ACCOUNT OUTCOMES -->
+
+<div class="section">
+
+<h2>Example Account Outcomes</h2>
+
+<div class="box">
+
+<h3>Micro Account Example</h3>
+
+<div class="dashboard">
+
+<div class="stat-box">
+<div class="stat-label">Starting Capital</div>
+<div class="stat-value">$300</div>
+</div>
+
+<div class="stat-box">
+<div class="stat-label">Account After Strategy Performance</div>
+<div id="microGrowth" class="stat-value"></div>
+</div>
+
+</div>
+
+<p class="micro-disclaimer">
+This example scales historical strategy performance to a single micro futures contract. Micro contracts typically represent approximately 10% of the performance of the equivalent mini contract strategy.
+</p>
+
+<p class="micro-disclaimer">
+This illustration is hypothetical and derived from historical data. Actual trading outcomes may vary significantly and traders may lose all capital.
+</p>
+
+</div>
+
+
+<div class="box">
+
+<h3>Mini Account Example</h3>
+
+<div class="dashboard">
+
+<div class="stat-box">
+<div class="stat-label">Starting Capital</div>
+<div class="stat-value">$3,000</div>
+</div>
+
+<div class="stat-box">
+<div class="stat-label">Account After Strategy Performance</div>
+<div id="miniGrowth" class="stat-value"></div>
+</div>
+
+</div>
+
+<p class="micro-disclaimer">
+This example illustrates how the same historical strategy performance would appear when trading one mini futures contract.
+</p>
+
+<p class="micro-disclaimer">
+These examples are provided for educational purposes only. Past performance does not guarantee future results and futures trading involves substantial financial risk.
+</p>
+
+</div>
+
+</div>
+
+
 <!-- PLATFORMS -->
 
 <div class="section">
@@ -718,10 +846,11 @@ GustaBOT is not affiliated with NinjaTrader or Kinetick.
 </div>
 
 <p class="micro-disclaimer">
-Automated trading strategies run on your personal NinjaTrader installation. You are solely responsible for enabling, disabling, and monitoring strategies running in your account.
+Automated trading strategies run locally on the trader's NinjaTrader installation. Traders assume full responsibility for enabling or disabling strategies and managing risk in their accounts.
 </p>
 
 </div>
+
 
 <!-- DISCLOSURE -->
 
@@ -731,17 +860,18 @@ Automated trading strategies run on your personal NinjaTrader installation. You 
 
 <p>Futures trading contains substantial risk and is not suitable for every investor.</p>
 
-<p>You may lose all capital deposited in your trading account.</p>
+<p>Traders may lose all capital in their trading accounts.</p>
 
 <p>Automated strategies operate on the trader's own platform and the trader assumes full responsibility for enabling or disabling strategies.</p>
 
 <p>Past performance does not guarantee future results.</p>
 
-<p>No representation is being made that any account will achieve profits similar to those shown.</p>
+<p>No representation is being made that any account will achieve profits similar to those displayed.</p>
 
 </div>
 
 </div>
+
 
 <!-- FOOTER -->
 
@@ -750,11 +880,10 @@ Automated trading strategies run on your personal NinjaTrader installation. You 
 <p>Automated trading strategies involve risk and may result in financial loss.</p>
 </footer>
 
+
 <script>
 
-/* =====================================
-   NINJATRADER PERFORMANCE METRICS
-===================================== */
+/* NINJATRADER METRICS */
 
 const performance = {
 
@@ -786,7 +915,7 @@ el.className="stat-value "+(val>=0?"stat-positive":"stat-negative")
 
 }
 
-/* METRICS DISPLAY */
+/* METRICS */
 
 setCurrency("lastMonth",performance.lastMonth)
 setCurrency("thisMonth",performance.thisMonth)
@@ -802,6 +931,7 @@ if(wr) wr.innerText=performance.winRate+"%"
 let pf=document.getElementById("profitFactor")
 if(pf) pf.innerText=performance.profitFactor
 
+
 /* PROFIT BREAKDOWN */
 
 let grossProfit = performance.totalProfit
@@ -812,7 +942,8 @@ setCurrency("grossProfit",grossProfit)
 setCurrency("strategyFee",fee)
 setCurrency("netProfit",traderKeeps)
 
-/* ACCOUNT GROWTH */
+
+/* ACCOUNT OUTCOMES */
 
 let microStart = 300
 let miniStart = 3000
@@ -822,6 +953,7 @@ let miniGrowth = miniStart + performance.totalProfit
 
 setCurrency("microGrowth",microGrowth)
 setCurrency("miniGrowth",miniGrowth)
+
 
 /* EQUITY CURVE */
 
@@ -867,15 +999,12 @@ data:{
 labels:equityDates,
 
 datasets:[{
-
 data:equityData,
 borderColor:"#22c55e",
 borderWidth:3,
 tension:0.35,
 pointRadius:5
-
 }]
-
 },
 
 options:{
