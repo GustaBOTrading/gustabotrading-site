@@ -642,17 +642,103 @@ development and trading insights are shared.
 GustaBOT is not affiliated with NinjaTrader or Kinetick.
 </div>
 
+<p class="micro-disclaimer">
+Trading futures involves substantial risk and may result in financial loss. Traders may lose all capital. Automated strategies operate on your personal platform and you assume full responsibility for enabling or disabling them.
+</p>
+
+</div>
+
+<!-- ACCOUNT GROWTH -->
+
+<div class="section">
+
+<h2>Account Growth Scenarios</h2>
+
+<div class="dashboard">
+
+<div class="stat-box">
+<div class="stat-label">Micro Account Start</div>
+<div class="stat-value">$300</div>
+</div>
+
+<div class="stat-box">
+<div class="stat-label">Micro Account Now</div>
+<div id="microGrowth" class="stat-value"></div>
+</div>
+
+<div class="stat-box">
+<div class="stat-label">Mini Account Start</div>
+<div class="stat-value">$3,000</div>
+</div>
+
+<div class="stat-box">
+<div class="stat-label">Mini Account Now</div>
+<div id="miniGrowth" class="stat-value"></div>
+</div>
+
+</div>
+
+<p class="micro-disclaimer">
+Account growth examples are derived from historical strategy performance. These figures illustrate how performance would scale between micro and mini contract sizing. Actual results will vary and future performance is not guaranteed.
+</p>
+
+<p class="micro-disclaimer">
+Futures trading contains substantial risk. Traders are responsible for managing risk and may lose all invested capital.
+</p>
+
+</div>
+
+<!-- PROFIT BREAKDOWN -->
+
+<div class="section">
+
+<h2>Strategy Profit Breakdown</h2>
+
+<div class="dashboard">
+
+<div class="stat-box">
+<div class="stat-label">Strategy Profit</div>
+<div id="grossProfit" class="stat-value"></div>
+</div>
+
+<div class="stat-box">
+<div class="stat-label">Strategy Fee</div>
+<div id="strategyFee" class="stat-value"></div>
+</div>
+
+<div class="stat-box">
+<div class="stat-label">Trader Keeps</div>
+<div id="netProfit" class="stat-value"></div>
+</div>
+
+</div>
+
+<p class="micro-disclaimer">
+Profit examples are based on historical strategy performance and hypothetical fee calculations. Actual trader results may differ depending on execution, broker costs, slippage, and market conditions.
+</p>
+
+<p class="micro-disclaimer">
+Past performance does not guarantee future results. All trading activity involves risk and traders may lose all capital.
+</p>
+
 </div>
 
 <!-- DISCLOSURE -->
 
 <div class="disclosure">
+
 <h2>Important Risk Disclosures</h2>
+
 <p>Futures trading contains substantial risk and is not suitable for every investor.</p>
-<p>You can lose all capital in your trading account.</p>
+
+<p>Traders may lose all capital in their trading account.</p>
+
+<p>Automated trading strategies run on the trader's own platform and the trader assumes full responsibility for enabling or disabling strategies.</p>
+
 <p>Past performance does not guarantee future results.</p>
-<p>All strategies run on your own NinjaTrader installation and you assume full responsibility for enabling automated trading.</p>
+
 <p>No representation is being made that any account will achieve profits similar to those displayed.</p>
+
 </div>
 
 </div>
@@ -666,28 +752,27 @@ GustaBOT is not affiliated with NinjaTrader or Kinetick.
 
 <script>
 
-/* =====================================================
+/* =====================================
    NINJATRADER PERFORMANCE METRICS
-   Update these numbers daily from your NT report
-   ===================================================== */
+===================================== */
 
 const performance = {
 
 lastMonth: 8985,
 thisMonth: 1605,
 thisWeek: 655,
-lastDay: -375,
+lastDay: -330,
 
-profitFactor: 3.82,
-winRate: 47.17,
-avgTrade: 215.65,
-maxDD: -1549.50
+profitFactor: 5.42,
+winRate: 57.14,
+avgTrade: 732.86,
+maxDD: -1290,
+
+totalProfit: 10260
 
 }
 
-/* =====================================================
-   DISPLAY FUNCTIONS
-   ===================================================== */
+/* DISPLAY FUNCTION */
 
 function setCurrency(id,val){
 
@@ -701,9 +786,7 @@ el.className="stat-value "+(val>=0?"stat-positive":"stat-negative")
 
 }
 
-/* =====================================================
-   DISPLAY METRICS
-   ===================================================== */
+/* DISPLAY METRICS */
 
 setCurrency("lastMonth",performance.lastMonth)
 setCurrency("thisMonth",performance.thisMonth)
@@ -719,10 +802,30 @@ if(wr) wr.innerText=performance.winRate+"%"
 let pf=document.getElementById("profitFactor")
 if(pf) pf.innerText=performance.profitFactor
 
-/* =====================================================
-   EQUITY CURVE
-   (manually maintained growth curve)
-   ===================================================== */
+/* PROFIT BREAKDOWN */
+
+let grossProfit = performance.totalProfit
+
+let fee = Math.max(grossProfit * 0.20, 2000)
+
+let traderKeeps = grossProfit - fee
+
+setCurrency("grossProfit",grossProfit)
+setCurrency("strategyFee",fee)
+setCurrency("netProfit",traderKeeps)
+
+/* ACCOUNT GROWTH */
+
+let microStart = 300
+let miniStart = 3000
+
+let microGrowth = microStart + (performance.totalProfit * 0.10)
+let miniGrowth = miniStart + performance.totalProfit
+
+setCurrency("microGrowth",microGrowth)
+setCurrency("miniGrowth",miniGrowth)
+
+/* EQUITY CURVE */
 
 const equityData = [
 0,
@@ -737,7 +840,8 @@ const equityData = [
 11500,
 11300,
 10900,
-10600
+10600,
+10260
 ]
 
 const equityDates = [
@@ -753,7 +857,8 @@ const equityDates = [
 "2026-03-09",
 "2026-03-10",
 "2026-03-11",
-"2026-03-12"
+"2026-03-12",
+"2026-03-13"
 ]
 
 new Chart(document.getElementById("equityChart"),{
