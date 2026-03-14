@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
@@ -55,6 +54,11 @@ padding:10px 18px;
 border-radius:6px;
 font-weight:bold;
 text-decoration:none;
+transition:0.2s;
+}
+
+.nav-button:hover{
+transform:translateY(-2px);
 }
 
 /* CONTAINER */
@@ -69,12 +73,11 @@ padding:32px 20px 60px;
 
 .hero{
 text-align:center;
-padding-top:40px;
+padding-top:20px;
 }
 
 .hero h1{
-font-size:44px;
-font-weight:700;
+font-size:42px;
 margin-bottom:10px;
 }
 
@@ -95,6 +98,60 @@ max-width:760px;
 font-size:12px;
 color:#9fb3c8;
 margin-top:10px;
+}
+
+/* TRUST STRIP */
+
+.trust-strip{
+max-width:900px;
+margin:30px auto;
+text-align:center;
+font-size:14px;
+color:#9fb3c8;
+}
+
+/* STRATEGIES */
+
+.strategy-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:24px;
+margin-top:30px;
+}
+
+.strategy-card{
+background:#0d243d;
+border:1px solid #1e3a5f;
+padding:26px;
+border-radius:12px;
+transition:0.25s;
+}
+
+.strategy-card:hover{
+transform:translateY(-5px);
+border-color:#22c55e;
+}
+
+.strategy-title{
+font-size:20px;
+font-weight:bold;
+color:#22c55e;
+margin-bottom:8px;
+}
+
+.strategy-market{
+font-size:13px;
+color:#9fb3c8;
+margin-bottom:14px;
+}
+
+.strategy-list{
+padding-left:20px;
+margin:0;
+}
+
+.strategy-list li{
+margin-bottom:6px;
 }
 
 /* METRICS */
@@ -128,15 +185,25 @@ margin-top:4px;
 .positive{color:#22c55e;}
 .negative{color:#ef4444;}
 
+/* HISTORICAL DISCLAIMER */
+
+.data-disclaimer{
+font-size:12px;
+color:#9fb3c8;
+max-width:760px;
+margin:10px auto 0 auto;
+text-align:center;
+}
+
 /* SECTION */
 
 .section{
-margin-top:100px;
+margin-top:90px;
 text-align:center;
 }
 
 .section h2{
-font-size:32px;
+font-size:30px;
 margin-bottom:20px;
 }
 
@@ -157,62 +224,6 @@ text-align:left;
 max-width:900px;
 height:380px;
 margin:30px auto;
-}
-
-/* TRUST */
-
-.trust-list{
-text-align:left;
-max-width:700px;
-margin:auto;
-padding-left:20px;
-}
-
-.trust-list li{
-margin-bottom:10px;
-}
-
-/* STRATEGIES */
-
-.strategy-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-gap:24px;
-margin-top:30px;
-}
-
-.strategy-card{
-background:#0d243d;
-border:1px solid #1e3a5f;
-padding:26px;
-border-radius:12px;
-transition:0.2s;
-}
-
-.strategy-card:hover{
-transform:translateY(-5px);
-}
-
-.strategy-title{
-font-size:20px;
-font-weight:bold;
-color:#22c55e;
-margin-bottom:8px;
-}
-
-.strategy-market{
-font-size:13px;
-color:#9fb3c8;
-margin-bottom:14px;
-}
-
-.strategy-list{
-padding-left:20px;
-margin:0;
-}
-
-.strategy-list li{
-margin-bottom:8px;
 }
 
 /* FLOW */
@@ -260,6 +271,11 @@ border:none;
 border-radius:8px;
 font-weight:bold;
 cursor:pointer;
+transition:0.2s;
+}
+
+button:hover{
+transform:translateY(-2px);
 }
 
 /* FAQ */
@@ -334,12 +350,9 @@ margin-top:40px;
 
 <div class="hero">
 
-<h1>Automated Futures Trading That Only Gets Paid If It Profits</h1>
+<h1>A Trading Strategy That Only Gets Paid If It Profits</h1>
 
-<p>
-Run the strategy on your NinjaTrader account.<br>
-You control the account. The strategy executes the trades.
-</p>
+<p>Run the strategy on your NinjaTrader account.<br>Test it free for 30 days.</p>
 
 <div class="message-box">
 
@@ -352,6 +365,51 @@ You control the account. The strategy executes the trades.
 <p class="micro-disclaimer">
 Futures trading involves substantial risk. Past performance does not guarantee future results.
 </p>
+
+</div>
+
+<div class="trust-strip">
+Strategies execute locally on your NinjaTrader platform. You maintain full control of your account at all times.
+</div>
+
+<!-- STRATEGIES -->
+
+<div class="section">
+
+<h2>Strategies</h2>
+
+<div class="strategy-grid">
+
+<div class="strategy-card">
+
+<div class="strategy-title">EASORA</div>
+<div class="strategy-market">Instrument: NQ Futures</div>
+
+<ul class="strategy-list">
+<li>Designed for Nasdaq futures</li>
+<li>Automated trade execution</li>
+<li>Intraday opportunity focus</li>
+<li>Structured risk management</li>
+</ul>
+
+</div>
+
+<div class="strategy-card">
+
+<div class="strategy-title">STRUCTORA</div>
+<div class="strategy-market">Multi-Instrument Strategy Family</div>
+
+<ul class="strategy-list">
+<li>STRUCTORA — MNQ</li>
+<li>STRUCTORA — MES</li>
+<li>STRUCTORA — MGC</li>
+<li>STRUCTORA — SIL</li>
+<li>STRUCTORA — MCL</li>
+</ul>
+
+</div>
+
+</div>
 
 </div>
 
@@ -381,6 +439,10 @@ Futures trading involves substantial risk. Past performance does not guarantee f
 
 </div>
 
+<p class="data-disclaimer">
+Performance values reflect historical strategy results. Past performance does not guarantee future results.
+</p>
+
 <!-- EQUITY -->
 
 <div class="section">
@@ -391,115 +453,13 @@ Futures trading involves substantial risk. Past performance does not guarantee f
 <canvas id="equityChart"></canvas>
 </div>
 
-</div>
-
-<!-- TRUST -->
-
-<div class="section">
-
-<h2>Why Traders Use GustaBOT</h2>
-
-<div class="card">
-
-<ul class="trust-list">
-
-<li>Fully automated futures trading strategies</li>
-
-<li>Runs locally on your NinjaTrader platform</li>
-
-<li>Built for controlled intraday opportunities</li>
-
-<li>Strict predefined risk management</li>
-
-<li>No signal groups, no manual trading required</li>
-
-</ul>
+<p class="data-disclaimer">
+The equity curve represents historical strategy performance and is provided for illustration. Future results may differ.
+</p>
 
 </div>
 
-</div>
-
-<!-- STRATEGIES -->
-
-<div class="section">
-
-<h2>Strategies</h2>
-
-<div class="strategy-grid">
-
-<div class="strategy-card">
-
-<div class="strategy-title">EASORA</div>
-
-<div class="strategy-market">Primary Nasdaq Strategy</div>
-
-<ul class="strategy-list">
-
-<li>Built for NQ futures</li>
-
-<li>Targets structured intraday moves</li>
-
-<li>Fully automated execution</li>
-
-<li>Strict predefined risk management</li>
-
-</ul>
-
-</div>
-
-<div class="strategy-card">
-
-<div class="strategy-title">STRUCTORA</div>
-
-<div class="strategy-market">Multi-Market Strategy Family</div>
-
-<ul class="strategy-list">
-
-<li>MNQ — Nasdaq Micro</li>
-
-<li>MES — S&P Micro</li>
-
-<li>MGC — Gold Micro</li>
-
-<li>SIL — Silver</li>
-
-<li>MCL — Oil Micro</li>
-
-</ul>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- ACCOUNT GROWTH -->
-
-<div class="section">
-
-<h2>Account Growth Example</h2>
-
-<div class="card">
-
-<p><strong>Micro Account</strong></p>
-
-<p>Start: $300</p>
-
-<p>Now: $1,326</p>
-
-<br>
-
-<p><strong>Mini Account</strong></p>
-
-<p>Start: $3,000</p>
-
-<p>Now: $13,260</p>
-
-</div>
-
-</div>
-
-<!-- PROFIT -->
+<!-- PROFIT BREAKDOWN -->
 
 <div class="section">
 
@@ -508,10 +468,53 @@ Futures trading involves substantial risk. Past performance does not guarantee f
 <div class="card">
 
 <p><strong>Total Strategy Profit:</strong> $10,260</p>
-
 <p><strong>Strategy Fee (20%):</strong> $2,052</p>
-
 <p><strong>Trader Keeps:</strong> $8,208</p>
+
+</div>
+
+<p class="data-disclaimer">
+Profit breakdown examples are based on historical performance data and are not a guarantee of future profitability.
+</p>
+
+</div>
+
+<!-- ACCOUNT GROWTH -->
+
+<div class="section">
+
+<h2>Account Growth Scenarios</h2>
+
+<div class="card">
+
+<p><strong>Micro Account Start:</strong> $300</p>
+<p><strong>Micro Account Now:</strong> $1,326</p>
+
+<br>
+
+<p><strong>Mini Account Start:</strong> $3,000</p>
+<p><strong>Mini Account Now:</strong> $13,260</p>
+
+</div>
+
+<p class="data-disclaimer">
+Account growth examples are hypothetical scenarios based on historical strategy performance and are not guaranteed outcomes.
+</p>
+
+</div>
+
+<!-- LICENSE -->
+
+<div class="section">
+
+<h2>License Model</h2>
+
+<div class="card">
+
+<p><strong>First 30 days:</strong> Free evaluation</p>
+<p><strong>Days 31-60:</strong> $1,000 license</p>
+<p><strong>Days 61-90:</strong> $2,000 license</p>
+<p><strong>After 90 days:</strong> 20% of monthly profit ($2,000 minimum)</p>
 
 </div>
 
@@ -526,46 +529,14 @@ Futures trading involves substantial risk. Past performance does not guarantee f
 <div class="flow">
 
 <div class="flow-step">Sign Up</div>
-
 <div class="arrow">→</div>
-
 <div class="flow-step">Install Strategy</div>
-
 <div class="arrow">→</div>
-
 <div class="flow-step">Test 30 Days</div>
-
 <div class="arrow">→</div>
-
 <div class="flow-step">Evaluate Results</div>
-
 <div class="arrow">→</div>
-
 <div class="flow-step">Pay If Profitable</div>
-
-</div>
-
-</div>
-
-<!-- LICENSE -->
-
-<div class="section">
-
-<h2>Performance-Based License</h2>
-
-<div class="card">
-
-<p><strong>Days 1-30:</strong> Free evaluation</p>
-
-<p><strong>Days 31-60:</strong> $1,000 license</p>
-
-<p><strong>Days 61-90:</strong> $2,000 license</p>
-
-<p><strong>After 90 days:</strong> 20% of monthly profit ($2,000 minimum)</p>
-
-<br>
-
-<p>If the strategy does not perform to your expectations, you can disable it at any time.</p>
 
 </div>
 
@@ -578,7 +549,6 @@ Futures trading involves substantial risk. Past performance does not guarantee f
 <h2>Start Your 30-Day Test</h2>
 
 <input type="text" placeholder="First Name">
-
 <input type="email" placeholder="Email Address">
 
 <br>
@@ -623,15 +593,12 @@ About $300 for micro contracts or about $3,000 for one NQ contract.</p>
 <div class="logos">
 
 <img src="NinjaTrader_Wordmark_color_RGB.png" class="ninja-logo">
-
 <img src="Kinetick-FreeEOD-300x250.png" class="kinetick-logo">
 
 </div>
 
 <p class="platform-disclaimer">
-
 GustaBOT is not affiliated with NinjaTrader or Kinetick.
-
 </p>
 
 </div>
@@ -644,13 +611,7 @@ GustaBOT is not affiliated with NinjaTrader or Kinetick.
 
 <h2>Important Risk Disclosure</h2>
 
-<p>
-
-Futures trading involves substantial risk and may result in losses exceeding deposited funds.
-
-Past performance does not guarantee future results.
-
-</p>
+<p>Futures trading involves substantial risk and may result in losses exceeding deposited funds. Past performance does not guarantee future results.</p>
 
 </div>
 
@@ -665,37 +626,21 @@ Past performance does not guarantee future results.
 const ctx=document.getElementById('equityChart');
 
 new Chart(ctx,{
-
 type:'line',
-
 data:{
-
 labels:['Feb17','Feb18','Feb19','Feb20','Feb23','Feb24','Feb27','Mar04','Mar05','Mar09','Mar10','Mar11','Mar12','Mar13'],
-
 datasets:[{
-
 data:[0,1600,2800,5600,6400,7400,9000,8200,9900,11500,11300,10900,10600,10260],
-
 borderColor:'#22c55e',
-
 borderWidth:3,
-
 tension:0.35
-
 }]
-
 },
-
 options:{
-
 plugins:{legend:{display:false}},
-
 responsive:true,
-
 maintainAspectRatio:false
-
 }
-
 });
 
 </script>
