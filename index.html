@@ -54,11 +54,6 @@ padding:10px 18px;
 border-radius:6px;
 font-weight:bold;
 text-decoration:none;
-transition:0.2s;
-}
-
-.nav-button:hover{
-transform:translateY(-2px);
 }
 
 /* CONTAINER */
@@ -71,10 +66,7 @@ padding:32px 20px 60px;
 
 /* HERO */
 
-.hero{
-text-align:center;
-padding-top:20px;
-}
+.hero{text-align:center;}
 
 .hero h1{
 font-size:42px;
@@ -92,22 +84,13 @@ padding:26px;
 border-radius:12px;
 margin:30px auto;
 max-width:760px;
+text-align:center;
 }
 
 .micro-disclaimer{
 font-size:12px;
 color:#9fb3c8;
-margin-top:10px;
-}
-
-/* TRUST STRIP */
-
-.trust-strip{
-max-width:900px;
-margin:30px auto;
-text-align:center;
-font-size:14px;
-color:#9fb3c8;
+margin-top:12px;
 }
 
 /* STRATEGIES */
@@ -124,12 +107,6 @@ background:#0d243d;
 border:1px solid #1e3a5f;
 padding:26px;
 border-radius:12px;
-transition:0.25s;
-}
-
-.strategy-card:hover{
-transform:translateY(-5px);
-border-color:#22c55e;
 }
 
 .strategy-title{
@@ -146,12 +123,12 @@ margin-bottom:14px;
 }
 
 .strategy-list{
-padding-left:20px;
+padding-left:18px;
 margin:0;
 }
 
 .strategy-list li{
-margin-bottom:6px;
+margin-bottom:8px;
 }
 
 /* METRICS */
@@ -169,6 +146,7 @@ background:#0f2a45;
 padding:18px;
 border-radius:12px;
 text-align:center;
+border:1px solid #1e3a5f;
 }
 
 .metric-label{
@@ -177,7 +155,7 @@ color:#9fb3c8;
 }
 
 .metric-value{
-font-size:24px;
+font-size:26px;
 font-weight:bold;
 margin-top:4px;
 }
@@ -185,20 +163,10 @@ margin-top:4px;
 .positive{color:#22c55e;}
 .negative{color:#ef4444;}
 
-/* HISTORICAL DISCLAIMER */
-
-.data-disclaimer{
-font-size:12px;
-color:#9fb3c8;
-max-width:760px;
-margin:10px auto 0 auto;
-text-align:center;
-}
-
 /* SECTION */
 
 .section{
-margin-top:90px;
+margin-top:80px;
 text-align:center;
 }
 
@@ -216,6 +184,7 @@ border-radius:12px;
 max-width:900px;
 margin:auto;
 text-align:left;
+border:1px solid #1e3a5f;
 }
 
 /* CHART */
@@ -238,16 +207,19 @@ margin-top:30px;
 
 .flow-step{
 background:#102b46;
-padding:14px;
+padding:14px 18px;
 border-radius:10px;
-min-width:150px;
+min-width:160px;
 text-align:center;
 font-weight:bold;
+border:1px solid #1e3a5f;
 }
 
 .arrow{
 color:#22c55e;
 font-size:26px;
+display:flex;
+align-items:center;
 }
 
 /* FORM */
@@ -271,11 +243,6 @@ border:none;
 border-radius:8px;
 font-weight:bold;
 cursor:pointer;
-transition:0.2s;
-}
-
-button:hover{
-transform:translateY(-2px);
 }
 
 /* FAQ */
@@ -287,6 +254,7 @@ border-radius:12px;
 max-width:900px;
 margin:auto;
 text-align:left;
+border:1px solid #1e3a5f;
 }
 
 .faq p{margin-bottom:14px;}
@@ -319,6 +287,12 @@ background:#132b45;
 padding:40px;
 border-top:4px solid #22c55e;
 border-radius:10px;
+}
+
+.performance-disclaimer{
+font-size:12px;
+color:#9fb3c8;
+margin-top:12px;
 }
 
 /* FOOTER */
@@ -368,10 +342,6 @@ Futures trading involves substantial risk. Past performance does not guarantee f
 
 </div>
 
-<div class="trust-strip">
-Strategies execute locally on your NinjaTrader platform. You maintain full control of your account at all times.
-</div>
-
 <!-- STRATEGIES -->
 
 <div class="section">
@@ -387,9 +357,9 @@ Strategies execute locally on your NinjaTrader platform. You maintain full contr
 
 <ul class="strategy-list">
 <li>Designed for Nasdaq futures</li>
-<li>Automated trade execution</li>
-<li>Intraday opportunity focus</li>
-<li>Structured risk management</li>
+<li>Automated execution through NinjaTrader</li>
+<li>Intraday market structure strategy</li>
+<li>Structured risk management logic</li>
 </ul>
 
 </div>
@@ -439,8 +409,8 @@ Strategies execute locally on your NinjaTrader platform. You maintain full contr
 
 </div>
 
-<p class="data-disclaimer">
-Performance values reflect historical strategy results. Past performance does not guarantee future results.
+<p class="performance-disclaimer" style="text-align:center;">
+Performance figures represent historical strategy testing results. Past performance does not guarantee future results.
 </p>
 
 <!-- EQUITY -->
@@ -453,8 +423,8 @@ Performance values reflect historical strategy results. Past performance does no
 <canvas id="equityChart"></canvas>
 </div>
 
-<p class="data-disclaimer">
-The equity curve represents historical strategy performance and is provided for illustration. Future results may differ.
+<p class="performance-disclaimer">
+Equity curve reflects historical simulated performance. Past performance does not guarantee future results.
 </p>
 
 </div>
@@ -471,11 +441,11 @@ The equity curve represents historical strategy performance and is provided for 
 <p><strong>Strategy Fee (20%):</strong> $2,052</p>
 <p><strong>Trader Keeps:</strong> $8,208</p>
 
-</div>
-
-<p class="data-disclaimer">
-Profit breakdown examples are based on historical performance data and are not a guarantee of future profitability.
+<p class="performance-disclaimer">
+Illustrative example based on historical performance. Results may vary. Past performance does not guarantee future results.
 </p>
+
+</div>
 
 </div>
 
@@ -495,11 +465,11 @@ Profit breakdown examples are based on historical performance data and are not a
 <p><strong>Mini Account Start:</strong> $3,000</p>
 <p><strong>Mini Account Now:</strong> $13,260</p>
 
-</div>
-
-<p class="data-disclaimer">
-Account growth examples are hypothetical scenarios based on historical strategy performance and are not guaranteed outcomes.
+<p class="performance-disclaimer">
+Account growth examples are based on historical testing. Actual results may differ.
 </p>
+
+</div>
 
 </div>
 
