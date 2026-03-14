@@ -289,8 +289,6 @@ color:#9fb3c8;
 
 <body>
 
-<!-- HEADER -->
-
 <div class="header">
 <div class="nav">
 <div class="logo-main">Gusta<span>BOT</span></div>
@@ -370,6 +368,61 @@ for the Nasdaq futures market.
 
 </div>
 
+<!-- METRICS -->
+
+<div class="dashboard">
+
+<div class="stat-box">
+<div class="stat-label">Last Month</div>
+<div class="stat-value stat-positive">$8,985</div>
+</div>
+
+<div class="stat-box">
+<div class="stat-label">This Month</div>
+<div class="stat-value stat-positive">$1,605</div>
+</div>
+
+<div class="stat-box">
+<div class="stat-label">This Week</div>
+<div class="stat-value stat-positive">$655</div>
+</div>
+
+<div class="stat-box">
+<div class="stat-label">Last Trading Day</div>
+<div class="stat-value stat-negative">-$330</div>
+</div>
+
+</div>
+
+<!-- EQUITY CURVE -->
+
+<div class="section">
+
+<h2>Equity Curve</h2>
+
+<div class="chart-container">
+<canvas id="equityChart"></canvas>
+</div>
+
+</div>
+
+<!-- LICENSE MODEL -->
+
+<div class="section">
+
+<h2>License Model</h2>
+
+<div class="box">
+
+<p><strong>First 30 days:</strong> Free evaluation period.</p>
+<p><strong>Days 31–60:</strong> $1,000 license.</p>
+<p><strong>Days 61–90:</strong> $2,000 license.</p>
+
+<p><strong>After 90 days:</strong> 20% of monthly strategy profit with a $2,000 minimum.</p>
+
+</div>
+
+</div>
 
 <!-- HOW IT WORKS -->
 
@@ -393,124 +446,32 @@ for the Nasdaq futures market.
 
 </div>
 
+<script>
 
-<!-- EVERYTHING YOU NEED -->
+const ctx = document.getElementById('equityChart');
 
-<div class="section">
+new Chart(ctx, {
+type: 'line',
+data: {
+labels: [
+'Feb17','Feb18','Feb19','Feb20','Feb23','Feb24',
+'Feb27','Mar04','Mar05','Mar09','Mar10','Mar11','Mar12','Mar13'
+],
+datasets: [{
+data: [0,1600,2800,5600,6400,7400,9000,8200,9900,11500,11300,10900,10600,10260],
+borderColor:'#22c55e',
+borderWidth:3,
+fill:false,
+tension:0.3
+}]
+},
+options:{
+plugins:{legend:{display:false}},
+scales:{y:{ticks:{color:'white'}},x:{ticks:{color:'white'}}}
+}
+});
 
-<h2>Everything You Need To Start</h2>
-
-<div class="box">
-
-<p>• Video tutorials</p>
-<p>• Step-by-step setup instructions</p>
-<p>• NinjaTrader configuration guide</p>
-<p>• Strategy installation walkthrough</p>
-
-<p>Most setups take between <strong>1–5 days</strong>.</p>
-
-</div>
-
-</div>
-
-
-<!-- SIGNUP -->
-
-<div class="section" id="signup">
-
-<h2>Start Your 30-Day Test</h2>
-
-<input type="text" placeholder="First Name">
-<input type="email" placeholder="Email Address">
-
-<br>
-
-<button>Start My Free 30-Day Test</button>
-
-</div>
-
-
-<!-- FAQ -->
-
-<div class="section">
-
-<h2>Frequently Asked Questions</h2>
-
-<div class="box">
-
-<p><strong>Do I need trading experience?</strong></p>
-<p>Basic familiarity with NinjaTrader is recommended.</p>
-
-<br>
-
-<p><strong>Do you control my account?</strong></p>
-<p>No. The strategy runs locally on your NinjaTrader platform.</p>
-
-<br>
-
-<p><strong>Can I stop the strategy anytime?</strong></p>
-<p>Yes. You can disable it inside NinjaTrader.</p>
-
-<br>
-
-<p><strong>Can I test on SIM first?</strong></p>
-<p>Yes. Many users test in simulation first.</p>
-
-<br>
-
-<p><strong>What capital is required?</strong></p>
-<p>Micro contracts typically require about $300 while one NQ contract typically requires about $3,000.</p>
-
-<br>
-
-<p><strong>Are profits guaranteed?</strong></p>
-<p>No. Futures trading involves substantial risk of loss.</p>
-
-</div>
-
-</div>
-
-
-<!-- PLATFORMS -->
-
-<div class="section">
-
-<h2>Recommended Platforms</h2>
-
-<div class="logos">
-
-<img src="NinjaTrader_Wordmark_color_RGB.png" class="ninja-logo">
-<img src="Kinetick-FreeEOD-300x250.png" class="kinetick-logo">
-
-</div>
-
-<p class="platform-disclaimer">
-GustaBOT is not affiliated with NinjaTrader or Kinetick.
-Strategies run locally on the trader's platform.
-</p>
-
-</div>
-
-
-<!-- DISCLOSURE -->
-
-<div class="disclosure">
-
-<h2>Important Risk Disclosures</h2>
-
-<p>Futures trading contains substantial risk and is not suitable for every investor.</p>
-<p>Traders may lose all capital in their trading accounts.</p>
-<p>Past performance does not guarantee future results.</p>
-
-</div>
-
-
-<footer>
-
-<p>© 2026 GustaBOT Trading Systems</p>
-<p>Automated trading strategies involve risk and may result in financial loss.</p>
-
-</footer>
+</script>
 
 </body>
 </html>
