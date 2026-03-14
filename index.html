@@ -140,6 +140,8 @@ max-width:900px;
 text-align:left;
 }
 
+/* STRATEGIES */
+
 .strategy-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
@@ -189,6 +191,7 @@ justify-content:center;
 align-items:center;
 gap:14px;
 margin-top:30px;
+flex-wrap:wrap;
 }
 
 .flow-step{
@@ -277,10 +280,8 @@ color:#9fb3c8;
 /* MOBILE */
 
 @media (max-width:768px){
-
 .dashboard{grid-template-columns:repeat(2,1fr);}
 .flow{flex-direction:column;}
-
 }
 
 </style>
@@ -288,6 +289,8 @@ color:#9fb3c8;
 </head>
 
 <body>
+
+<!-- HEADER -->
 
 <div class="header">
 <div class="nav">
@@ -417,8 +420,43 @@ for the Nasdaq futures market.
 <p><strong>First 30 days:</strong> Free evaluation period.</p>
 <p><strong>Days 31–60:</strong> $1,000 license.</p>
 <p><strong>Days 61–90:</strong> $2,000 license.</p>
-
 <p><strong>After 90 days:</strong> 20% of monthly strategy profit with a $2,000 minimum.</p>
+
+</div>
+
+</div>
+
+<!-- PROFIT BREAKDOWN -->
+
+<div class="section">
+
+<h2>Strategy Profit Breakdown</h2>
+
+<div class="box">
+
+<p>Strategy Profit: <strong>$10,260</strong></p>
+<p>Strategy Fee (20%): <strong>$2,052</strong></p>
+<p>Trader Keeps: <strong>$8,208</strong></p>
+
+</div>
+
+</div>
+
+<!-- ACCOUNT GROWTH -->
+
+<div class="section">
+
+<h2>Account Growth Scenarios</h2>
+
+<div class="box">
+
+<p>Micro Account Start: <strong>$300</strong></p>
+<p>Micro Account Now: <strong>$1,326</strong></p>
+
+<br>
+
+<p>Mini Account Start: <strong>$3,000</strong></p>
+<p>Mini Account Now: <strong>$13,260</strong></p>
 
 </div>
 
@@ -446,28 +484,144 @@ for the Nasdaq futures market.
 
 </div>
 
+<!-- EVERYTHING YOU NEED -->
+
+<div class="section">
+
+<h2>Everything You Need To Start</h2>
+
+<div class="box">
+
+<p>• Video tutorials</p>
+<p>• Step-by-step setup instructions</p>
+<p>• NinjaTrader configuration guide</p>
+<p>• Strategy installation walkthrough</p>
+
+<p>Most setups take between <strong>1–5 days</strong>.</p>
+
+</div>
+
+</div>
+
+<!-- SIGNUP -->
+
+<div class="section" id="signup">
+
+<h2>Start Your 30-Day Test</h2>
+
+<input type="text" placeholder="First Name">
+<input type="email" placeholder="Email Address">
+
+<br>
+
+<button>Start My Free 30-Day Test</button>
+
+</div>
+
+<!-- FAQ -->
+
+<div class="section">
+
+<h2>Frequently Asked Questions</h2>
+
+<div class="box">
+
+<p><strong>Do I need trading experience?</strong></p>
+<p>Basic familiarity with NinjaTrader is recommended.</p>
+
+<br>
+
+<p><strong>Do you control my account?</strong></p>
+<p>No. The strategy runs locally on your NinjaTrader platform.</p>
+
+<br>
+
+<p><strong>Can I stop the strategy anytime?</strong></p>
+<p>Yes. You can disable it inside NinjaTrader.</p>
+
+<br>
+
+<p><strong>Can I test on SIM first?</strong></p>
+<p>Yes. Many users test in simulation first.</p>
+
+<br>
+
+<p><strong>What capital is required?</strong></p>
+<p>Micro contracts typically require about $300 while one NQ contract typically requires about $3,000.</p>
+
+<br>
+
+<p><strong>Are profits guaranteed?</strong></p>
+<p>No. Futures trading involves substantial risk of loss.</p>
+
+</div>
+
+</div>
+
+<!-- PLATFORMS -->
+
+<div class="section">
+
+<h2>Recommended Platforms</h2>
+
+<div class="logos">
+
+<img src="NinjaTrader_Wordmark_color_RGB.png" class="ninja-logo">
+<img src="Kinetick-FreeEOD-300x250.png" class="kinetick-logo">
+
+</div>
+
+<p class="platform-disclaimer">
+GustaBOT is not affiliated with NinjaTrader or Kinetick.
+Strategies run locally on the trader's platform.
+</p>
+
+</div>
+
+</div>
+
+<!-- DISCLOSURE -->
+
+<div class="disclosure">
+
+<h2>Important Risk Disclosures</h2>
+
+<p>Futures trading contains substantial risk and is not suitable for every investor.</p>
+<p>Traders may lose all capital in their trading accounts.</p>
+<p>Past performance does not guarantee future results.</p>
+
+</div>
+
+<footer>
+
+<p>© 2026 GustaBOT Trading Systems</p>
+<p>Automated trading strategies involve risk and may result in financial loss.</p>
+
+</footer>
+
 <script>
 
-const ctx = document.getElementById('equityChart');
+const ctx=document.getElementById('equityChart');
 
-new Chart(ctx, {
-type: 'line',
-data: {
-labels: [
+new Chart(ctx,{
+type:'line',
+data:{
+labels:[
 'Feb17','Feb18','Feb19','Feb20','Feb23','Feb24',
 'Feb27','Mar04','Mar05','Mar09','Mar10','Mar11','Mar12','Mar13'
 ],
-datasets: [{
-data: [0,1600,2800,5600,6400,7400,9000,8200,9900,11500,11300,10900,10600,10260],
+datasets:[{
+data:[0,1600,2800,5600,6400,7400,9000,8200,9900,11500,11300,10900,10600,10260],
 borderColor:'#22c55e',
 borderWidth:3,
-fill:false,
-tension:0.3
+tension:0.35,
+pointRadius:4
 }]
 },
 options:{
 plugins:{legend:{display:false}},
-scales:{y:{ticks:{color:'white'}},x:{ticks:{color:'white'}}}
+responsive:true,
+maintainAspectRatio:false
 }
 });
 
