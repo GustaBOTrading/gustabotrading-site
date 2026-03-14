@@ -122,9 +122,6 @@ margin-top:4px;
 .stat-positive{color:#22c55e;}
 .stat-negative{color:#ef4444;}
 
-.result-positive{color:#22c55e;font-weight:bold;}
-.result-negative{color:#ef4444;font-weight:bold;}
-
 /* SECTIONS */
 
 .section{
@@ -208,24 +205,12 @@ font-size:26px;
 color:#22c55e;
 }
 
-.mobile-arrow{display:none;}
-
 /* CHART */
 
 .chart-container{
 max-width:900px;
 height:360px;
 margin:30px auto;
-}
-
-/* LICENSE */
-
-.license-box{
-background:#0f2a45;
-padding:28px;
-border-radius:12px;
-max-width:900px;
-margin:auto;
 }
 
 /* FORM */
@@ -295,11 +280,6 @@ color:#9fb3c8;
 
 .dashboard{grid-template-columns:repeat(2,1fr);}
 .flow{flex-direction:column;}
-.desktop-arrow{display:none;}
-.mobile-arrow{display:block;}
-
-.ninja-logo{height:38px;}
-.kinetick-logo{height:80px;}
 
 }
 
@@ -338,8 +318,7 @@ color:#9fb3c8;
 
 <p class="micro-disclaimer">
 Futures trading involves substantial risk and is not suitable for every investor.
-You may lose part or all of your trading capital. Users enable strategies on their
-own trading accounts and assume full responsibility for all trading decisions.
+You may lose part or all of your trading capital.
 Past performance does not guarantee future results.
 </p>
 
@@ -351,8 +330,6 @@ Past performance does not guarantee future results.
 
 <h2>Strategies</h2>
 
-<h3>Strategy Description</h3>
-
 <div class="strategy-grid">
 
 <div class="strategy-card">
@@ -362,9 +339,7 @@ Past performance does not guarantee future results.
 
 <p>
 EASORA is an automated intraday futures strategy designed specifically
-for the Nasdaq futures market. The system evaluates price behavior
-during defined trading periods and executes trades automatically
-when predefined conditions are satisfied.
+for the Nasdaq futures market.
 </p>
 
 <ul class="strategy-list">
@@ -381,12 +356,6 @@ when predefined conditions are satisfied.
 <div class="strategy-title">STRUCTORA</div>
 <div class="strategy-market">Multi-Instrument Strategy Family</div>
 
-<p>
-STRUCTORA is a structural trading framework deployed across several
-futures markets. Each strategy version is configured for a specific
-instrument while maintaining the same core trading model.
-</p>
-
 <ul class="strategy-list">
 <li>STRUCTORA — MNQ</li>
 <li>STRUCTORA — MES</li>
@@ -396,101 +365,6 @@ instrument while maintaining the same core trading model.
 </ul>
 
 </div>
-
-</div>
-
-<h3>Metrics</h3>
-
-<div class="dashboard">
-
-<div class="stat-box">
-<div class="stat-label">Last Month</div>
-<div id="lastMonth" class="stat-value"></div>
-</div>
-
-<div class="stat-box">
-<div class="stat-label">This Month</div>
-<div id="thisMonth" class="stat-value"></div>
-</div>
-
-<div class="stat-box">
-<div class="stat-label">This Week</div>
-<div id="thisWeek" class="stat-value"></div>
-</div>
-
-<div class="stat-box">
-<div class="stat-label">Last Trading Day</div>
-<div id="lastTrade" class="stat-value"></div>
-</div>
-
-<div class="stat-box">
-<div class="stat-label">Profit Factor</div>
-<div id="profitFactor" class="stat-value"></div>
-</div>
-
-<div class="stat-box">
-<div class="stat-label">Win Rate</div>
-<div id="winRate" class="stat-value"></div>
-</div>
-
-<div class="stat-box">
-<div class="stat-label">Average Trade</div>
-<div id="avgTrade" class="stat-value"></div>
-</div>
-
-<div class="stat-box">
-<div class="stat-label">Max Drawdown</div>
-<div id="maxDD" class="stat-value"></div>
-</div>
-
-</div>
-
-<p class="micro-disclaimer">
-Metrics summarize historical strategy performance. Trading futures
-involves substantial risk of loss and users remain responsible for
-all trading decisions on their own accounts.
-</p>
-
-<h3>Equity Curve</h3>
-
-<div class="box">
-
-<div class="chart-container">
-<canvas id="equityChart"></canvas>
-</div>
-
-</div>
-
-</div>
-
-
-<!-- LICENSE MODEL -->
-
-<div class="section">
-
-<h2>License Model</h2>
-
-<div class="license-box">
-
-<p><strong>First 30 days:</strong> Free evaluation period.</p>
-<p><strong>Days 31–60:</strong> $1,000 license.</p>
-<p><strong>Days 61–90:</strong> $2,000 license.</p>
-<p><strong>After 90 days:</strong> 20% of monthly profit with a minimum license fee of $2,000.</p>
-
-<br>
-
-<p><strong>Example Calculation</strong></p>
-
-<p>Monthly Profit: $8,000</p>
-<p>20% License: $1,600</p>
-<p>Minimum License Applies: $2,000</p>
-<p>Trader Keeps: $6,000</p>
-
-<p class="micro-disclaimer">
-Users enable the strategy on their own trading accounts and assume
-full responsibility for trading risk. Past performance does not
-guarantee future results.
-</p>
 
 </div>
 
@@ -506,21 +380,13 @@ guarantee future results.
 <div class="flow">
 
 <div class="flow-step">Sign Up</div>
-<div class="arrow desktop-arrow">→</div>
-<div class="arrow mobile-arrow">↓</div>
-
+<div class="arrow">→</div>
 <div class="flow-step">Install Strategy</div>
-<div class="arrow desktop-arrow">→</div>
-<div class="arrow mobile-arrow">↓</div>
-
+<div class="arrow">→</div>
 <div class="flow-step">Test 30 Days</div>
-<div class="arrow desktop-arrow">→</div>
-<div class="arrow mobile-arrow">↓</div>
-
+<div class="arrow">→</div>
 <div class="flow-step">Evaluate Results</div>
-<div class="arrow desktop-arrow">→</div>
-<div class="arrow mobile-arrow">↓</div>
-
+<div class="arrow">→</div>
 <div class="flow-step">Pay Only If Profitable</div>
 
 </div>
@@ -542,24 +408,6 @@ guarantee future results.
 <p>• Strategy installation walkthrough</p>
 
 <p>Most setups take between <strong>1–5 days</strong>.</p>
-
-</div>
-
-</div>
-
-
-<!-- TIKTOK -->
-
-<div class="section">
-
-<h2>From TikTok To Live Trading</h2>
-
-<div class="box">
-
-<p>
-Many traders discover GustaBOT strategies through TikTok where
-development and trading insights are shared.
-</p>
 
 </div>
 
@@ -611,12 +459,7 @@ development and trading insights are shared.
 <br>
 
 <p><strong>What capital is required?</strong></p>
-<p>Micro contracts typically require about $200 while one NQ contract typically requires about $2,000.</p>
-
-<br>
-
-<p><strong>Does the strategy trade every day?</strong></p>
-<p>No. The system trades only when market conditions match its rules.</p>
+<p>Micro contracts typically require about $300 while one NQ contract typically requires about $3,000.</p>
 
 <br>
 
@@ -626,537 +469,6 @@ development and trading insights are shared.
 </div>
 
 </div>
-
-<!-- PROFIT BREAKDOWN -->
-
-<div class="section">
-
-<h2>Strategy Profit Breakdown</h2>
-
-<div class="dashboard">
-
-<div class="stat-box">
-<div class="stat-label">Strategy Profit</div>
-<div id="grossProfit" class="stat-value"></div>
-</div>
-
-<div class="stat-box">
-<div class="stat-label">Strategy Fee</div>
-<div id="strategyFee" class="stat-value"></div>
-</div>
-
-<div class="stat-box">
-<div class="stat-label">Trader Keeps</div>
-<div id="netProfit" class="stat-value"></div>
-</div>
-
-</div>
-
-<p class="micro-disclaimer">
-These figures illustrate how strategy performance translates into trader profit after licensing fees. Fee examples are calculated using historical strategy performance and the current fee structure.
-</p>
-
-<p class="micro-disclaimer">
-Past performance does not guarantee future results. Actual results may differ due to execution, slippage, broker fees, and market conditions. Futures trading involves substantial risk and traders may lose all capital.
-</p>
-
-</div>
-
-<!-- ACCOUNT GROWTH -->
-
-<div class="section">
-
-<h2>Account Growth Scenarios</h2>
-
-<div class="dashboard">
-
-<div class="stat-box">
-<div class="stat-label">Micro Account Start</div>
-<div class="stat-value">$300</div>
-</div>
-
-<div class="stat-box">
-<div class="stat-label">Micro Account Now</div>
-<div id="microGrowth" class="stat-value"></div>
-</div>
-
-<div class="stat-box">
-<div class="stat-label">Mini Account Start</div>
-<div class="stat-value">$3,000</div>
-</div>
-
-<div class="stat-box">
-<div class="stat-label">Mini Account Now</div>
-<div id="miniGrowth" class="stat-value"></div>
-</div>
-
-</div>
-
-<p class="micro-disclaimer">
-These examples scale historical strategy performance to illustrate how results may appear when trading one micro contract versus one mini contract. Micro contracts typically reflect approximately 10% of the performance of the mini contract strategy.
-</p>
-
-<p class="micro-disclaimer">
-These examples are hypothetical illustrations derived from historical performance data and do not represent guaranteed outcomes. Traders remain fully responsible for risk management and may lose all invested capital.
-</p>
-
-</div>
-
-<!-- LICENSE MODEL -->
-
-<div class="section">
-
-<h2>License Model</h2>
-
-<div class="box">
-
-<p>
-The strategy license is performance-based. The first 30 days are free so traders can evaluate results using their own NinjaTrader account.
-</p>
-
-<p>
-After the initial testing period, the license fee becomes performance-based and equals <strong>20% of strategy profit with a $2,000 monthly minimum</strong>.
-</p>
-
-<p class="micro-disclaimer">
-All examples below illustrate how historical strategy performance would translate under the license model. These examples are for educational purposes only and do not represent guaranteed results.
-</p>
-
-</div>
-
-</div>
-
-
-<!-- STRATEGY PROFIT BREAKDOWN -->
-
-<div class="section">
-
-<h2>Strategy Profit Breakdown</h2>
-
-<div class="dashboard">
-
-<div class="stat-box">
-<div class="stat-label">Strategy Profit</div>
-<div id="grossProfit" class="stat-value"></div>
-</div>
-
-<div class="stat-box">
-<div class="stat-label">Strategy Fee</div>
-<div id="strategyFee" class="stat-value"></div>
-</div>
-
-<div class="stat-box">
-<div class="stat-label">Trader Keeps</div>
-<div id="netProfit" class="stat-value"></div>
-</div>
-
-</div>
-
-<p class="micro-disclaimer">
-These figures illustrate how historical strategy performance translates into trader profit after licensing fees.
-Actual trader results may differ due to execution, broker costs, slippage, and market conditions.
-</p>
-
-<p class="micro-disclaimer">
-Past performance does not guarantee future results. Futures trading involves substantial risk and traders may lose all invested capital.
-</p>
-
-</div>
-
-
-<!-- ACCOUNT OUTCOMES -->
-
-<div class="section">
-
-<h2>Example Account Outcomes</h2>
-
-<div class="box">
-
-<h3>Micro Account Example</h3>
-
-<div class="dashboard">
-
-<div class="stat-box">
-<div class="stat-label">Starting Capital</div>
-<div class="stat-value">$300</div>
-</div>
-
-<div class="stat-box">
-<div class="stat-label">Account After Strategy Performance</div>
-<div id="microGrowth" class="stat-value"></div>
-</div>
-
-</div>
-
-<p class="micro-disclaimer">
-This example scales historical strategy performance to a single micro futures contract. Micro contracts typically represent approximately 10% of the performance of the equivalent mini contract strategy.
-</p>
-
-<p class="micro-disclaimer">
-This illustration is hypothetical and derived from historical data. Actual trading outcomes may vary significantly and traders may lose all capital.
-</p>
-
-</div>
-
-
-<div class="box">
-
-<h3>Mini Account Example</h3>
-
-<div class="dashboard">
-
-<div class="stat-box">
-<div class="stat-label">Starting Capital</div>
-<div class="stat-value">$3,000</div>
-</div>
-
-<div class="stat-box">
-<div class="stat-label">Account After Strategy Performance</div>
-<div id="miniGrowth" class="stat-value"></div>
-</div>
-
-</div>
-
-<p class="micro-disclaimer">
-This example illustrates how the same historical strategy performance would appear when trading one mini futures contract.
-</p>
-
-<p class="micro-disclaimer">
-These examples are provided for educational purposes only. Past performance does not guarantee future results and futures trading involves substantial financial risk.
-</p>
-
-</div>
-
-</div>
-
-<!-- LICENSE MODEL -->
-
-<div class="section">
-
-<h2>Strategy License Model</h2>
-
-<p class="license-text">
-Traders can run Easora using a simple performance-based licensing model designed to align strategy success with trader success.
-</p>
-
-<div class="profit-breakdown">
-
-<div class="stat-card">
-<div class="stat-title">Strategy Profit</div>
-<div class="stat-value" id="grossProfit">$0</div>
-</div>
-
-<div class="stat-card">
-<div class="stat-title">Strategy Fee</div>
-<div class="stat-value" id="strategyFee">$0</div>
-</div>
-
-<div class="stat-card">
-<div class="stat-title">Trader Keeps</div>
-<div class="stat-value" id="netProfit">$0</div>
-</div>
-
-</div>
-
-<p class="micro-disclaimer">
-These figures illustrate how historical strategy performance translates into trader profit after licensing fees. Fee examples are calculated using historical strategy performance and the current fee structure.
-</p>
-
-<p class="micro-disclaimer">
-Past performance does not guarantee future results. Actual results may differ due to execution quality, broker commissions, slippage, market conditions, and trader behavior.
-</p>
-
-<p class="micro-disclaimer">
-Futures trading involves substantial risk and traders may lose all capital. Traders assume full responsibility for enabling strategies and managing their own risk.
-</p>
-
-</div>
-
-
-
-<!-- ACCOUNT GROWTH -->
-
-<div class="section">
-
-<h2>Account Growth Scenarios</h2>
-
-<p class="license-text">
-The examples below illustrate how strategy performance may scale when trading micro contracts versus mini contracts.
-</p>
-
-
-<!-- MICRO ROW -->
-
-<div class="growth-row">
-
-<div class="stat-card">
-<div class="stat-title">Micro Account Start</div>
-<div class="stat-value">$300</div>
-</div>
-
-<div class="stat-card">
-<div class="stat-title">Micro Account Now</div>
-<div class="stat-value" id="microGrowth">$0</div>
-</div>
-
-</div>
-
-
-<!-- MINI ROW -->
-
-<div class="growth-row">
-
-<div class="stat-card">
-<div class="stat-title">Mini Account Start</div>
-<div class="stat-value">$3,000</div>
-</div>
-
-<div class="stat-card">
-<div class="stat-title">Mini Account Now</div>
-<div class="stat-value" id="miniGrowth">$0</div>
-</div>
-
-</div>
-
-
-<p class="micro-disclaimer">
-Micro contract examples assume approximately 10% of the performance of the equivalent mini contract strategy.
-</p>
-
-<p class="micro-disclaimer">
-These figures are hypothetical illustrations derived from historical strategy performance data and do not represent guaranteed outcomes.
-</p>
-
-<p class="micro-disclaimer">
-Actual trading results will vary depending on account size, execution quality, broker costs, slippage, market volatility, and trader risk management.
-</p>
-
-<p class="micro-disclaimer">
-Futures trading contains substantial risk and traders may lose all invested capital.
-</p>
-
-</div>
-
-<!-- LICENSE MODEL -->
-
-<div class="section">
-
-<h2>License Model</h2>
-
-<div class="card-large">
-
-<p>
-The strategy license is performance-based.
-The first <strong>30 days are free</strong> so traders can evaluate results using their own NinjaTrader account.
-</p>
-
-<p>
-After the evaluation period the license becomes performance-based and equals
-<strong>20% of monthly strategy profit</strong> with a <strong>$2,000 minimum monthly fee</strong>.
-</p>
-
-<p class="micro-disclaimer">
-All examples below illustrate how historical strategy performance would translate under the license model.
-These examples are educational illustrations only and do not represent guaranteed results.
-</p>
-
-</div>
-
-</div>
-
-
-
-<!-- PROFIT BREAKDOWN -->
-
-<div class="section">
-
-<h2>Strategy Profit Breakdown</h2>
-
-<div class="profit-breakdown">
-
-<div class="stat-card">
-<div class="stat-title">Strategy Profit</div>
-<div class="stat-value" id="grossProfit">$0</div>
-</div>
-
-<div class="stat-card">
-<div class="stat-title">Strategy Fee</div>
-<div class="stat-value" id="strategyFee">$0</div>
-</div>
-
-<div class="stat-card">
-<div class="stat-title">Trader Keeps</div>
-<div class="stat-value" id="netProfit">$0</div>
-</div>
-
-</div>
-
-<p class="micro-disclaimer">
-These figures illustrate how historical strategy performance translates into trader profit after licensing fees.
-Actual trader results may differ depending on execution quality, broker commissions, slippage and market conditions.
-</p>
-
-<p class="micro-disclaimer">
-Past performance does not guarantee future results. Futures trading involves substantial risk and traders may lose all invested capital.
-</p>
-
-</div>
-
-
-
-<!-- ACCOUNT GROWTH -->
-
-<div class="section">
-
-<h2>Account Growth Scenarios</h2>
-
-<p class="license-text">
-The examples below illustrate how strategy performance may scale when trading micro contracts versus mini contracts.
-</p>
-
-
-<div class="growth-row">
-
-<div class="stat-card">
-<div class="stat-title">Micro Account Start</div>
-<div class="stat-value">$300</div>
-</div>
-
-<div class="stat-card">
-<div class="stat-title">Micro Account Now</div>
-<div class="stat-value" id="microGrowth">$0</div>
-</div>
-
-</div>
-
-
-<div class="growth-row">
-
-<div class="stat-card">
-<div class="stat-title">Mini Account Start</div>
-<div class="stat-value">$3,000</div>
-</div>
-
-<div class="stat-card">
-<div class="stat-title">Mini Account Now</div>
-<div class="stat-value" id="miniGrowth">$0</div>
-</div>
-
-</div>
-
-<p class="micro-disclaimer">
-Micro contract examples assume approximately 10% of the performance of the equivalent mini contract strategy.
-These examples are hypothetical illustrations derived from historical strategy performance data.
-</p>
-
-<p class="micro-disclaimer">
-Actual trading results will vary depending on account size, execution quality, broker costs, slippage, market volatility and trader risk management.
-</p>
-
-<p class="micro-disclaimer">
-Futures trading contains substantial risk and traders may lose all invested capital.
-</p>
-
-</div>
-
-
-
-<!-- HOW IT WORKS -->
-
-<div class="section">
-
-<h2>How It Works</h2>
-
-<div class="steps">
-
-<div class="step">Sign Up</div>
-<div class="arrow">→</div>
-<div class="step">Install Strategy</div>
-<div class="arrow">→</div>
-<div class="step">Test 30 Days</div>
-<div class="arrow">→</div>
-<div class="step">Evaluate Results</div>
-<div class="arrow">→</div>
-<div class="step">Pay Only If Profitable</div>
-
-</div>
-
-</div>
-
-
-
-<!-- WHAT YOU NEED -->
-
-<div class="section">
-
-<h2>Everything You Need To Start</h2>
-
-<div class="card-large">
-
-<ul>
-<li>Video tutorials</li>
-<li>Step-by-step setup instructions</li>
-<li>NinjaTrader configuration guide</li>
-<li>Strategy installation walkthrough</li>
-</ul>
-
-<p>Most setups take between 1-5 days.</p>
-
-</div>
-
-</div>
-
-
-
-<!-- FAQ -->
-
-<div class="section">
-
-<h2>Frequently Asked Questions</h2>
-
-<div class="faq">
-
-<p><strong>Do I need trading experience?</strong><br>
-Basic familiarity with NinjaTrader is recommended.</p>
-
-<p><strong>Do you control my account?</strong><br>
-No. The strategy runs locally on your NinjaTrader platform.</p>
-
-<p><strong>Can I stop the strategy anytime?</strong><br>
-Yes. You can disable it inside NinjaTrader.</p>
-
-<p><strong>Can I test on SIM first?</strong><br>
-Yes. Many users test in simulation before going live.</p>
-
-<p><strong>What capital is required?</strong><br>
-Micro contracts typically require about $300 while one NQ contract typically requires about $3,000.</p>
-
-<p><strong>Are profits guaranteed?</strong><br>
-No. Futures trading involves substantial risk of loss.</p>
-
-</div>
-
-</div>
-
-
-
-<!-- START TEST -->
-
-<div class="section">
-
-<h2>Start Your 30-Day Test</h2>
-
-<div class="signup">
-
-<input placeholder="First Name">
-<input placeholder="Email Address">
-
-<button class="cta-button">Start My Free 30-Day Test</button>
-
-</div>
-
-</div>
-
 
 
 <!-- PLATFORMS -->
@@ -1172,13 +484,12 @@ No. Futures trading involves substantial risk of loss.</p>
 
 </div>
 
-<p class="micro-disclaimer">
+<p class="platform-disclaimer">
 GustaBOT is not affiliated with NinjaTrader or Kinetick.
-Automated strategies run locally on the trader's NinjaTrader installation and traders assume full responsibility for enabling or disabling strategies.
+Strategies run locally on the trader's platform.
 </p>
 
 </div>
-
 
 
 <!-- DISCLOSURE -->
@@ -1189,12 +500,9 @@ Automated strategies run locally on the trader's NinjaTrader installation and tr
 
 <p>Futures trading contains substantial risk and is not suitable for every investor.</p>
 <p>Traders may lose all capital in their trading accounts.</p>
-<p>Automated strategies operate on the trader's own platform and the trader assumes full responsibility for enabling or disabling strategies.</p>
 <p>Past performance does not guarantee future results.</p>
-<p>No representation is being made that any account will achieve profits similar to those displayed.</p>
 
 </div>
-
 
 
 <footer>
@@ -1203,3 +511,6 @@ Automated strategies run locally on the trader's NinjaTrader installation and tr
 <p>Automated trading strategies involve risk and may result in financial loss.</p>
 
 </footer>
+
+</body>
+</html>
