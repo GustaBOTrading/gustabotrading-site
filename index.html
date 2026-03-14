@@ -68,7 +68,7 @@ padding:32px 20px 60px;
 
 .hero{text-align:center;}
 
-.hero h1{font-size:40px;}
+.hero h1{font-size:40px;margin-bottom:10px;}
 
 .hero p{
 font-size:20px;
@@ -89,98 +89,102 @@ color:#9fb3c8;
 margin-top:10px;
 }
 
-/* DASHBOARD */
+/* STRATEGIES */
 
-.dashboard{
+.strategy-grid{
 display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:20px;
-max-width:900px;
-margin:auto;
-margin-top:40px;
-margin-bottom:40px;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:24px;
+margin-top:30px;
 }
 
-.stat-box{
+.strategy-card{
+background:#0d243d;
+border:1px solid #1e3a5f;
+padding:26px;
+border-radius:12px;
+}
+
+.strategy-title{
+font-size:20px;
+font-weight:bold;
+color:#22c55e;
+margin-bottom:8px;
+}
+
+.strategy-market{
+font-size:13px;
+color:#9fb3c8;
+margin-bottom:14px;
+}
+
+.strategy-list{
+padding-left:20px;
+margin:0;
+}
+
+.strategy-list li{
+margin-bottom:6px;
+}
+
+/* METRICS */
+
+.metrics{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:18px;
+max-width:900px;
+margin:40px auto;
+}
+
+.metric{
 background:#0f2a45;
 padding:18px;
 border-radius:12px;
 text-align:center;
 }
 
-.stat-label{
-font-size:13px;
+.metric-label{
+font-size:12px;
 color:#9fb3c8;
 }
 
-.stat-value{
-font-size:26px;
+.metric-value{
+font-size:24px;
 font-weight:bold;
 margin-top:4px;
 }
 
-.stat-positive{color:#22c55e;}
-.stat-negative{color:#ef4444;}
+.positive{color:#22c55e;}
+.negative{color:#ef4444;}
 
-/* SECTIONS */
+/* SECTION */
 
 .section{
-margin-top:70px;
+margin-top:80px;
 text-align:center;
 }
 
-.section h2{font-size:32px;}
+.section h2{
+font-size:30px;
+margin-bottom:20px;
+}
 
-.box{
+.card{
 background:#0f2a45;
-padding:26px;
+padding:28px;
 border-radius:12px;
-margin:20px auto;
 max-width:900px;
+margin:auto;
 text-align:left;
 }
 
-/* STRATEGIES */
+/* CHART */
 
-.strategy-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:20px;
-margin-top:20px;
-}
-
-.strategy-card{
-background:#0d243d;
-border:1px solid #1e3a5f;
-padding:22px;
-border-radius:12px;
-transition:transform .2s ease;
-}
-
-.strategy-card:hover{
-transform:translateY(-3px);
-}
-
-.strategy-title{
-font-size:20px;
-font-weight:bold;
-margin-bottom:10px;
-color:#22c55e;
-}
-
-.strategy-market{
-font-size:13px;
-color:#9fb3c8;
-margin-bottom:12px;
-}
-
-.strategy-list{
-margin-top:12px;
-padding-left:18px;
-}
-
-.strategy-list li{
-margin-bottom:6px;
+.chart-container{
+max-width:900px;
+height:380px;
+margin:30px auto;
 }
 
 /* FLOW */
@@ -188,10 +192,9 @@ margin-bottom:6px;
 .flow{
 display:flex;
 justify-content:center;
-align-items:center;
 gap:14px;
-margin-top:30px;
 flex-wrap:wrap;
+margin-top:30px;
 }
 
 .flow-step{
@@ -204,19 +207,15 @@ font-weight:bold;
 }
 
 .arrow{
-font-size:26px;
 color:#22c55e;
-}
-
-/* CHART */
-
-.chart-container{
-max-width:900px;
-height:360px;
-margin:30px auto;
+font-size:26px;
 }
 
 /* FORM */
+
+.signup{
+text-align:center;
+}
 
 input{
 padding:14px;
@@ -235,6 +234,19 @@ font-weight:bold;
 cursor:pointer;
 }
 
+/* FAQ */
+
+.faq{
+background:#0f2a45;
+padding:26px;
+border-radius:12px;
+max-width:900px;
+margin:auto;
+text-align:left;
+}
+
+.faq p{margin-bottom:14px;}
+
 /* LOGOS */
 
 .logos{
@@ -242,7 +254,7 @@ display:flex;
 justify-content:center;
 align-items:center;
 gap:60px;
-margin-top:40px;
+margin-top:30px;
 flex-wrap:wrap;
 }
 
@@ -250,11 +262,9 @@ flex-wrap:wrap;
 .kinetick-logo{height:70px;}
 
 .platform-disclaimer{
-margin-top:20px;
 font-size:13px;
 color:#9fb3c8;
-border-top:1px solid #1e3a5f;
-padding-top:14px;
+margin-top:16px;
 }
 
 /* DISCLOSURE */
@@ -262,7 +272,7 @@ padding-top:14px;
 .disclosure{
 margin-top:80px;
 background:#132b45;
-padding:40px 24px;
+padding:40px;
 border-top:4px solid #22c55e;
 border-radius:10px;
 }
@@ -270,18 +280,11 @@ border-radius:10px;
 /* FOOTER */
 
 footer{
-margin-top:40px;
 text-align:center;
-padding:30px 0;
+padding:30px;
 border-top:1px solid #1e3a5f;
 color:#9fb3c8;
-}
-
-/* MOBILE */
-
-@media (max-width:768px){
-.dashboard{grid-template-columns:repeat(2,1fr);}
-.flow{flex-direction:column;}
+margin-top:40px;
 }
 
 </style>
@@ -289,8 +292,6 @@ color:#9fb3c8;
 </head>
 
 <body>
-
-<!-- HEADER -->
 
 <div class="header">
 <div class="nav">
@@ -311,16 +312,14 @@ color:#9fb3c8;
 
 <div class="message-box">
 
-<p><strong>Step 1</strong> — Test the strategy free for 30 days</p>
+<p><strong>Step 1</strong> — Test free for 30 days</p>
 <p><strong>Step 2</strong> — If the strategy generates profits</p>
 <p><strong>Step 3</strong> — The profits pay the license</p>
 
 </div>
 
 <p class="micro-disclaimer">
-Futures trading involves substantial risk and is not suitable for every investor.
-You may lose part or all of your trading capital.
-Past performance does not guarantee future results.
+Futures trading involves substantial risk. Past performance does not guarantee future results.
 </p>
 
 </div>
@@ -336,15 +335,10 @@ Past performance does not guarantee future results.
 <div class="strategy-card">
 
 <div class="strategy-title">EASORA</div>
-<div class="strategy-market">Instrument: NQ (Nasdaq Futures)</div>
-
-<p>
-EASORA is an automated intraday futures strategy designed specifically
-for the Nasdaq futures market.
-</p>
+<div class="strategy-market">Instrument: NQ Futures</div>
 
 <ul class="strategy-list">
-<li>Designed for NQ futures</li>
+<li>Designed for Nasdaq futures</li>
 <li>Automated trade execution</li>
 <li>Intraday opportunity focus</li>
 <li>Structured risk management</li>
@@ -373,31 +367,31 @@ for the Nasdaq futures market.
 
 <!-- METRICS -->
 
-<div class="dashboard">
+<div class="metrics">
 
-<div class="stat-box">
-<div class="stat-label">Last Month</div>
-<div class="stat-value stat-positive">$8,985</div>
+<div class="metric">
+<div class="metric-label">Last Month</div>
+<div class="metric-value positive">$8,985</div>
 </div>
 
-<div class="stat-box">
-<div class="stat-label">This Month</div>
-<div class="stat-value stat-positive">$1,605</div>
+<div class="metric">
+<div class="metric-label">This Month</div>
+<div class="metric-value positive">$1,605</div>
 </div>
 
-<div class="stat-box">
-<div class="stat-label">This Week</div>
-<div class="stat-value stat-positive">$655</div>
+<div class="metric">
+<div class="metric-label">This Week</div>
+<div class="metric-value positive">$655</div>
 </div>
 
-<div class="stat-box">
-<div class="stat-label">Last Trading Day</div>
-<div class="stat-value stat-negative">-$330</div>
+<div class="metric">
+<div class="metric-label">Last Trading Day</div>
+<div class="metric-value negative">-$330</div>
 </div>
 
 </div>
 
-<!-- EQUITY CURVE -->
+<!-- EQUITY -->
 
 <div class="section">
 
@@ -409,34 +403,17 @@ for the Nasdaq futures market.
 
 </div>
 
-<!-- LICENSE MODEL -->
-
-<div class="section">
-
-<h2>License Model</h2>
-
-<div class="box">
-
-<p><strong>First 30 days:</strong> Free evaluation period.</p>
-<p><strong>Days 31–60:</strong> $1,000 license.</p>
-<p><strong>Days 61–90:</strong> $2,000 license.</p>
-<p><strong>After 90 days:</strong> 20% of monthly strategy profit with a $2,000 minimum.</p>
-
-</div>
-
-</div>
-
 <!-- PROFIT BREAKDOWN -->
 
 <div class="section">
 
 <h2>Strategy Profit Breakdown</h2>
 
-<div class="box">
+<div class="card">
 
-<p>Strategy Profit: <strong>$10,260</strong></p>
-<p>Strategy Fee (20%): <strong>$2,052</strong></p>
-<p>Trader Keeps: <strong>$8,208</strong></p>
+<p><strong>Total Strategy Profit:</strong> $10,260</p>
+<p><strong>Strategy Fee (20%):</strong> $2,052</p>
+<p><strong>Trader Keeps:</strong> $8,208</p>
 
 </div>
 
@@ -448,15 +425,32 @@ for the Nasdaq futures market.
 
 <h2>Account Growth Scenarios</h2>
 
-<div class="box">
+<div class="card">
 
-<p>Micro Account Start: <strong>$300</strong></p>
-<p>Micro Account Now: <strong>$1,326</strong></p>
+<p><strong>Micro Account Start:</strong> $300</p>
+<p><strong>Micro Account Now:</strong> $1,326</p>
 
 <br>
 
-<p>Mini Account Start: <strong>$3,000</strong></p>
-<p>Mini Account Now: <strong>$13,260</strong></p>
+<p><strong>Mini Account Start:</strong> $3,000</p>
+<p><strong>Mini Account Now:</strong> $13,260</p>
+
+</div>
+
+</div>
+
+<!-- LICENSE -->
+
+<div class="section">
+
+<h2>License Model</h2>
+
+<div class="card">
+
+<p><strong>First 30 days:</strong> Free evaluation</p>
+<p><strong>Days 31-60:</strong> $1,000 license</p>
+<p><strong>Days 61-90:</strong> $2,000 license</p>
+<p><strong>After 90 days:</strong> 20% of monthly profit ($2,000 minimum)</p>
 
 </div>
 
@@ -478,26 +472,7 @@ for the Nasdaq futures market.
 <div class="arrow">→</div>
 <div class="flow-step">Evaluate Results</div>
 <div class="arrow">→</div>
-<div class="flow-step">Pay Only If Profitable</div>
-
-</div>
-
-</div>
-
-<!-- EVERYTHING YOU NEED -->
-
-<div class="section">
-
-<h2>Everything You Need To Start</h2>
-
-<div class="box">
-
-<p>• Video tutorials</p>
-<p>• Step-by-step setup instructions</p>
-<p>• NinjaTrader configuration guide</p>
-<p>• Strategy installation walkthrough</p>
-
-<p>Most setups take between <strong>1–5 days</strong>.</p>
+<div class="flow-step">Pay If Profitable</div>
 
 </div>
 
@@ -505,7 +480,7 @@ for the Nasdaq futures market.
 
 <!-- SIGNUP -->
 
-<div class="section" id="signup">
+<div class="section signup" id="signup">
 
 <h2>Start Your 30-Day Test</h2>
 
@@ -524,35 +499,22 @@ for the Nasdaq futures market.
 
 <h2>Frequently Asked Questions</h2>
 
-<div class="box">
+<div class="faq">
 
-<p><strong>Do I need trading experience?</strong></p>
-<p>Basic familiarity with NinjaTrader is recommended.</p>
+<p><strong>Do I need trading experience?</strong><br>
+Basic familiarity with NinjaTrader is recommended.</p>
 
-<br>
+<p><strong>Do you control my account?</strong><br>
+No. Strategies run locally on your NinjaTrader platform.</p>
 
-<p><strong>Do you control my account?</strong></p>
-<p>No. The strategy runs locally on your NinjaTrader platform.</p>
+<p><strong>Can I stop anytime?</strong><br>
+Yes. You can disable the strategy inside NinjaTrader.</p>
 
-<br>
+<p><strong>Can I test on SIM first?</strong><br>
+Yes. Many users start with simulation.</p>
 
-<p><strong>Can I stop the strategy anytime?</strong></p>
-<p>Yes. You can disable it inside NinjaTrader.</p>
-
-<br>
-
-<p><strong>Can I test on SIM first?</strong></p>
-<p>Yes. Many users test in simulation first.</p>
-
-<br>
-
-<p><strong>What capital is required?</strong></p>
-<p>Micro contracts typically require about $300 while one NQ contract typically requires about $3,000.</p>
-
-<br>
-
-<p><strong>Are profits guaranteed?</strong></p>
-<p>No. Futures trading involves substantial risk of loss.</p>
+<p><strong>What capital is required?</strong><br>
+About $300 for micro contracts or about $3,000 for one NQ contract.</p>
 
 </div>
 
@@ -573,7 +535,6 @@ for the Nasdaq futures market.
 
 <p class="platform-disclaimer">
 GustaBOT is not affiliated with NinjaTrader or Kinetick.
-Strategies run locally on the trader's platform.
 </p>
 
 </div>
@@ -584,18 +545,15 @@ Strategies run locally on the trader's platform.
 
 <div class="disclosure">
 
-<h2>Important Risk Disclosures</h2>
+<h2>Important Risk Disclosure</h2>
 
-<p>Futures trading contains substantial risk and is not suitable for every investor.</p>
-<p>Traders may lose all capital in their trading accounts.</p>
-<p>Past performance does not guarantee future results.</p>
+<p>Futures trading involves substantial risk and may result in losses exceeding deposited funds. Past performance does not guarantee future results.</p>
 
 </div>
 
 <footer>
 
 <p>© 2026 GustaBOT Trading Systems</p>
-<p>Automated trading strategies involve risk and may result in financial loss.</p>
 
 </footer>
 
@@ -606,16 +564,12 @@ const ctx=document.getElementById('equityChart');
 new Chart(ctx,{
 type:'line',
 data:{
-labels:[
-'Feb17','Feb18','Feb19','Feb20','Feb23','Feb24',
-'Feb27','Mar04','Mar05','Mar09','Mar10','Mar11','Mar12','Mar13'
-],
+labels:['Feb17','Feb18','Feb19','Feb20','Feb23','Feb24','Feb27','Mar04','Mar05','Mar09','Mar10','Mar11','Mar12','Mar13'],
 datasets:[{
 data:[0,1600,2800,5600,6400,7400,9000,8200,9900,11500,11300,10900,10600,10260],
 borderColor:'#22c55e',
 borderWidth:3,
-tension:0.35,
-pointRadius:4
+tension:0.35
 }]
 },
 options:{
