@@ -7,8 +7,6 @@
 
 <title>GustaBOT Trading Systems</title>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
 <style>
 
 *{box-sizing:border-box;}
@@ -28,23 +26,17 @@ position:sticky;
 top:0;
 background:#071a2d;
 border-bottom:1px solid #1e3a5f;
-z-index:1000;
 }
 
 .nav{
-max-width:1200px;
+max-width:1100px;
 margin:auto;
 display:flex;
-align-items:center;
 justify-content:space-between;
 padding:14px 20px;
 }
 
-.logo-main{
-font-size:20px;
-font-weight:bold;
-}
-
+.logo-main{font-weight:bold;}
 .logo-main span{color:#22c55e;}
 
 .nav-button{
@@ -59,17 +51,16 @@ text-decoration:none;
 /* CONTAINER */
 
 .container{
-max-width:1200px;
+max-width:1000px;
 margin:auto;
-padding:32px 20px 60px;
+padding:40px 20px;
+text-align:center;
 }
 
 /* HERO */
 
-.hero{text-align:center;}
-
 .hero h1{
-font-size:42px;
+font-size:40px;
 margin-bottom:10px;
 }
 
@@ -78,129 +69,73 @@ font-size:20px;
 color:#d6e2f0;
 }
 
-.message-box{
-background:#0f2a45;
-padding:26px;
-border-radius:12px;
-margin:30px auto;
-max-width:760px;
-text-align:center;
-}
+/* CORE MESSAGE */
 
-.micro-disclaimer{
-font-size:12px;
-color:#9fb3c8;
-margin-top:12px;
-}
-
-/* STRATEGIES */
-
-.strategy-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-gap:24px;
-margin-top:30px;
-}
-
-.strategy-card{
-background:#0d243d;
-border:1px solid #1e3a5f;
-padding:26px;
-border-radius:12px;
-}
-
-.strategy-title{
-font-size:20px;
-font-weight:bold;
-color:#22c55e;
-margin-bottom:8px;
-}
-
-.strategy-market{
-font-size:13px;
-color:#9fb3c8;
-margin-bottom:14px;
-}
-
-.strategy-list{
-padding-left:18px;
-margin:0;
-}
-
-.strategy-list li{
-margin-bottom:8px;
-}
-
-/* SECTION */
-
-.section{
-margin-top:80px;
-text-align:center;
-}
-
-.section h2{
-font-size:30px;
-margin-bottom:20px;
-}
-
-/* CARD */
-
-.card{
+.core-box{
 background:#0f2a45;
 padding:28px;
 border-radius:12px;
-max-width:900px;
-margin:auto;
+margin:30px 0;
+}
+
+.core-box p{
+margin:10px 0;
+font-size:18px;
+}
+
+/* STRATEGY */
+
+.strategy{
+margin-top:40px;
 text-align:left;
+background:#0d243d;
+padding:24px;
+border-radius:12px;
 border:1px solid #1e3a5f;
+}
+
+.strategy h3{
+color:#22c55e;
+margin-bottom:10px;
+}
+
+.strategy ul{
+padding-left:18px;
+}
+
+.strategy li{
+margin-bottom:8px;
 }
 
 /* FLOW */
 
 .flow{
+margin-top:40px;
 display:flex;
-justify-content:center;
-gap:14px;
-flex-wrap:wrap;
-margin-top:30px;
-}
-
-.flow-step{
-background:#102b46;
-padding:14px 18px;
-border-radius:10px;
-min-width:160px;
-text-align:center;
+flex-direction:column;
+gap:12px;
 font-weight:bold;
-border:1px solid #1e3a5f;
 }
 
-.arrow{
-color:#22c55e;
-font-size:26px;
-display:flex;
-align-items:center;
-}
-
-/* FORM */
+/* CTA */
 
 .signup{
-text-align:center;
+margin-top:50px;
 }
 
 input{
-padding:14px;
+padding:12px;
 width:260px;
-margin:10px;
-border-radius:8px;
+margin:8px;
+border-radius:6px;
 border:none;
 }
 
 button{
 background:#22c55e;
-padding:14px 28px;
+padding:14px 30px;
 border:none;
-border-radius:8px;
+border-radius:6px;
 font-weight:bold;
 cursor:pointer;
 }
@@ -212,7 +147,7 @@ background:#0f2a45;
 padding:26px;
 border-radius:12px;
 max-width:900px;
-margin:auto;
+margin:50px auto;
 text-align:left;
 border:1px solid #1e3a5f;
 }
@@ -239,7 +174,7 @@ color:#9fb3c8;
 margin-top:16px;
 }
 
-/* DISCLOSURE */
+/* DISCLOSURE (UNCHANGED) */
 
 .disclosure{
 margin-top:80px;
@@ -268,7 +203,7 @@ margin-top:40px;
 <div class="header">
 <div class="nav">
 <div class="logo-main">Gusta<span>BOT</span></div>
-<a href="#signup" class="nav-button">Start My Free 30-Day Test</a>
+<a href="#signup" class="nav-button">Start Free</a>
 </div>
 </div>
 
@@ -276,144 +211,70 @@ margin-top:40px;
 
 <div class="hero">
 
-<h1>A Trading Strategy That Only Gets Paid If It Profits</h1>
-
-</p>Run the strategy for 30 days and only pay if it profits more than $5,000.<br>
-
-<div class="message-box">
-
-<p><strong>Step 1</strong> — Test free for 30 days</p>
-<p><strong>Step 2</strong> — If the strategy generates profits</p>
-<p><strong>Step 3</strong> — The profits pay the license</p>
+<h1>You Only Pay If The Strategy Wins</h1>
+<p>No subscriptions. No courses. No upfront cost.</p>
 
 </div>
 
-<p class="micro-disclaimer">
-Futures trading involves substantial risk. Past performance does not guarantee future results.
-</p>
+<div class="core-box">
+
+<p><strong>Run the strategy for 30 days — free.</strong></p>
+<p>If it generates more than $5,000 in profit, you pay using those profits.</p>
+<p><strong>If it does not — you pay nothing.</strong></p>
 
 </div>
 
-<div class="section">
-<h2>License Model</h2>
-<div class="card">
+<div class="strategy">
 
-<p></strong> The strategy must generate more than $5,000 in a given month for any license fee to apply. If monthly performance is below $5,000, no fees are charged.</p>
+<h3>EASORA — NQ Futures</h3>
 
-<br>
-  
-<p><strong>First 30 days:</strong> Free evaluation</p>
-<p><strong>Day 31:</strong> $500 license fee due</p>  
-<p><strong>Day 61:</strong> $1,000 license fee due</p>
-<p><strong>Day 91:</strong> $2,000 license fee due</p>
-<p><strong>Day 121 and beyond:</strong> 20% of monthly profit ($2,000 minimum)</p>
-
-<br>
-
-<p></strong> The strategy must generate more than $5,000 in a given month for any license fee to apply. If monthly performance is below $5,000, no fees are charged.</p>
-
-</div>
-</div>
-
-<div class="section">
-
-<h2>Strategies</h2>
-
-<div class="strategy-grid">
-
-<div class="strategy-card">
-<div class="strategy-title">EASORA</div>
-<div class="strategy-market">Instrument: NQ Futures</div>
-
-<ul class="strategy-list">
-<li>Designed for disciplined, automated execution in Nasdaq futures</li>
-<li>Runs directly on your NinjaTrader platform — no external control</li>
-<li>Built to operate with patience, selecting only high-quality opportunities</li>
-<li>Accepts both small and large wins, as well as small and controlled losses</li>
-<li>Will often choose not to trade when conditions are not favorable</li>
-<li>Focused on consistency, structure, and long-term performance stability</li>
+<ul>
+<li>Runs directly on your NinjaTrader platform</li>
+<li>Trades selectively — not every day</li>
+<li>Captures both small and large moves</li>
+<li>Accepts controlled losses as part of performance</li>
+<li>Designed for consistency over time</li>
 </ul>
 
-<div class="strategy-disclaimer">
-<p><strong>Risk Disclaimer:</strong><br>
-Trading futures involves substantial risk and is not suitable for all investors. 
-Losses can exceed initial deposits. Past performance is not indicative of future results. 
-You are solely responsible for all trading decisions, risk management, and financial outcomes.</p>
 </div>
 
-</div>
-</div>
-
-</div>
-
-</div>
-
-<div class="section">
-<h2>How It Works</h2>
 <div class="flow">
-<div class="flow-step">Sign Up</div>
-<div class="arrow">→</div>
-<div class="flow-step">Install Strategy</div>
-<div class="arrow">→</div>
-<div class="flow-step">Test 30 Days</div>
-<div class="arrow">→</div>
-<div class="flow-step">Evaluate Results</div>
-<div class="arrow">→</div>
-<div class="flow-step">Pay If Profitable</div>
-</div>
+
+<div>1. Sign up</div>
+<div>2. Install strategy</div>
+<div>3. Run for 30 days</div>
+<div>4. Evaluate results</div>
+<div>5. Pay only if profitable</div>
+
 </div>
 
-<div class="section signup" id="signup">
-<h2>Start Your 30-Day Test</h2>
+<div class="signup" id="signup">
+
+<h2>Start Your Free 30-Day Test</h2>
+
 <input type="text" placeholder="First Name">
 <input type="email" placeholder="Email Address">
 <br>
-<button>Start My Free 30-Day Test</button>
+<button>Start Free</button>
+
 </div>
 
-<div class="section">
-<h2>Frequently Asked Questions</h2>
+<!-- FAQ (kept clean but optional if you want to reduce friction further) -->
+
 <div class="faq">
 
 <p><strong>Do I need trading experience?</strong><br>
-No experience is required. The onboarding package you receive after signing up includes easy-to-follow, step-by-step instructions.</p>
+No experience is required. The onboarding package includes step-by-step instructions.</p>
 
 <p><strong>Do you control my account?</strong><br>
-No. The strategies run locally on your NinjaTrader platform. You maintain full control of your account at all times.</p>
-
-<p><strong>Can I stop anytime?</strong><br>
-Yes. You can disable the strategy inside NinjaTrader whenever you want. It’s your account, your risk, and your decision.</p>
+No. Everything runs locally on your NinjaTrader platform. You are always in control.</p>
 
 <p><strong>Can I test on SIM first?</strong><br>
-Yes. Many users begin with a simulation account before going live.</p>
-
-<p><strong>What capital is required?</strong><br>
-Approximately $300 for micro contracts or around $3,000 for one NQ contract.</p>
-
-<p><strong>Is this a subscription?</strong><br>
-No. This is a licensing model, not a traditional subscription. You are paying for access to use the strategy on your NinjaTrader platform.</p>
-
-<p><strong>Is this a course?</strong><br>
-No. This is not a course or educational program. You are not buying training—you are licensing a working strategy.</p>
-
-<p><strong>Do I need to provide my bank account or credit card?</strong><br>
-No. You are not required to provide any banking or credit card information to us.</p>
-
-<p><strong>How is the fee charged?</strong><br>
-The licensee is fully responsible for submitting the monthly fee.<br><br>
-GustaBOT does not send invoices, bills, or payment requests.<br><br>
-Payment must be made via PayPal on the <strong>first business day of each month before 3:00 PM</strong>.<br><br>
-If the fee is not received by the deadline:<br>
-- The strategy license will not be renewed<br>
-- The strategy will become inactive on the platform<br>
-- You will lose access to use it<br><br>
-Because of this, it is important to pay on time—especially if the strategy is actively generating profits.</p>
-
-<p><strong>What happens if my license expires?</strong><br>
-If a license expires, a <strong>$5,000 reinstatement fee</strong> is required to restore access.</p>
+Yes. Many users start in simulation before going live.</p>
 
 </div>
-</div>
+
+<!-- REQUIRED PLATFORM LINKS (UNCHANGED) -->
 
 <div class="section">
 <h2>Recommended Platforms</h2>
@@ -435,6 +296,8 @@ GustaBOT is not affiliated with NinjaTrader or Kinetick.
 </div>
 
 </div>
+
+<!-- DISCLOSURE (100% UNCHANGED) -->
 
 <div class="disclosure">
 
@@ -459,10 +322,6 @@ GustaBOT is not affiliated with NinjaTrader or Kinetick.
 <footer>
 <p>© 2026 GustaBOT Trading Systems</p>
 </footer>
-
-<script>
-const ctx=document.getElementById('equityChart');
-</script>
 
 </body>
 </html>
